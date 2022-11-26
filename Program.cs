@@ -356,8 +356,8 @@ class JsMethodDefinition {
 
     public int RelativeVirtualAddress { get => _md.RelativeVirtualAddress; }
 
-    public JsModuleImport? Import { get =>
-        _md.GetImport().Module.IsNil ? null : new JsModuleImport(_reader, _md.GetImport()); }
+    public JsMethodImport? Import { get =>
+        _md.GetImport().Module.IsNil ? null : new JsMethodImport(_reader, _md.GetImport()); }
 
     public JsReturnType ReturnType { get {
         var sig = _md.DecodeSignature(new TypeProvider(), new object());
@@ -434,11 +434,11 @@ class JsParameter {
 
 }
 
-class JsModuleImport {
+class JsMethodImport {
     MetadataReader _reader;
     MethodImport _mi;
 
-    public JsModuleImport(MetadataReader reader, MethodImport mi) {
+    public JsMethodImport(MetadataReader reader, MethodImport mi) {
         _reader = reader;
         _mi = mi;
     }
