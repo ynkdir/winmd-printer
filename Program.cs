@@ -60,27 +60,7 @@ class TypeProvider : ISignatureTypeProvider<string, object>, ICustomAttributeTyp
     }
 
     public string GetPrimitiveType(PrimitiveTypeCode typeCode) {
-        return typeCode switch {
-            PrimitiveTypeCode.Boolean => "Boolean",
-            PrimitiveTypeCode.Byte => "Byte",
-            PrimitiveTypeCode.Char => "Char",
-            PrimitiveTypeCode.Double => "Double",
-            PrimitiveTypeCode.Int16 => "Int64",
-            PrimitiveTypeCode.Int32 => "Int32",
-            PrimitiveTypeCode.Int64 => "Int64",
-            PrimitiveTypeCode.IntPtr => "IntPtr",
-            PrimitiveTypeCode.Object => "Object",
-            PrimitiveTypeCode.SByte => "SByte",
-            PrimitiveTypeCode.Single => "Single",
-            PrimitiveTypeCode.String => "String",
-            PrimitiveTypeCode.TypedReference => "TypedReference",
-            PrimitiveTypeCode.UInt16 => "Uint16",
-            PrimitiveTypeCode.UInt32 => "Uint32",
-            PrimitiveTypeCode.UInt64 => "Uint64",
-            PrimitiveTypeCode.UIntPtr => "UIntPtr",
-            PrimitiveTypeCode.Void => "Void",
-            _ => throw new NotImplementedException(),
-        };
+        return typeCode.ToString();
     }
 
     public string GetSZArrayType(string elementType) {
@@ -357,7 +337,6 @@ class JsMethodDefinition {
                 orderby pa.SequenceNumber   // seems not needed
                 select new JsParameter(_reader, pa, sig.ParameterTypes[pa.SequenceNumber - 1]))
                 .ToList();
-
     } }
 }
 
@@ -411,7 +390,6 @@ class JsParameter {
 
     public JsConstant? DefaultValue { get =>
         _pa.GetDefaultValue().IsNil ? null : new JsConstant(_reader, _reader.GetConstant(_pa.GetDefaultValue())); }
-
 }
 
 class JsMethodImport {
