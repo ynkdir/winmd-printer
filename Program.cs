@@ -98,6 +98,14 @@ class TypeProvider : ISignatureTypeProvider<string, object>, ICustomAttributeTyp
         };
     }
 
+    public static object? ToCustomValue(string type, object? val) {
+        return val is null ? null : type switch {
+            "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
+            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
+            _ => val,
+        };
+    }
+
     // ?
     public bool IsSystemType(string type) {
         return type == "System.Type";
@@ -183,17 +191,6 @@ class JsCustomAttribute {
     public List<JsCustomAttributeNamedArgument> NamedArguments { get =>
         (from na in _cv.NamedArguments
          select new JsCustomAttributeNamedArgument(na)).ToList(); }
-
-    public static object? ToTypedValue(string type, object? val) {
-        if (val == null) {
-            return null;
-        }
-        return type switch {
-            "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
-            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
-            _ => val,
-        };
-    }
 }
 
 class JsCustomAttributeFixedArgument {
@@ -205,7 +202,7 @@ class JsCustomAttributeFixedArgument {
 
     public string Type { get => _ta.Type; }
 
-    public object? Value { get => JsCustomAttribute.ToTypedValue(_ta.Type, _ta.Value); }
+    public object? Value { get => TypeProvider.ToCustomValue(_ta.Type, _ta.Value); }
 }
 
 class JsCustomAttributeNamedArgument {
@@ -221,7 +218,7 @@ class JsCustomAttributeNamedArgument {
 
     public string Type { get => _na.Type; }
 
-    public object? Value { get => JsCustomAttribute.ToTypedValue(_na.Type, _na.Value); }
+    public object? Value { get => TypeProvider.ToCustomValue(_na.Type, _na.Value); }
 }
 
 class JsFieldDefinition {
