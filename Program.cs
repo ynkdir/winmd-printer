@@ -471,21 +471,11 @@ class MetadataPrinter {
         using var fs = new FileStream(args[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         using var pe = new PEReader(fs);
         var reader = pe.GetMetadataReader();
+        var target = args.Length >= 2 ? args[1] : "";
         Console.WriteLine(JsonSerializer.Serialize(
             from h in reader.TypeDefinitions
             let td = new JsTypeDefinition(reader, reader.GetTypeDefinition(h))
-            //let name = $"{td.Namespace}.{td.Name}"
-            //where false
-            //|| name == "Windows.Win32.Foundation.Apis"                 // Constant, Function
-            //|| name == "Windows.Win32.Foundation.HANDLE"               // NativeTypedef
-            //|| name == "Windows.Win32.Foundation.WIN32_ERROR"          // Enum
-            //|| name == "Windows.Win32.Foundation.RECT"                 // Struct
-            //|| name == "Windows.Win32.Foundation.DECIMAL"              // Struct Nested
-            //|| name == "Windows.Win32.UI.WindowsAndMessaging.WNDPROC"  // FunctionPointer
-            //|| name == "Windows.Win32.System.Com.IUnknown"             // Com
-            //|| name == "Windows.Win32.System.Com.IEnumGUID"            // Com
-            //// winmd have multiple entry with same name for different architecture or something.
-            //|| name == "Windows.Win32.System.SystemServices.POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK"
+            where target == "" || target == td.Namespace || target == $"{td.Namespace}.{td.Name}"
             select td));
     }
 }
