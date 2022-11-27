@@ -298,10 +298,12 @@ class JsTypeLayout {
 class JsMethodDefinition {
     MetadataReader _reader;
     MethodDefinition _md;
+    MethodSignature<string> _sig;
 
     public JsMethodDefinition(MetadataReader reader, MethodDefinition md) {
         _reader = reader;
         _md = md;
+        _sig = _md.DecodeSignature(new TypeProvider(), new object());
     }
 
     public string Name { get => _reader.GetString(_md.Name); }
@@ -319,25 +321,45 @@ class JsMethodDefinition {
     public JsMethodImport? Import { get =>
         _md.GetImport().Module.IsNil ? null : new JsMethodImport(_reader, _md.GetImport()); }
 
+    public JsSignatureHeader Header { get => new JsSignatureHeader(_sig.Header); }
+
     public JsReturnType ReturnType { get {
-        var sig = _md.DecodeSignature(new TypeProvider(), new object());
         // Return type is pa.SequenceNumber == 0.  It can be missing in GetParameters();
         var ps = from h in _md.GetParameters()
                  let pa = _reader.GetParameter(h)
                  where pa.SequenceNumber == 0
                  select pa;
-        return new JsReturnType(_reader, ps.Count() == 0 ? null : ps.First(), sig.ReturnType);
+        return new JsReturnType(_reader, ps.Count() == 0 ? null : ps.First(), _sig.ReturnType);
     } }
 
     public List<JsParameter> Parameters { get {
-        var sig = _md.DecodeSignature(new TypeProvider(), new object());
         return (from h in _md.GetParameters()
                 let pa = _reader.GetParameter(h)
                 where pa.SequenceNumber != 0
                 orderby pa.SequenceNumber   // seems not needed
-                select new JsParameter(_reader, pa, sig.ParameterTypes[pa.SequenceNumber - 1]))
+                select new JsParameter(_reader, pa, _sig.ParameterTypes[pa.SequenceNumber - 1]))
                 .ToList();
     } }
+}
+
+class JsSignatureHeader {
+    SignatureHeader _sh;
+
+    public JsSignatureHeader(SignatureHeader sh) {
+        _sh = sh;
+    }
+
+    public List<string> Attributes { get => _sh.Attributes.ToString().Split(", ").ToList(); }
+
+    public string CallingConvention { get => _sh.CallingConvention.ToString(); }
+
+    public bool HasExplicitThis { get => _sh.HasExplicitThis; }
+
+    public bool IsGeneric { get => _sh.IsGeneric; }
+
+    public bool IsInstance { get => _sh.IsInstance; }
+
+    public string Kind { get => _sh.Kind.ToString(); }
 }
 
 class JsReturnType {
