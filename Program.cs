@@ -278,27 +278,7 @@ class JsConstant {
 
     public string TypeCode { get => _ct.TypeCode.ToString(); }
 
-    public string Value { get {
-        var r = _reader.GetBlobReader(_ct.Value);
-        return _ct.TypeCode switch {
-            ConstantTypeCode.Boolean        => r.ReadBoolean().ToString(),
-            ConstantTypeCode.Byte           => r.ReadByte().ToString(),
-            ConstantTypeCode.Char           => r.ReadChar().ToString(),
-            ConstantTypeCode.Double         => r.ReadDouble().ToString(),
-            ConstantTypeCode.Int16          => r.ReadInt16().ToString(),
-            ConstantTypeCode.Int32          => r.ReadInt32().ToString(),
-            ConstantTypeCode.Int64          => r.ReadInt64().ToString(),
-            ConstantTypeCode.SByte          => r.ReadSByte().ToString(),
-            ConstantTypeCode.Single         => r.ReadSingle().ToString(),
-            ConstantTypeCode.String         => r.ReadUTF16(r.Length),
-            ConstantTypeCode.UInt16         => r.ReadUInt16().ToString(),
-            ConstantTypeCode.UInt32         => r.ReadUInt32().ToString(),
-            ConstantTypeCode.UInt64         => r.ReadUInt64().ToString(),
-            ConstantTypeCode.Invalid        => throw new NotImplementedException(),
-            ConstantTypeCode.NullReference  => throw new NotImplementedException(),
-            _                               => throw new NotImplementedException(),
-        };
-    } }
+    public object? Value { get => _reader.GetBlobReader(_ct.Value).ReadConstant(_ct.TypeCode); }
 }
 
 class JsInterfaceImplementation {
