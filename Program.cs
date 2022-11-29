@@ -20,86 +20,112 @@ enum Architecture {
     All = Architecture.X64 | Architecture.X86 | Architecture.Arm64
 }
 
-class TypeProvider : ISignatureTypeProvider<string, object>, ICustomAttributeTypeProvider<string> {
-    public string GetArrayType(string elementType, ArrayShape shape) {
+[JsonDerivedType(typeof(ArrayType))]
+class TType {
+    public TType(string kind, object type) {
+        Kind = kind;
+        Type = type;
+    }
+    public string Kind { get; set; }
+    public object Type { get; set; }
+}
+
+class ArrayType : TType {
+    public ArrayType(TType type, int size)
+        : base("Array", type)
+    {
+        Size = size;
+    }
+    public int Size { get; set; }
+}
+
+class TGenericContext {
+}
+
+class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttributeTypeProvider<TType> {
+    public TType GetArrayType(TType elementType, ArrayShape shape) {
         Debug.Assert((from x in shape.LowerBounds where x != 0 select x).Count() == 0);
         Debug.Assert(shape.Sizes.Count() == shape.Rank);
-        return elementType + String.Join("", from n in shape.Sizes select $"[{n}]");
+        TType type = elementType;
+        foreach (var n in shape.Sizes) {
+            type = new ArrayType(type, n);
+        }
+        return type;
     }
 
-    public string GetByReferenceType(string elementType) {
+    public TType GetByReferenceType(TType elementType) {
         throw new NotImplementedException();
     }
 
-    public string GetFunctionPointerType(MethodSignature<string> signature) {
+    public TType GetFunctionPointerType(MethodSignature<TType> signature) {
         throw new NotImplementedException();
     }
 
-    public string GetGenericInstantiation(string genericType, ImmutableArray<string> typeArguments) {
+    public TType GetGenericInstantiation(TType genericType, ImmutableArray<TType> typeArguments) {
         throw new NotImplementedException();
     }
 
-    public string GetGenericMethodParameter(object genericContext, int index) {
+    public TType GetGenericMethodParameter(TGenericContext genericContext, int index) {
         throw new NotImplementedException();
     }
 
-    public string GetGenericTypeParameter(object genericContext, int index) {
+    public TType GetGenericTypeParameter(TGenericContext genericContext, int index) {
         throw new NotImplementedException();
     }
 
-    public string GetModifiedType(string modifierType, string unmodifiedType, bool isRequired) {
+    public TType GetModifiedType(TType modifierType, TType unmodifiedType, bool isRequired) {
         throw new NotImplementedException();
     }
 
-    public string GetPinnedType(string elementType) {
+    public TType GetPinnedType(TType elementType) {
         throw new NotImplementedException();
     }
 
-    public string GetPointerType(string elementType) {
-        return $"{elementType}*";
+    public TType GetPointerType(TType elementType) {
+        return new TType("Pointer", elementType);
     }
 
-    public string GetPrimitiveType(PrimitiveTypeCode typeCode) {
-        return typeCode.ToString();
+    public TType GetPrimitiveType(PrimitiveTypeCode typeCode) {
+        return new TType("Primitive", typeCode.ToString());
     }
 
-    public string GetSZArrayType(string elementType) {
-        return elementType + "[]";
+    public TType GetSZArrayType(TType elementType) {
+        return new TType("SZArray", elementType);
     }
 
-    public string GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind = 0) {
+    public TType GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind) {
         var td = reader.GetTypeDefinition(handle);
-        return $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}";
+        return new TType("Type", $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}");
     }
 
-    public string GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind = 0) {
+    public TType GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) {
         var tr = reader.GetTypeReference((TypeReferenceHandle)handle);
-        return $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}";
+        return new TType("Type", $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}");
     }
 
-    public string GetTypeFromSpecification(MetadataReader reader, object genericContext, TypeSpecificationHandle handle, byte rawTypeKind = 0) {
+    public TType GetTypeFromSpecification(MetadataReader reader, TGenericContext genericContext, TypeSpecificationHandle handle, byte rawTypeKind) {
         throw new NotImplementedException();
     }
 
     // ?
-    public string GetSystemType() {
-        return "System.Type";
+    public TType GetSystemType() {
+        return new TType("System.Type", "System.Type");
     }
 
-    public string GetTypeFromSerializedName(string name) {
+    public TType GetTypeFromSerializedName(string name) {
         throw new NotImplementedException();
     }
 
-    public PrimitiveTypeCode GetUnderlyingEnumType(string type) {
-        return type switch {
+    public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
+        return type.Type switch {
             "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
             "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
             _ => throw new NotImplementedException(),
         };
     }
 
-    public static object? ToCustomValue(string type, object? val) {
-        return val is null ? null : type switch {
+    public static object? ToCustomValue(TType type, object? val) {
+        return val is null ? null : type.Type switch {
             "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
             "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
             _ => val,
@@ -107,8 +133,8 @@ class TypeProvider : ISignatureTypeProvider<string, object>, ICustomAttributeTyp
     }
 
     // ?
-    public bool IsSystemType(string type) {
-        return type == "System.Type";
+    public bool IsSystemType(TType type) {
+        return type.Kind == "System.Type";
     }
 }
 
@@ -171,7 +197,7 @@ class JsCustomAttribute {
     CustomAttribute _ca;
     MemberReference _mr;
     TypeReference _tr;
-    CustomAttributeValue<string> _cv;
+    CustomAttributeValue<TType> _cv;
 
     public JsCustomAttribute(MetadataReader reader, CustomAttribute ca) {
         Debug.Assert(ca.Constructor.Kind == HandleKind.MemberReference);
@@ -194,21 +220,21 @@ class JsCustomAttribute {
 }
 
 class JsCustomAttributeFixedArgument {
-    CustomAttributeTypedArgument<string> _ta;
+    CustomAttributeTypedArgument<TType> _ta;
 
-    public JsCustomAttributeFixedArgument(CustomAttributeTypedArgument<string> ta) {
+    public JsCustomAttributeFixedArgument(CustomAttributeTypedArgument<TType> ta) {
         _ta = ta;
     }
 
-    public string Type { get => _ta.Type; }
+    public TType Type { get => _ta.Type; }
 
     public object? Value { get => TypeProvider.ToCustomValue(_ta.Type, _ta.Value); }
 }
 
 class JsCustomAttributeNamedArgument {
-    CustomAttributeNamedArgument<string> _na;
+    CustomAttributeNamedArgument<TType> _na;
 
-    public JsCustomAttributeNamedArgument(CustomAttributeNamedArgument<string> na) {
+    public JsCustomAttributeNamedArgument(CustomAttributeNamedArgument<TType> na) {
         _na = na;
     }
 
@@ -216,7 +242,7 @@ class JsCustomAttributeNamedArgument {
 
     public string? Name { get => _na.Name; }
 
-    public string Type { get => _na.Type; }
+    public TType Type { get => _na.Type; }
 
     public object? Value { get => TypeProvider.ToCustomValue(_na.Type, _na.Value); }
 }
@@ -232,7 +258,7 @@ class JsFieldDefinition {
 
     public string Name { get => _reader.GetString(_fd.Name); }
 
-    public string Type { get => _fd.DecodeSignature(new TypeProvider(), new object()); }
+    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), new TGenericContext()); }
 
     public List<string> Attributes { get => _fd.Attributes.ToString().Split(", ").ToList(); }
 
@@ -295,12 +321,12 @@ class JsTypeLayout {
 class JsMethodDefinition {
     MetadataReader _reader;
     MethodDefinition _md;
-    MethodSignature<string> _sig;
+    MethodSignature<TType> _sig;
 
     public JsMethodDefinition(MetadataReader reader, MethodDefinition md) {
         _reader = reader;
         _md = md;
-        _sig = _md.DecodeSignature(new TypeProvider(), new object());
+        _sig = _md.DecodeSignature(new TypeProvider(), new TGenericContext());
     }
 
     public string Name { get => _reader.GetString(_md.Name); }
@@ -362,15 +388,15 @@ class JsSignatureHeader {
 class JsReturnType {
     MetadataReader _reader;
     Parameter? _pa;
-    string _type;
+    TType _type;
 
-    public JsReturnType(MetadataReader reader, Parameter? pa, string type) {
+    public JsReturnType(MetadataReader reader, Parameter? pa, TType type) {
         _reader = reader;
         _pa = pa;
         _type = type;
     }
 
-    public string Type { get => _type; }
+    public TType Type { get => _type; }
 
     public List<string> Attributes { get =>
         _pa.HasValue
@@ -387,9 +413,9 @@ class JsReturnType {
 class JsParameter {
     MetadataReader _reader;
     Parameter _pa;
-    string _type;
+    TType _type;
 
-    public JsParameter(MetadataReader reader, Parameter pa, string type) {
+    public JsParameter(MetadataReader reader, Parameter pa, TType type) {
         _reader = reader;
         _pa = pa;
         _type = type;
@@ -397,7 +423,7 @@ class JsParameter {
 
     public string Name { get => _reader.GetString(_pa.Name); }
 
-    public string Type { get => _type; }
+    public TType Type { get => _type; }
 
     public int SequenceNumber { get => _pa.SequenceNumber; }
 
@@ -453,6 +479,7 @@ class MetadataPrinter {
             from h in reader.TypeDefinitions
             let td = new JsTypeDefinition(reader, reader.GetTypeDefinition(h))
             where target == "" || target == td.Namespace || target == $"{td.Namespace}.{td.Name}"
-            select td));
+            select td,
+            new JsonSerializerOptions { WriteIndented = true}));
     }
 }
