@@ -20,23 +20,17 @@ enum Architecture {
     All = Architecture.X64 | Architecture.X86 | Architecture.Arm64
 }
 
-[JsonDerivedType(typeof(ArrayType))]
 class TType {
-    public TType(string kind, object type) {
+    public TType(string kind, TType? type = null, string? name = null, int? size = null) {
         Kind = kind;
         Type = type;
-    }
-    public string Kind { get; set; }
-    public object Type { get; set; }
-}
-
-class ArrayType : TType {
-    public ArrayType(TType type, int size)
-        : base("Array", type)
-    {
+        Name = name;
         Size = size;
     }
-    public int Size { get; set; }
+    public string Kind { get; set; }
+    public TType? Type { get; set; }
+    public string? Name { get; set; }
+    public int? Size{ get; set; }
 }
 
 class TGenericContext {
@@ -48,7 +42,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         Debug.Assert(shape.Sizes.Count() == shape.Rank);
         TType type = elementType;
         foreach (var n in shape.Sizes) {
-            type = new ArrayType(type, n);
+            type = new TType("Array", type: type, size: n);
         }
         return type;
     }
@@ -82,25 +76,25 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetPointerType(TType elementType) {
-        return new TType("Pointer", elementType);
+        return new TType("Pointer", type: elementType);
     }
 
     public TType GetPrimitiveType(PrimitiveTypeCode typeCode) {
-        return new TType("Primitive", typeCode.ToString());
+        return new TType("Primitive", name: typeCode.ToString());
     }
 
     public TType GetSZArrayType(TType elementType) {
-        return new TType("SZArray", elementType);
+        return new TType("SZArray", type: elementType);
     }
 
     public TType GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind) {
         var td = reader.GetTypeDefinition(handle);
-        return new TType("Type", $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}");
+        return new TType("Type", name: $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}");
     }
 
     public TType GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) {
         var tr = reader.GetTypeReference((TypeReferenceHandle)handle);
-        return new TType("Type", $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}");
+        return new TType("Type", name: $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}");
     }
 
     public TType GetTypeFromSpecification(MetadataReader reader, TGenericContext genericContext, TypeSpecificationHandle handle, byte rawTypeKind) {
@@ -109,7 +103,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
 
     // ?
     public TType GetSystemType() {
-        return new TType("System.Type", "System.Type");
+        return new TType("System.Type", name: "System.Type");
     }
 
     public TType GetTypeFromSerializedName(string name) {
@@ -117,7 +111,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
-        return type.Type switch {
+        return type.Name switch {
             "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
             "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
             _ => throw new NotImplementedException(),
@@ -125,7 +119,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public static object? ToCustomValue(TType type, object? val) {
-        return val is null ? null : type.Type switch {
+        return val is null ? null : type.Name switch {
             "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
             "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
             _ => val,
