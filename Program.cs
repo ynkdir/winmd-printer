@@ -262,6 +262,10 @@ class JsFieldDefinition {
 
     public JsConstant? DefaultValue { get =>
         _fd.GetDefaultValue().IsNil ? null : new JsConstant(_reader, _reader.GetConstant(_fd.GetDefaultValue())); }
+
+    public int Offset { get => _fd.GetOffset(); }
+
+    public int RelativeVirtualAddress { get => _fd.GetRelativeVirtualAddress(); }
 }
 
 class JsConstant {
