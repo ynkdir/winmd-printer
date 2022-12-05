@@ -145,13 +145,14 @@ class JsTypeDefinition {
 
     public string Name { get => _reader.GetString(_td.Name); }
 
-    public string BaseType { get {
-        if (_td.BaseType.Kind == HandleKind.TypeReference) {
+    public string? BaseType { get {
+        if (_td.BaseType.IsNil) {
+            return null;
+        } else if (_td.BaseType.Kind == HandleKind.TypeReference) {
             var tr = _reader.GetTypeReference((TypeReferenceHandle)_td.BaseType);
             return $"{_reader.GetString(tr.Namespace)}.{_reader.GetString(tr.Name)}";
         } else if (_td.BaseType.Kind == HandleKind.TypeDefinition) {
-            Debug.Assert(_td.BaseType.IsNil);
-            return "TypeDefinition";
+            throw new NotImplementedException();
         } else if (_td.BaseType.Kind == HandleKind.TypeSpecification) {
             throw new NotImplementedException();
         } else {
