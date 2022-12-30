@@ -20,20 +20,79 @@ enum Architecture {
     All = Architecture.X64 | Architecture.X86 | Architecture.Arm64
 }
 
+// Windows.Foundation.Metadata.MarshalingType
+enum MarshalingType {
+    Agile = 2,
+    InvalidMarshaling = 0,
+    None = 1,
+    Standard = 3
+}
+
+// Windows.Foundation.Metadata.ThreadingModel
+enum ThreadingModel {
+    Both = 3,
+    InvalidThreading = 0,
+    MTA = 2,
+    STA = 1
+}
+
+// Windows.Foundation.Metadata.DeprecationType
+enum DeprecationType {
+    Deprecate = 0,
+    Remove = 1
+}
+
+// Windows.Foundation.Metadata.GCPressureAmount
+enum GCPressureAmount {
+    High = 2,
+    Low = 0,
+    Medium = 1
+}
+
+// Windows.Foundation.Metadata.CompositionType
+enum CompositionType {
+    Protected = 1,
+    Public = 2
+}
+
 class TType {
-    public TType(string kind, TType? type = null, string? name = null, int? size = null) {
+    public TType(string kind, TType? type = null, string? name = null, int? size = null, List<TType>? type_arguments = null, bool? is_required = null) {
         Kind = kind;
         Type = type;
         Name = name;
         Size = size;
+        TypeArguments = type_arguments;
+        IsRequired = is_required;
     }
     public string Kind { get; set; }
     public TType? Type { get; set; }
     public string? Name { get; set; }
-    public int? Size{ get; set; }
+    public int? Size { get; set; }
+    public List<TType>? TypeArguments { get; set; }
+    public bool? IsRequired { get; set; }
 }
 
 class TGenericContext {
+    MetadataReader _reader;
+    TypeDefinition _td;
+    MethodDefinition? _md;
+
+    public TGenericContext(MetadataReader reader, TypeDefinition td, MethodDefinition? md = null) {
+        _reader = reader;
+        _td = td;
+        _md = md;
+    }
+
+    public TType GetMethodParameter(int index) {
+        Debug.Assert(_md is not null);
+        var gm = _reader.GetGenericParameter(_md.Value.GetGenericParameters()[index]);
+        return new TType("Type", name: _reader.GetString(gm.Name));
+    }
+
+    public TType GetTypeParameter(int index) {
+        var gm = _reader.GetGenericParameter(_td.GetGenericParameters()[index]);
+        return new TType("Type", name: _reader.GetString(gm.Name));
+    }
 }
 
 class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttributeTypeProvider<TType> {
@@ -48,7 +107,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetByReferenceType(TType elementType) {
-        throw new NotImplementedException();
+        return new TType("Reference", type: elementType);
     }
 
     public TType GetFunctionPointerType(MethodSignature<TType> signature) {
@@ -56,19 +115,21 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetGenericInstantiation(TType genericType, ImmutableArray<TType> typeArguments) {
-        throw new NotImplementedException();
+        Debug.Assert(genericType.Kind == "Type");
+        return new TType("Generic", name: genericType.Name, type_arguments: typeArguments.ToList());
     }
 
     public TType GetGenericMethodParameter(TGenericContext genericContext, int index) {
-        throw new NotImplementedException();
+        return genericContext.GetMethodParameter(index);
     }
 
     public TType GetGenericTypeParameter(TGenericContext genericContext, int index) {
-        throw new NotImplementedException();
+        return genericContext.GetTypeParameter(index);
     }
 
     public TType GetModifiedType(TType modifierType, TType unmodifiedType, bool isRequired) {
-        throw new NotImplementedException();
+        Debug.Assert(modifierType.Kind == "Type");
+        return new TType("Modified", name: modifierType.Name, type: unmodifiedType, is_required: isRequired);
     }
 
     public TType GetPinnedType(TType elementType) {
@@ -107,13 +168,20 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetTypeFromSerializedName(string name) {
-        throw new NotImplementedException();
+        return new TType("Type", name: name);
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
         return type.Name switch {
             "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
             "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
+            "System.Type" => PrimitiveTypeCode.String,
+            "System.AttributeTargets" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.MarshalingType" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.ThreadingModel" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.DeprecationType" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.GCPressureAmount" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.CompositionType" => PrimitiveTypeCode.Int32,
             _ => throw new NotImplementedException(),
         };
     }
@@ -122,6 +190,13 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         return val is null ? null : type.Name switch {
             "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
             "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
+            "System.Type" => val,
+            "System.AttributeTargets" => ((System.AttributeTargets)val).ToString().Split(", ").ToList(),
+            "Windows.Foundation.Metadata.MarshalingType" => ((MarshalingType)val).ToString(),
+            "Windows.Foundation.Metadata.ThreadingModel" => ((ThreadingModel)val).ToString(),
+            "Windows.Foundation.Metadata.DeprecationType" => ((DeprecationType)val).ToString(),
+            "Windows.Foundation.Metadata.GCPressureAmount" => ((GCPressureAmount)val).ToString(),
+            "Windows.Foundation.Metadata.CompositionType" => ((CompositionType)val).ToString(),
             _ => val,
         };
     }
@@ -174,7 +249,7 @@ class JsTypeDefinition {
 
     public List<JsInterfaceImplementation> InterfaceImplementations { get =>
         (from h in _td.GetInterfaceImplementations()
-         select new JsInterfaceImplementation(_reader, _reader.GetInterfaceImplementation(h))).ToList(); }
+         select new JsInterfaceImplementation(_reader, _td, _reader.GetInterfaceImplementation(h))).ToList(); }
 
     public JsTypeLayout Layout { get => new JsTypeLayout(_td.GetLayout()); }
 
@@ -253,7 +328,7 @@ class JsFieldDefinition {
 
     public string Name { get => _reader.GetString(_fd.Name); }
 
-    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), new TGenericContext()); }
+    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _reader.GetTypeDefinition(_fd.GetDeclaringType()))); }
 
     public List<string> Attributes { get => _fd.Attributes.ToString().Split(", ").ToList(); }
 
@@ -285,21 +360,80 @@ class JsConstant {
 
 class JsInterfaceImplementation {
     MetadataReader _reader;
+    TypeDefinition _td;
     InterfaceImplementation _ii;
 
-    public JsInterfaceImplementation(MetadataReader reader, InterfaceImplementation ii) {
+    public JsInterfaceImplementation(MetadataReader reader, TypeDefinition td, InterfaceImplementation ii) {
         _reader = reader;
+        _td = td;
         _ii = ii;
     }
 
-    public string Interface { get {
-        Debug.Assert(_ii.Interface.Kind == HandleKind.TypeReference);
-        var tr = _reader.GetTypeReference((TypeReferenceHandle)_ii.Interface);
-        return $"{_reader.GetString(tr.Namespace)}.{_reader.GetString(tr.Name)}";
-    } }
+    public JsInterface Interface { get => new JsInterface(_reader, _td, _ii.Interface); }
 
     public List<JsCustomAttribute> CustomAttributes { get =>
         (from h in _ii.GetCustomAttributes()
+         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+}
+
+class JsInterface {
+    MetadataReader _reader;
+    TypeDefinition _td;
+    EntityHandle _interface;
+
+    public JsInterface(MetadataReader reader, TypeDefinition td, EntityHandle interface_) {
+        _reader = reader;
+        _td = td;
+        _interface = interface_;
+        if (_interface.Kind == HandleKind.TypeReference) {
+            Kind = "TypeReference";
+            TypeReference = new JsTypeReference(_reader, _reader.GetTypeReference((TypeReferenceHandle)_interface));
+        } else if (_interface.Kind == HandleKind.TypeDefinition) {
+            throw new NotImplementedException();
+        } else if (_interface.Kind == HandleKind.TypeSpecification) {
+            Kind = "TypeSpecification";
+            TypeSpecification = new JsTypeSpecification(_reader, _td, _reader.GetTypeSpecification((TypeSpecificationHandle)_interface));
+        } else {
+            throw new NotImplementedException();
+        }
+    }
+
+    public string Kind { get; set; }
+
+    public JsTypeReference? TypeReference { get; set; }
+
+    public JsTypeSpecification? TypeSpecification { get; set; }
+}
+
+class JsTypeReference {
+    MetadataReader _reader;
+    TypeReference _tr;
+
+    public JsTypeReference(MetadataReader reader, TypeReference tr) {
+        _reader = reader;
+        _tr = tr;
+    }
+
+    public string Name { get => _reader.GetString(_tr.Name); }
+
+    public string Namespace { get => _reader.GetString(_tr.Namespace); }
+}
+
+class JsTypeSpecification {
+    MetadataReader _reader;
+    TypeDefinition _td;
+    TypeSpecification _ts;
+
+    public JsTypeSpecification(MetadataReader reader, TypeDefinition td, TypeSpecification ts) {
+        _reader = reader;
+        _td = td;
+        _ts = ts;
+    }
+
+    public TType Signature { get => _ts.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _td)); }
+
+    public List<JsCustomAttribute> CustomAttributes { get =>
+        (from h in _ts.GetCustomAttributes()
          select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
 }
 
@@ -325,7 +459,7 @@ class JsMethodDefinition {
     public JsMethodDefinition(MetadataReader reader, MethodDefinition md) {
         _reader = reader;
         _md = md;
-        _sig = _md.DecodeSignature(new TypeProvider(), new TGenericContext());
+        _sig = _md.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _reader.GetTypeDefinition(_md.GetDeclaringType()), _md));
     }
 
     public string Name { get => _reader.GetString(_md.Name); }
