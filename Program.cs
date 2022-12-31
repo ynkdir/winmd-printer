@@ -210,10 +210,12 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
 class JsTypeDefinition {
     MetadataReader _reader;
     TypeDefinition _td;
+    TGenericContext _gc;
 
     public JsTypeDefinition(MetadataReader reader, TypeDefinition td) {
         _reader = reader;
         _td = td;
+        _gc = new TGenericContext(_reader, _td);
     }
 
     public string Namespace { get => _reader.GetString(_td.Namespace); }
@@ -245,11 +247,11 @@ class JsTypeDefinition {
 
     public List<JsFieldDefinition> Fields { get =>
         (from h in _td.GetFields()
-         select new JsFieldDefinition(_reader, _reader.GetFieldDefinition(h))).ToList(); }
+         select new JsFieldDefinition(_reader, _reader.GetFieldDefinition(h), _gc)).ToList(); }
 
     public List<JsInterfaceImplementation> InterfaceImplementations { get =>
         (from h in _td.GetInterfaceImplementations()
-         select new JsInterfaceImplementation(_reader, _td, _reader.GetInterfaceImplementation(h))).ToList(); }
+         select new JsInterfaceImplementation(_reader, _reader.GetInterfaceImplementation(h), _gc)).ToList(); }
 
     public JsTypeLayout Layout { get => new JsTypeLayout(_td.GetLayout()); }
 
@@ -260,6 +262,54 @@ class JsTypeDefinition {
     public List<JsTypeDefinition> NestedTypes { get =>
         (from h in _td.GetNestedTypes()
          select new JsTypeDefinition(_reader, _reader.GetTypeDefinition(h))).ToList(); }
+
+    public List<JsGenericParameter> GenericParameters { get =>
+        (from h in _td.GetGenericParameters()
+         select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc)).ToList(); }
+}
+
+class JsGenericParameter {
+    MetadataReader _reader;
+    GenericParameter _gp;
+    TGenericContext _gc;
+
+    public JsGenericParameter(MetadataReader reader, GenericParameter gp, TGenericContext gc) {
+        _reader = reader;
+        _gp = gp;
+        _gc = gc;
+    }
+
+    public List<string> Attributes { get => _gp.Attributes.ToString().Split(", ").ToList(); }
+
+    public int Index { get => _gp.Index; }
+
+    public string Name { get => _reader.GetString(_gp.Name); }
+
+    public List<JsGenericParameterConstraint> Constraints { get =>
+        (from h in _gp.GetConstraints()
+         select new JsGenericParameterConstraint(_reader, _reader.GetGenericParameterConstraint(h), _gc)).ToList(); }
+
+    public List<JsCustomAttribute> CustomAttributes { get =>
+        (from h in _gp.GetCustomAttributes()
+         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+}
+
+class JsGenericParameterConstraint {
+    MetadataReader _reader;
+    GenericParameterConstraint _gpc;
+    TGenericContext _gc;
+
+    public JsGenericParameterConstraint(MetadataReader reader, GenericParameterConstraint gpc, TGenericContext gc) {
+        _reader = reader;
+        _gpc = gpc;
+        _gc = gc;
+    }
+
+    public JsEntityHandle Type { get => new JsEntityHandle(_reader, _gpc.Type, _gc); }
+
+    public List<JsCustomAttribute> CustomAttributes { get =>
+        (from h in _gpc.GetCustomAttributes()
+         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
 }
 
 class JsCustomAttribute {
@@ -320,15 +370,17 @@ class JsCustomAttributeNamedArgument {
 class JsFieldDefinition {
     MetadataReader _reader;
     FieldDefinition _fd;
+    TGenericContext _gc;
 
-    public JsFieldDefinition(MetadataReader reader, FieldDefinition fd) {
+    public JsFieldDefinition(MetadataReader reader, FieldDefinition fd, TGenericContext gc) {
         _reader = reader;
         _fd = fd;
+        _gc = gc;
     }
 
     public string Name { get => _reader.GetString(_fd.Name); }
 
-    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _reader.GetTypeDefinition(_fd.GetDeclaringType()))); }
+    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), _gc); }
 
     public List<string> Attributes { get => _fd.Attributes.ToString().Split(", ").ToList(); }
 
@@ -360,31 +412,31 @@ class JsConstant {
 
 class JsInterfaceImplementation {
     MetadataReader _reader;
-    TypeDefinition _td;
     InterfaceImplementation _ii;
+    TGenericContext _gc;
 
-    public JsInterfaceImplementation(MetadataReader reader, TypeDefinition td, InterfaceImplementation ii) {
+    public JsInterfaceImplementation(MetadataReader reader, InterfaceImplementation ii, TGenericContext gc) {
         _reader = reader;
-        _td = td;
         _ii = ii;
+        _gc = gc;
     }
 
-    public JsInterface Interface { get => new JsInterface(_reader, _td, _ii.Interface); }
+    public JsEntityHandle Interface { get => new JsEntityHandle(_reader, _ii.Interface, _gc); }
 
     public List<JsCustomAttribute> CustomAttributes { get =>
         (from h in _ii.GetCustomAttributes()
          select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
 }
 
-class JsInterface {
+class JsEntityHandle {
     MetadataReader _reader;
-    TypeDefinition _td;
     EntityHandle _interface;
+    TGenericContext _gc;
 
-    public JsInterface(MetadataReader reader, TypeDefinition td, EntityHandle interface_) {
+    public JsEntityHandle(MetadataReader reader, EntityHandle interface_, TGenericContext gc) {
         _reader = reader;
-        _td = td;
         _interface = interface_;
+        _gc = gc;
         if (_interface.Kind == HandleKind.TypeReference) {
             Kind = "TypeReference";
             TypeReference = new JsTypeReference(_reader, _reader.GetTypeReference((TypeReferenceHandle)_interface));
@@ -392,7 +444,7 @@ class JsInterface {
             throw new NotImplementedException();
         } else if (_interface.Kind == HandleKind.TypeSpecification) {
             Kind = "TypeSpecification";
-            TypeSpecification = new JsTypeSpecification(_reader, _td, _reader.GetTypeSpecification((TypeSpecificationHandle)_interface));
+            TypeSpecification = new JsTypeSpecification(_reader, _reader.GetTypeSpecification((TypeSpecificationHandle)_interface), _gc);
         } else {
             throw new NotImplementedException();
         }
@@ -421,16 +473,16 @@ class JsTypeReference {
 
 class JsTypeSpecification {
     MetadataReader _reader;
-    TypeDefinition _td;
     TypeSpecification _ts;
+    TGenericContext _gc;
 
-    public JsTypeSpecification(MetadataReader reader, TypeDefinition td, TypeSpecification ts) {
+    public JsTypeSpecification(MetadataReader reader, TypeSpecification ts, TGenericContext gc) {
         _reader = reader;
-        _td = td;
         _ts = ts;
+        _gc = gc;
     }
 
-    public TType Signature { get => _ts.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _td)); }
+    public TType Signature { get => _ts.DecodeSignature(new TypeProvider(), _gc); }
 
     public List<JsCustomAttribute> CustomAttributes { get =>
         (from h in _ts.GetCustomAttributes()
@@ -454,12 +506,14 @@ class JsTypeLayout {
 class JsMethodDefinition {
     MetadataReader _reader;
     MethodDefinition _md;
+    TGenericContext _gc;
     MethodSignature<TType> _sig;
 
     public JsMethodDefinition(MetadataReader reader, MethodDefinition md) {
         _reader = reader;
         _md = md;
-        _sig = _md.DecodeSignature(new TypeProvider(), new TGenericContext(_reader, _reader.GetTypeDefinition(_md.GetDeclaringType()), _md));
+        _gc = new TGenericContext(_reader, _reader.GetTypeDefinition(_md.GetDeclaringType()), _md);
+        _sig = _md.DecodeSignature(new TypeProvider(), _gc);
     }
 
     public string Name { get => _reader.GetString(_md.Name); }
@@ -496,6 +550,10 @@ class JsMethodDefinition {
                 select new JsParameter(_reader, pa, _sig.ParameterTypes[pa.SequenceNumber - 1]))
                 .ToList();
     } }
+
+    public List<JsGenericParameter> GenericParameters { get =>
+        (from h in _md.GetGenericParameters()
+         select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc)).ToList(); }
 }
 
 class JsSignatureHeader {
