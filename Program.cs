@@ -154,7 +154,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) {
-        var tr = reader.GetTypeReference((TypeReferenceHandle)handle);
+        var tr = reader.GetTypeReference(handle);
         return new TType("Type", name: $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}");
     }
 
