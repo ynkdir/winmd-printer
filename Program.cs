@@ -691,7 +691,6 @@ class MetadataPrinter {
             from h in reader.TypeDefinitions
             let td = new JsTypeDefinition(reader, reader.GetTypeDefinition(h))
             where target == "" || target == td.Namespace || target == $"{td.Namespace}.{td.Name}"
-            orderby td.Namespace, td.Name
             select td,
             new JsonSerializerOptions { WriteIndented = true}));
     }
