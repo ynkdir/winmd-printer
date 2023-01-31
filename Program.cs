@@ -427,7 +427,7 @@ class JsFieldDefinition {
 
     public string Name { get => _reader.GetString(_fd.Name); }
 
-    public TType Type { get => _fd.DecodeSignature(new TypeProvider(), _gc); }
+    public TType Signature { get => _fd.DecodeSignature(new TypeProvider(), _gc); }
 
     public List<string> Attributes { get => _fd.Attributes.ToString().Split(", ").ToList(); }
 
@@ -554,13 +554,11 @@ class JsMethodDefinition {
     MetadataReader _reader;
     MethodDefinition _md;
     TGenericContext _gc;
-    MethodSignature<TType> _sig;
 
     public JsMethodDefinition(MetadataReader reader, MethodDefinition md) {
         _reader = reader;
         _md = md;
         _gc = new TGenericContext(_reader, _reader.GetTypeDefinition(_md.GetDeclaringType()), _md);
-        _sig = _md.DecodeSignature(new TypeProvider(), _gc);
     }
 
     public string Name { get => _reader.GetString(_md.Name); }
@@ -578,29 +576,34 @@ class JsMethodDefinition {
     public JsMethodImport? Import { get =>
         _md.GetImport().Module.IsNil ? null : new JsMethodImport(_reader, _md.GetImport()); }
 
-    public JsSignatureHeader Header { get => new JsSignatureHeader(_sig.Header); }
+    public JsMethodSignature Signature { get =>
+        new JsMethodSignature(_md.DecodeSignature(new TypeProvider(), _gc)); }
 
-    public JsReturnType ReturnType { get {
-        // Return type is pa.SequenceNumber == 0.  It can be missing in GetParameters();
-        var ps = from h in _md.GetParameters()
-                 let pa = _reader.GetParameter(h)
-                 where pa.SequenceNumber == 0
-                 select pa;
-        return new JsReturnType(_reader, ps.Count() == 0 ? null : ps.First(), _sig.ReturnType);
-    } }
-
-    public List<JsParameter> Parameters { get {
-        return (from h in _md.GetParameters()
-                let pa = _reader.GetParameter(h)
-                where pa.SequenceNumber != 0
-                orderby pa.SequenceNumber   // seems not needed
-                select new JsParameter(_reader, pa, _sig.ParameterTypes[pa.SequenceNumber - 1]))
-                .ToList();
-    } }
+    public List<JsParameter> Parameters { get =>
+        (from h in _md.GetParameters()
+         select new JsParameter(_reader, _reader.GetParameter(h))) .ToList(); }
 
     public List<JsGenericParameter> GenericParameters { get =>
         (from h in _md.GetGenericParameters()
          select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc)).ToList(); }
+}
+
+class JsMethodSignature {
+    MethodSignature<TType> _sig;
+
+    public JsMethodSignature(MethodSignature<TType> sig) {
+        _sig = sig;
+    }
+
+    public int GenericParameterCount { get => _sig.GenericParameterCount; }
+
+    public JsSignatureHeader Header { get => new JsSignatureHeader(_sig.Header); }
+
+    public List<TType> ParameterTypes { get => _sig.ParameterTypes.ToList(); }
+
+    public int RequiredParameterCount { get => _sig.RequiredParameterCount; }
+
+    public TType ReturnType { get => _sig.ReturnType; }
 }
 
 class JsSignatureHeader {
@@ -623,45 +626,16 @@ class JsSignatureHeader {
     public string Kind { get => _sh.Kind.ToString(); }
 }
 
-class JsReturnType {
-    MetadataReader _reader;
-    Parameter? _pa;
-    TType _type;
-
-    public JsReturnType(MetadataReader reader, Parameter? pa, TType type) {
-        _reader = reader;
-        _pa = pa;
-        _type = type;
-    }
-
-    public TType Type { get => _type; }
-
-    public List<string> Attributes { get =>
-        _pa.HasValue
-            ? _pa.Value.Attributes.ToString().Split(", ").ToList()
-            : new List<string>(); }
-
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        _pa.HasValue
-            ?  (from h in _pa.Value.GetCustomAttributes()
-                select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList()
-            : new List<JsCustomAttribute>(); }
-}
-
 class JsParameter {
     MetadataReader _reader;
     Parameter _pa;
-    TType _type;
 
-    public JsParameter(MetadataReader reader, Parameter pa, TType type) {
+    public JsParameter(MetadataReader reader, Parameter pa) {
         _reader = reader;
         _pa = pa;
-        _type = type;
     }
 
     public string Name { get => _reader.GetString(_pa.Name); }
-
-    public TType Type { get => _type; }
 
     public int SequenceNumber { get => _pa.SequenceNumber; }
 
