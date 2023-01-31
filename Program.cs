@@ -56,20 +56,23 @@ enum CompositionType {
 }
 
 class TType {
-    public TType(string kind, TType? type = null, string? name = null, int? size = null, List<TType>? type_arguments = null, bool? is_required = null) {
-        Kind = kind;
-        Type = type;
-        Name = name;
-        Size = size;
-        TypeArguments = type_arguments;
-        IsRequired = is_required;
-    }
-    public string Kind { get; set; }
+    public string Kind { get; set; } /* for CS8625 */ = "";
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public TType? Type { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Name { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public int? Size { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public List<TType>? TypeArguments { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public TType? ModifierType { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public TType? UnmodifiedType { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public bool? IsRequired { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? Comment { get; set; }
 }
 
 class TGenericContext {
@@ -86,12 +89,18 @@ class TGenericContext {
     public TType GetMethodParameter(int index) {
         Debug.Assert(_md is not null);
         var gm = _reader.GetGenericParameter(_md.Value.GetGenericParameters()[index]);
-        return new TType("Type", name: _reader.GetString(gm.Name));
+        return new TType() {
+            Kind = "GenericParameter",
+            Name = _reader.GetString(gm.Name)
+        };
     }
 
     public TType GetTypeParameter(int index) {
         var gm = _reader.GetGenericParameter(_td.GetGenericParameters()[index]);
-        return new TType("Type", name: _reader.GetString(gm.Name));
+        return new TType() {
+            Kind = "GenericParameter",
+            Name = _reader.GetString(gm.Name)
+        };
     }
 }
 
@@ -100,14 +109,21 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         Debug.Assert((from x in shape.LowerBounds where x != 0 select x).Count() == 0);
         Debug.Assert(shape.Sizes.Count() == shape.Rank);
         TType type = elementType;
-        foreach (var n in shape.Sizes) {
-            type = new TType("Array", type: type, size: n);
+        foreach (var size in shape.Sizes) {
+            type = new TType() {
+                Kind = "Array",
+                Type = type,
+                Size = size
+            };
         }
         return type;
     }
 
     public TType GetByReferenceType(TType elementType) {
-        return new TType("Reference", type: elementType);
+        return new TType() {
+            Kind = "Reference",
+            Type = elementType
+        };
     }
 
     public TType GetFunctionPointerType(MethodSignature<TType> signature) {
@@ -116,7 +132,11 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
 
     public TType GetGenericInstantiation(TType genericType, ImmutableArray<TType> typeArguments) {
         Debug.Assert(genericType.Kind == "Type");
-        return new TType("Generic", name: genericType.Name, type_arguments: typeArguments.ToList());
+        return new TType() {
+            Kind = "Generic",
+            Type = genericType,
+            TypeArguments = typeArguments.ToList()
+        };
     }
 
     public TType GetGenericMethodParameter(TGenericContext genericContext, int index) {
@@ -129,7 +149,12 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
 
     public TType GetModifiedType(TType modifierType, TType unmodifiedType, bool isRequired) {
         Debug.Assert(modifierType.Kind == "Type");
-        return new TType("Modified", name: modifierType.Name, type: unmodifiedType, is_required: isRequired);
+        return new TType() {
+            Kind = "Modified",
+            ModifierType = modifierType,
+            UnmodifiedType = unmodifiedType,
+            IsRequired = isRequired
+        };
     }
 
     public TType GetPinnedType(TType elementType) {
@@ -137,25 +162,42 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public TType GetPointerType(TType elementType) {
-        return new TType("Pointer", type: elementType);
+        return new TType() {
+            Kind = "Pointer",
+            Type = elementType
+        };
     }
 
     public TType GetPrimitiveType(PrimitiveTypeCode typeCode) {
-        return new TType("Primitive", name: typeCode.ToString());
+        return new TType() {
+            Kind = "Primitive",
+            Name = typeCode.ToString()
+        };
     }
 
     public TType GetSZArrayType(TType elementType) {
-        return new TType("SZArray", type: elementType);
+        return new TType() {
+            Kind = "SZArray",
+            Type = elementType
+        };
     }
 
     public TType GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind) {
         var td = reader.GetTypeDefinition(handle);
-        return new TType("Type", name: $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}");
+        return new TType() {
+            Kind = "Type",
+            Name = $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}",
+            Comment = "TypeDefinition"
+        };
     }
 
     public TType GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) {
         var tr = reader.GetTypeReference(handle);
-        return new TType("Type", name: $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}");
+        return new TType() {
+            Kind = "Type",
+            Name = $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}",
+            Comment = "TypeReference"
+        };
     }
 
     public TType GetTypeFromSpecification(MetadataReader reader, TGenericContext genericContext, TypeSpecificationHandle handle, byte rawTypeKind) {
@@ -164,11 +206,16 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
 
     // ?
     public TType GetSystemType() {
-        return new TType("System.Type", name: "System.Type");
+        return new TType() {
+            Kind = "System.Type"
+        };
     }
 
     public TType GetTypeFromSerializedName(string name) {
-        return new TType("Type", name: name);
+        return new TType() {
+            Kind = "SerializedName",
+            Name = name
+        };
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
