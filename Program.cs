@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -64,7 +64,7 @@ class TType {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public int? Size { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public List<TType>? TypeArguments { get; set; }
+    public IEnumerable<TType>? TypeArguments { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public TType? ModifierType { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -135,7 +135,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         return new TType() {
             Kind = "Generic",
             Type = genericType,
-            TypeArguments = typeArguments.ToList()
+            TypeArguments = typeArguments
         };
     }
 
@@ -236,9 +236,9 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     public static object? ToCustomValue(TType type, object? val) {
         return val is null ? null : type.Name switch {
             "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
-            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", ").ToList(),
+            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", "),
             "System.Type" => val,
-            "System.AttributeTargets" => ((System.AttributeTargets)val).ToString().Split(", ").ToList(),
+            "System.AttributeTargets" => ((System.AttributeTargets)val).ToString().Split(", "),
             "Windows.Foundation.Metadata.MarshalingType" => ((MarshalingType)val).ToString(),
             "Windows.Foundation.Metadata.ThreadingModel" => ((ThreadingModel)val).ToString(),
             "Windows.Foundation.Metadata.DeprecationType" => ((DeprecationType)val).ToString(),
@@ -286,33 +286,33 @@ class JsTypeDefinition {
 
     public bool IsNested { get => _td.IsNested; }
 
-    public List<string> Attributes { get => _td.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _td.Attributes.ToString().Split(", "); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _td.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _td.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 
-    public List<JsFieldDefinition> Fields { get =>
-        (from h in _td.GetFields()
-         select new JsFieldDefinition(_reader, _reader.GetFieldDefinition(h), _gc)).ToList(); }
+    public IEnumerable<JsFieldDefinition> Fields { get =>
+        from h in _td.GetFields()
+        select new JsFieldDefinition(_reader, _reader.GetFieldDefinition(h), _gc); }
 
-    public List<JsInterfaceImplementation> InterfaceImplementations { get =>
-        (from h in _td.GetInterfaceImplementations()
-         select new JsInterfaceImplementation(_reader, _reader.GetInterfaceImplementation(h), _gc)).ToList(); }
+    public IEnumerable<JsInterfaceImplementation> InterfaceImplementations { get =>
+        from h in _td.GetInterfaceImplementations()
+        select new JsInterfaceImplementation(_reader, _reader.GetInterfaceImplementation(h), _gc); }
 
     public JsTypeLayout Layout { get => new JsTypeLayout(_td.GetLayout()); }
 
-    public List<JsMethodDefinition> MethodDefinitions { get =>
-        (from h in _td.GetMethods()
-         select new JsMethodDefinition(_reader, _reader.GetMethodDefinition(h))).ToList(); }
+    public IEnumerable<JsMethodDefinition> MethodDefinitions { get =>
+        from h in _td.GetMethods()
+        select new JsMethodDefinition(_reader, _reader.GetMethodDefinition(h)); }
 
-    public List<JsTypeDefinition> NestedTypes { get =>
-        (from h in _td.GetNestedTypes()
-         select new JsTypeDefinition(_reader, _reader.GetTypeDefinition(h))).ToList(); }
+    public IEnumerable<JsTypeDefinition> NestedTypes { get =>
+        from h in _td.GetNestedTypes()
+        select new JsTypeDefinition(_reader, _reader.GetTypeDefinition(h)); }
 
-    public List<JsGenericParameter> GenericParameters { get =>
-        (from h in _td.GetGenericParameters()
-         select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc)).ToList(); }
+    public IEnumerable<JsGenericParameter> GenericParameters { get =>
+        from h in _td.GetGenericParameters()
+        select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc); }
 }
 
 class JsGenericParameter {
@@ -326,19 +326,19 @@ class JsGenericParameter {
         _gc = gc;
     }
 
-    public List<string> Attributes { get => _gp.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _gp.Attributes.ToString().Split(", "); }
 
     public int Index { get => _gp.Index; }
 
     public string Name { get => _reader.GetString(_gp.Name); }
 
-    public List<JsGenericParameterConstraint> Constraints { get =>
-        (from h in _gp.GetConstraints()
-         select new JsGenericParameterConstraint(_reader, _reader.GetGenericParameterConstraint(h), _gc)).ToList(); }
+    public IEnumerable<JsGenericParameterConstraint> Constraints { get =>
+        from h in _gp.GetConstraints()
+        select new JsGenericParameterConstraint(_reader, _reader.GetGenericParameterConstraint(h), _gc); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _gp.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _gp.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 }
 
 class JsGenericParameterConstraint {
@@ -354,9 +354,9 @@ class JsGenericParameterConstraint {
 
     public JsEntityHandle Type { get => new JsEntityHandle(_reader, _gpc.Type, _gc); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _gpc.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _gpc.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 }
 
 class JsCustomAttribute {
@@ -377,13 +377,13 @@ class JsCustomAttribute {
 
     public string Type { get => $"{_reader.GetString(_tr.Namespace)}.{_reader.GetString(_tr.Name)}"; }
 
-    public List<JsCustomAttributeFixedArgument> FixedArguments { get =>
-        (from ta in _cv.FixedArguments
-         select new JsCustomAttributeFixedArgument(ta)).ToList(); }
+    public IEnumerable<JsCustomAttributeFixedArgument> FixedArguments { get =>
+        from ta in _cv.FixedArguments
+        select new JsCustomAttributeFixedArgument(ta); }
 
-    public List<JsCustomAttributeNamedArgument> NamedArguments { get =>
-        (from na in _cv.NamedArguments
-         select new JsCustomAttributeNamedArgument(na)).ToList(); }
+    public IEnumerable<JsCustomAttributeNamedArgument> NamedArguments { get =>
+        from na in _cv.NamedArguments
+        select new JsCustomAttributeNamedArgument(na); }
 }
 
 class JsCustomAttributeFixedArgument {
@@ -429,11 +429,11 @@ class JsFieldDefinition {
 
     public TType Signature { get => _fd.DecodeSignature(new TypeProvider(), _gc); }
 
-    public List<string> Attributes { get => _fd.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _fd.Attributes.ToString().Split(", "); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _fd.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _fd.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 
     public JsConstant? DefaultValue { get =>
         _fd.GetDefaultValue().IsNil ? null : new JsConstant(_reader, _reader.GetConstant(_fd.GetDefaultValue())); }
@@ -470,9 +470,9 @@ class JsInterfaceImplementation {
 
     public JsEntityHandle Interface { get => new JsEntityHandle(_reader, _ii.Interface, _gc); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _ii.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _ii.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 }
 
 class JsEntityHandle {
@@ -531,9 +531,9 @@ class JsTypeSpecification {
 
     public TType Signature { get => _ts.DecodeSignature(new TypeProvider(), _gc); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _ts.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _ts.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 }
 
 class JsTypeLayout {
@@ -563,13 +563,13 @@ class JsMethodDefinition {
 
     public string Name { get => _reader.GetString(_md.Name); }
 
-    public List<string> Attributes { get => _md.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _md.Attributes.ToString().Split(", "); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _md.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _md.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 
-    public List<string> ImplAttributes { get => _md.ImplAttributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> ImplAttributes { get => _md.ImplAttributes.ToString().Split(", "); }
 
     public int RelativeVirtualAddress { get => _md.RelativeVirtualAddress; }
 
@@ -579,13 +579,13 @@ class JsMethodDefinition {
     public JsMethodSignature Signature { get =>
         new JsMethodSignature(_md.DecodeSignature(new TypeProvider(), _gc)); }
 
-    public List<JsParameter> Parameters { get =>
-        (from h in _md.GetParameters()
-         select new JsParameter(_reader, _reader.GetParameter(h))) .ToList(); }
+    public IEnumerable<JsParameter> Parameters { get =>
+        from h in _md.GetParameters()
+        select new JsParameter(_reader, _reader.GetParameter(h)); }
 
-    public List<JsGenericParameter> GenericParameters { get =>
-        (from h in _md.GetGenericParameters()
-         select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc)).ToList(); }
+    public IEnumerable<JsGenericParameter> GenericParameters { get =>
+        from h in _md.GetGenericParameters()
+        select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc); }
 }
 
 class JsMethodSignature {
@@ -599,7 +599,7 @@ class JsMethodSignature {
 
     public JsSignatureHeader Header { get => new JsSignatureHeader(_sig.Header); }
 
-    public List<TType> ParameterTypes { get => _sig.ParameterTypes.ToList(); }
+    public IEnumerable<TType> ParameterTypes { get => _sig.ParameterTypes; }
 
     public int RequiredParameterCount { get => _sig.RequiredParameterCount; }
 
@@ -613,7 +613,7 @@ class JsSignatureHeader {
         _sh = sh;
     }
 
-    public List<string> Attributes { get => _sh.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _sh.Attributes.ToString().Split(", "); }
 
     public string CallingConvention { get => _sh.CallingConvention.ToString(); }
 
@@ -639,11 +639,11 @@ class JsParameter {
 
     public int SequenceNumber { get => _pa.SequenceNumber; }
 
-    public List<string> Attributes { get => _pa.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _pa.Attributes.ToString().Split(", "); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _pa.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _pa.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 
     public JsConstant? DefaultValue { get =>
         _pa.GetDefaultValue().IsNil ? null : new JsConstant(_reader, _reader.GetConstant(_pa.GetDefaultValue())); }
@@ -660,7 +660,7 @@ class JsMethodImport {
 
     public string Name { get => _reader.GetString(_mi.Name); }
 
-    public List<string> Attributes { get => _mi.Attributes.ToString().Split(", ").ToList(); }
+    public IEnumerable<string> Attributes { get => _mi.Attributes.ToString().Split(", "); }
 
     public JsModuleReference Module { get => new JsModuleReference(_reader, _reader.GetModuleReference(_mi.Module)); }
 }
@@ -676,9 +676,9 @@ class JsModuleReference {
 
     public string Name { get => _reader.GetString(_mr.Name); }
 
-    public List<JsCustomAttribute> CustomAttributes { get =>
-        (from h in _mr.GetCustomAttributes()
-         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h))).ToList(); }
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _mr.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 }
 
 class MetadataPrinter {
