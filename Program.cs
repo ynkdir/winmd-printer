@@ -60,6 +60,8 @@ class TType {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public TType? Type { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? Namespace { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Name { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public int? Size { get; set; }
@@ -186,7 +188,8 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         var td = reader.GetTypeDefinition(handle);
         return new TType() {
             Kind = "Type",
-            Name = $"{reader.GetString(td.Namespace)}.{reader.GetString(td.Name)}",
+            Namespace = reader.GetString(td.Namespace),
+            Name = reader.GetString(td.Name),
             Comment = "TypeDefinition"
         };
     }
@@ -195,7 +198,8 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
         var tr = reader.GetTypeReference(handle);
         return new TType() {
             Kind = "Type",
-            Name = $"{reader.GetString(tr.Namespace)}.{reader.GetString(tr.Name)}",
+            Namespace = reader.GetString(tr.Namespace),
+            Name = reader.GetString(tr.Name),
             Comment = "TypeReference"
         };
     }
@@ -219,7 +223,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
-        return type.Name switch {
+        return $"{type.Namespace}.{type.Name}" switch {
             "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
             "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
             "System.Type" => PrimitiveTypeCode.String,
@@ -234,7 +238,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public static object? ToCustomValue(TType type, object? val) {
-        return val is null ? null : type.Name switch {
+        return val is null ? null : $"{type.Namespace}.{type.Name}" switch {
             "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
             "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", "),
             "System.Type" => val,
