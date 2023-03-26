@@ -223,7 +223,11 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
-        return $"{type.Namespace}.{type.Name}" switch {
+        var name = type.Kind switch {
+            "SerializedName" => type.Name,
+            _ => $"{type.Namespace}.{type.Name}",
+        };
+        return name switch {
             "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
             "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
             "System.Type" => PrimitiveTypeCode.String,
