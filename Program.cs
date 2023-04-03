@@ -237,6 +237,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
             "Windows.Foundation.Metadata.DeprecationType" => PrimitiveTypeCode.Int32,
             "Windows.Foundation.Metadata.GCPressureAmount" => PrimitiveTypeCode.Int32,
             "Windows.Foundation.Metadata.CompositionType" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.AttributeTargets" => PrimitiveTypeCode.Int32,
             _ => throw new NotImplementedException(),
         };
     }
@@ -252,6 +253,7 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
             "Windows.Foundation.Metadata.DeprecationType" => ((DeprecationType)val).ToString(),
             "Windows.Foundation.Metadata.GCPressureAmount" => ((GCPressureAmount)val).ToString(),
             "Windows.Foundation.Metadata.CompositionType" => ((CompositionType)val).ToString(),
+            "Windows.Foundation.Metadata.AttributeTargets" => ((AttributeTargets)val).ToString(),
             _ => val,
         };
     }
@@ -693,7 +695,7 @@ class MetadataPrinter {
     public static void Main(string[] args) {
         using var fs = new FileStream(args[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         using var pe = new PEReader(fs);
-        var reader = pe.GetMetadataReader();
+        var reader = pe.GetMetadataReader(MetadataReaderOptions.None);
         var target = args.Length >= 2 ? args[1] : "";
         Console.WriteLine(JsonSerializer.Serialize(
             from h in reader.TypeDefinitions
