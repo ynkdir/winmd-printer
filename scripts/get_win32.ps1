@@ -4,3 +4,5 @@ curl.exe -o winmd.zip $url
 tar.exe -xvf winmd.zip Windows.Win32.winmd
 cmd /c "dotnet run Windows.Win32.winmd > Windows.Win32.json.$winmdver"
 rm winmd.zip
+
+py scripts\split_namespace.py Windows.Win32.json.$winmdver
