@@ -12,7 +12,7 @@ def main():
         ns[td["Namespace"]].append(td)
     for namespace, meta in ns.items():
         print(namespace)
-        json.dump(meta, open(f"json/{namespace}.json", "w"))
+        json.dump(meta, open(f"json/{namespace}.json", "w"), indent=2)
 
 if __name__ == "__main__":
     main()
