@@ -19,4 +19,4 @@ foreach ($ApiContract in $xml.ApplicationPlatform.ContainedApiContracts.ApiContr
 Write-Output "make Windows.WinRT.json ..."
 py -c "import json, glob; json.dump([td for f in glob.glob('winrt/*.json') for td in json.load(open(f))], open('Windows.WinRT.json', 'w'), indent=2)"
 
-Copy-Item winrt\*.json json
+py scripts\split_namespace.py Windows.WinRT.json
