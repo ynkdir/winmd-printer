@@ -1,0 +1,3082 @@
+[
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "Apis",
+    "BaseType": "System.Object",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Abstract",
+      "Sealed",
+      "AutoClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "CCH_RM_SESSION_KEY",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CCH_RM_MAX_APP_NAME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 255
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CCH_RM_MAX_SVC_NAME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 63
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RM_INVALID_TS_SESSION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": -1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RM_INVALID_PROCESS",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": -1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "RmStartSession",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmStartSession",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionFlags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ReservedAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strSessionKey",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmJoinSession",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmJoinSession",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "RstrtMgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strSessionKey",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmEndSession",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmEndSession",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmRegisterResources",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmRegisterResources",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "PWSTR",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.RestartManager",
+                "Name": "RM_UNIQUE_PROCESS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "PWSTR",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 7,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "nFiles",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "rgsFileNames",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Interop.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "nApplications",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "rgApplications",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "nServices",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "rgsServiceNames",
+            "SequenceNumber": 7,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Interop.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 5
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmGetList",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmGetList",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.RestartManager",
+                "Name": "RM_PROCESS_INFO",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pnProcInfoNeeded",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pnProcInfo",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "rgAffectedApps",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In",
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpdwRebootReasons",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmShutdown",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmShutdown",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.RestartManager",
+              "Name": "RM_WRITE_STATUS_CALLBACK",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lActionFlags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "fnStatus",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmRestart",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmRestart",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "rstrtmgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.RestartManager",
+              "Name": "RM_WRITE_STATUS_CALLBACK",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwRestartFlags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ReservedAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "fnStatus",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmCancelCurrentTask",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmCancelCurrentTask",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "RstrtMgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmAddFilter",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmAddFilter",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "RstrtMgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.RestartManager",
+                "Name": "RM_UNIQUE_PROCESS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.RestartManager",
+              "Name": "RM_FILTER_ACTION",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strModuleName",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pProcess",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strServiceShortName",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "FilterAction",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmRemoveFilter",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmRemoveFilter",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "RstrtMgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.RestartManager",
+                "Name": "RM_UNIQUE_PROCESS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strModuleName",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pProcess",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "strServiceShortName",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RmGetFilterList",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows6.0.6000"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RmGetFilterList",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "RstrtMgr.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Byte"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSessionHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pbFilterBuf",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "cbFilterBuf",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "cbFilterBufNeeded",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_APP_TYPE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmUnknownApp",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmMainWindow",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmOtherWindow",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmService",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmExplorer",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmConsole",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 5
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmCritical",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1000
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_SHUTDOWN_TYPE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmForceShutdown",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_SHUTDOWN_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmShutdownOnlyRegistered",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_SHUTDOWN_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_APP_STATUS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusUnknown",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusRunning",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusStopped",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusStoppedOther",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusRestarted",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusErrorOnStop",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusErrorOnRestart",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusShutdownMasked",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 64
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmStatusRestartMasked",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_STATUS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 128
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_REBOOT_REASON",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonNone",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonPermissionDenied",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonSessionMismatch",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonCriticalProcess",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonCriticalService",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmRebootReasonDetectedSelf",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_REBOOT_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_UNIQUE_PROCESS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "dwProcessId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ProcessStartTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_PROCESS_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Process",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_UNIQUE_PROCESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "strAppName",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Char"
+          },
+          "Size": 256
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "strServiceShortName",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Char"
+          },
+          "Size": 64
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ApplicationType",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_APP_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AppStatus",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TSSessionId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "bRestartable",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "BOOL",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_FILTER_TRIGGER",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmFilterTriggerInvalid",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_TRIGGER",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmFilterTriggerFile",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_TRIGGER",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmFilterTriggerProcess",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_TRIGGER",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmFilterTriggerService",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_TRIGGER",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_FILTER_ACTION",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmInvalidFilterAction",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_ACTION",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmNoRestart",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_ACTION",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RmNoShutdown",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_ACTION",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_FILTER_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "FilterAction",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_ACTION",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FilterTrigger",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.RestartManager",
+          "Name": "RM_FILTER_TRIGGER",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "cbNextOffset",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Anonymous",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Anonymous_e__Union",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_Anonymous_e__Union",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "AutoLayout",
+          "AnsiClass",
+          "Class",
+          "NestedPublic",
+          "ExplicitLayout",
+          "Sealed",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "strFilename",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Process",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.RestartManager",
+              "Name": "RM_UNIQUE_PROCESS",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "strServiceShortName",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": true,
+          "PackingSize": 0,
+          "Size": 0
+        },
+        "MethodDefinitions": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      }
+    ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.RestartManager",
+    "Name": "RM_WRITE_STATUS_CALLBACK",
+    "BaseType": "System.MulticastDelegate",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed",
+      "AutoClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System.Runtime.InteropServices",
+              "Name": "CallingConvention",
+              "Comment": "TypeReference"
+            },
+            "Value": "Winapi"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": ".ctor",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "HideBySig",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Object"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "IntPtr"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "object",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "method",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "Invoke",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "nPercentComplete",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  }
+]

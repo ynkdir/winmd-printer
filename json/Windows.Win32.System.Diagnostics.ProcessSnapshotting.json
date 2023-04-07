@@ -1,0 +1,5529 @@
+[
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "Apis",
+    "BaseType": "System.Object",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Abstract",
+      "Sealed",
+      "AutoClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "PSS_PERF_RESOLUTION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1000000
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "PssCaptureSnapshot",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssCaptureSnapshot",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "PSS_CAPTURE_FLAGS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+                "Name": "HPSS",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProcessHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "CaptureFlags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ThreadContextFlags",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SnapshotHandle",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssFreeSnapshot",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssFreeSnapshot",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSS",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProcessHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SnapshotHandle",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssQuerySnapshot",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssQuerySnapshot",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "PSS_QUERY_INFORMATION_CLASS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SnapshotHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "InformationClass",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Buffer",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferLength",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkSnapshot",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkSnapshot",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "PSS_WALK_INFORMATION_CLASS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSSWALK",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SnapshotHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "InformationClass",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Buffer",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 4
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferLength",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssDuplicateSnapshot",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssDuplicateSnapshot",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+                "Name": "HPSS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "PSS_DUPLICATE_FLAGS",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SourceProcessHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SnapshotHandle",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TargetProcessHandle",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TargetSnapshotHandle",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Flags",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkMarkerCreate",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkMarkerCreate",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+                "Name": "PSS_ALLOCATOR",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+                "Name": "HPSSWALK",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Allocator",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Interop.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkMarkerFree",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkMarkerFree",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSSWALK",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkMarkerGetPosition",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkMarkerGetPosition",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSSWALK",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UIntPtr"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Position",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkMarkerSetPosition",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkMarkerSetPosition",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSSWALK",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UIntPtr"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Position",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PssWalkMarkerSeekToBeginning",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows8.1"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PssWalkMarkerSeekToBeginning",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+              "Name": "HPSSWALK",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "WalkMarkerHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "HPSS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Interop.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": -1
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Win32.Interop.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": 0
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Win32.Interop.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "HPSSWALK",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Interop.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": -1
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Win32.Interop.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": 0
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Win32.Interop.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_HANDLE_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_HANDLE_NONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_HANDLE_HAVE_TYPE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_HANDLE_HAVE_NAME",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_HANDLE_HAVE_BASIC_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_HANDLE_HAVE_TYPE_SPECIFIC_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_OBJECT_TYPE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_UNKNOWN",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_PROCESS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_THREAD",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_MUTANT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_EVENT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_SECTION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 5
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_OBJECT_TYPE_SEMAPHORE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 6
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_CAPTURE_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_NONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_VA_CLONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_RESERVED_00000002",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_HANDLES",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_HANDLE_NAME_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_HANDLE_BASIC_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_HANDLE_TYPE_SPECIFIC_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_HANDLE_TRACE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 64
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_THREADS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 128
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_THREAD_CONTEXT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 256
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_THREAD_CONTEXT_EXTENDED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 512
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_RESERVED_00000400",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1024
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_VA_SPACE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2048
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_VA_SPACE_SECTION_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4096
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_IPT_TRACE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8192
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CAPTURE_RESERVED_00004000",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16384
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_BREAKAWAY_OPTIONAL",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 67108864
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_BREAKAWAY",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 134217728
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_FORCE_BREAKAWAY",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 268435456
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_USE_VM_ALLOCATIONS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 536870912
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_MEASURE_PERFORMANCE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1073741824
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_CREATE_RELEASE_SECTION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_CAPTURE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2147483648
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_QUERY_INFORMATION_CLASS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_PROCESS_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_VA_CLONE_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_AUXILIARY_PAGES_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_VA_SPACE_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_HANDLE_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_THREAD_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 5
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_HANDLE_TRACE_INFORMATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 6
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_QUERY_PERFORMANCE_COUNTERS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_QUERY_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 7
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_WALK_INFORMATION_CLASS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_WALK_AUXILIARY_PAGES",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_WALK_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_WALK_VA_SPACE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_WALK_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_WALK_HANDLES",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_WALK_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_WALK_THREADS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_WALK_INFORMATION_CLASS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_DUPLICATE_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_DUPLICATE_NONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_DUPLICATE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_DUPLICATE_CLOSE_SOURCE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_DUPLICATE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_PROCESS_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_NONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_PROTECTED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_WOW64",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_RESERVED_03",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_RESERVED_04",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_PROCESS_FLAGS_FROZEN",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_PROCESS_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "ExitStatus",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PebBaseAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AffinityMask",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BasePriority",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ProcessId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ParentProcessId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_PROCESS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CreateTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ExitTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "KernelTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "UserTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PriorityClass",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PeakVirtualSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VirtualSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageFaultCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PeakWorkingSetSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WorkingSetSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "QuotaPeakPagedPoolUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "QuotaPagedPoolUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "QuotaPeakNonPagedPoolUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "QuotaNonPagedPoolUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagefileUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PeakPagefileUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PrivateUsage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ExecuteFlags",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ImageFileName",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Char"
+          },
+          "Size": 260
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_VA_CLONE_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "VaCloneHandle",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_AUXILIARY_PAGES_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "AuxPagesCaptured",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_VA_SPACE_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "RegionCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_HANDLE_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "HandlesCaptured",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_THREAD_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "ThreadsCaptured",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ContextLength",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_HANDLE_TRACE_INFORMATION",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "SectionHandle",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Size",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_PERFORMANCE_COUNTERS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "TotalCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TotalWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VaCloneCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VaCloneWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VaSpaceCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VaSpaceWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AuxPagesCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AuxPagesWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HandlesCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HandlesWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ThreadsCycleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ThreadsWallClockPeriod",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_AUXILIARY_PAGE_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Address",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BasicInformation",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Memory",
+          "Name": "MEMORY_BASIC_INFORMATION",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CaptureTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageContents",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_VA_SPACE_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "BaseAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AllocationBase",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AllocationProtect",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RegionSize",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "State",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Protect",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Type",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TimeDateStamp",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SizeOfImage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ImageBase",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CheckSum",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MappedFileNameLength",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MappedFileName",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "PWSTR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.ConstAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_HANDLE_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Handle",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_HANDLE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ObjectType",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_OBJECT_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CaptureTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Attributes",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "GrantedAccess",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HandleCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PointerCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagedPoolCharge",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NonPagedPoolCharge",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CreationTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TypeNameLength",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TypeName",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "PWSTR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.ConstAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ObjectNameLength",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ObjectName",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "PWSTR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Interop.ConstAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TypeSpecificInformation",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_TypeSpecificInformation_e__Union",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_TypeSpecificInformation_e__Union",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "AutoLayout",
+          "AnsiClass",
+          "Class",
+          "NestedPublic",
+          "ExplicitLayout",
+          "Sealed",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "Process",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Process_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Thread",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Thread_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Mutant",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Mutant_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Event",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Event_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Section",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Section_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Semaphore",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_Semaphore_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": true,
+          "PackingSize": 0,
+          "Size": 0
+        },
+        "MethodDefinitions": [],
+        "NestedTypes": [
+          {
+            "Namespace": "",
+            "Name": "_Process_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "ExitStatus",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "PebBaseAddress",
+                "Signature": {
+                  "Kind": "Pointer",
+                  "Type": {
+                    "Kind": "Primitive",
+                    "Name": "Void"
+                  }
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "AffinityMask",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UIntPtr"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "BasePriority",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "ProcessId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "ParentProcessId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "Flags",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_Thread_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "ExitStatus",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "TebBaseAddress",
+                "Signature": {
+                  "Kind": "Pointer",
+                  "Type": {
+                    "Kind": "Primitive",
+                    "Name": "Void"
+                  }
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "ProcessId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "ThreadId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "AffinityMask",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UIntPtr"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "Priority",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "BasePriority",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "Win32StartAddress",
+                "Signature": {
+                  "Kind": "Pointer",
+                  "Type": {
+                    "Kind": "Primitive",
+                    "Name": "Void"
+                  }
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_Mutant_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "CurrentCount",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "Abandoned",
+                "Signature": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.Foundation",
+                  "Name": "BOOL",
+                  "Comment": "TypeReference"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "OwnerProcessId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "OwnerThreadId",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_Event_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "ManualReset",
+                "Signature": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.Foundation",
+                  "Name": "BOOL",
+                  "Comment": "TypeReference"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "Signaled",
+                "Signature": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.Foundation",
+                  "Name": "BOOL",
+                  "Comment": "TypeReference"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_Section_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "BaseAddress",
+                "Signature": {
+                  "Kind": "Pointer",
+                  "Type": {
+                    "Kind": "Primitive",
+                    "Name": "Void"
+                  }
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "AllocationAttributes",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "MaximumSize",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_Semaphore_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "AutoLayout",
+              "AnsiClass",
+              "Class",
+              "NestedPublic",
+              "SequentialLayout",
+              "Sealed",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "CurrentCount",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              },
+              {
+                "Name": "MaximumCount",
+                "Signature": {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "MethodDefinitions": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_THREAD_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_THREAD_FLAGS_NONE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_THREAD_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PSS_THREAD_FLAGS_TERMINATED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_THREAD_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_THREAD_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "ExitStatus",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TebBaseAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ProcessId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ThreadId",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AffinityMask",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Priority",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BasePriority",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "LastSyscallFirstArgument",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "LastSyscallNumber",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CreateTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ExitTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "KernelTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "UserTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Win32StartAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CaptureTime",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "FILETIME",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+          "Name": "PSS_THREAD_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SuspendCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SizeOfContextRecord",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ContextRecord",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+            "Name": "CONTEXT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.ProcessSnapshotting",
+    "Name": "PSS_ALLOCATOR",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Context",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AllocRoutine",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FreeRoutine",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  }
+]
