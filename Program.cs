@@ -223,37 +223,40 @@ class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttr
     }
 
     public PrimitiveTypeCode GetUnderlyingEnumType(TType type) {
-        var name = type.Kind switch {
-            "SerializedName" => type.Name,
-            _ => $"{type.Namespace}.{type.Name}",
-        };
+        var name = type.Namespace is null ? type.Name : $"{type.Namespace}.{type.Name}";
         return name switch {
-            "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
-            "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
-            "System.Type" => PrimitiveTypeCode.String,
             "System.AttributeTargets" => PrimitiveTypeCode.Int32,
-            "Windows.Foundation.Metadata.MarshalingType" => PrimitiveTypeCode.Int32,
-            "Windows.Foundation.Metadata.ThreadingModel" => PrimitiveTypeCode.Int32,
+            "System.Runtime.InteropServices.CallingConvention" => PrimitiveTypeCode.Int32,
+            "System.Type" => PrimitiveTypeCode.String,
+            "Windows.Foundation.Metadata.AttributeTargets" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.CompositionType" => PrimitiveTypeCode.Int32,
             "Windows.Foundation.Metadata.DeprecationType" => PrimitiveTypeCode.Int32,
             "Windows.Foundation.Metadata.GCPressureAmount" => PrimitiveTypeCode.Int32,
-            "Windows.Foundation.Metadata.CompositionType" => PrimitiveTypeCode.Int32,
-            "Windows.Foundation.Metadata.AttributeTargets" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.MarshalingType" => PrimitiveTypeCode.Int32,
+            "Windows.Foundation.Metadata.ThreadingModel" => PrimitiveTypeCode.Int32,
+            "Windows.Win32.Foundation.Metadata.Architecture" => PrimitiveTypeCode.Int32,
+            "Windows.Win32.Interop.Architecture" => PrimitiveTypeCode.Int32,
             _ => throw new NotImplementedException(),
         };
     }
 
     public static object? ToCustomValue(TType type, object? val) {
-        return val is null ? null : $"{type.Namespace}.{type.Name}" switch {
-            "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
-            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", "),
-            "System.Type" => val,
+        if (val is null) {
+            return null;
+        }
+        var name = type.Namespace is null ? type.Name : $"{type.Namespace}.{type.Name}";
+        return name switch {
             "System.AttributeTargets" => ((System.AttributeTargets)val).ToString().Split(", "),
-            "Windows.Foundation.Metadata.MarshalingType" => ((MarshalingType)val).ToString(),
-            "Windows.Foundation.Metadata.ThreadingModel" => ((ThreadingModel)val).ToString(),
+            "System.Runtime.InteropServices.CallingConvention" => ((CallingConvention)val).ToString(),
+            "System.Type" => val,
+            "Windows.Foundation.Metadata.AttributeTargets" => ((AttributeTargets)val).ToString(),
+            "Windows.Foundation.Metadata.CompositionType" => ((CompositionType)val).ToString(),
             "Windows.Foundation.Metadata.DeprecationType" => ((DeprecationType)val).ToString(),
             "Windows.Foundation.Metadata.GCPressureAmount" => ((GCPressureAmount)val).ToString(),
-            "Windows.Foundation.Metadata.CompositionType" => ((CompositionType)val).ToString(),
-            "Windows.Foundation.Metadata.AttributeTargets" => ((AttributeTargets)val).ToString(),
+            "Windows.Foundation.Metadata.MarshalingType" => ((MarshalingType)val).ToString(),
+            "Windows.Foundation.Metadata.ThreadingModel" => ((ThreadingModel)val).ToString(),
+            "Windows.Win32.Foundation.Metadata.Architecture" => ((Architecture)val).ToString().Split(", "),
+            "Windows.Win32.Interop.Architecture" => ((Architecture)val).ToString().Split(", "),
             _ => val,
         };
     }
