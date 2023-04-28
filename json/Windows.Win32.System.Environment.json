@@ -345,6 +345,2145 @@
     },
     "MethodDefinitions": [
       {
+        "Name": "IsEnclaveTypeSupported",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.10240"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "IsEnclaveTypeSupported",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "flEnclaveType",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "CreateEnclave",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.10240"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "CreateEnclave",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UIntPtr"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UIntPtr"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 8,
+          "ReturnType": {
+            "Kind": "Pointer",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Void"
+            }
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "hProcess",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpAddress",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSize",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwInitialCommitment",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "flEnclaveType",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveInformation",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 6
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwInfoLength",
+            "SequenceNumber": 7,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveError",
+            "SequenceNumber": 8,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "LoadEnclaveData",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.10240"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "LoadEnclaveData",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UIntPtr"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UIntPtr"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 9,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "hProcess",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpAddress",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpBuffer",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "nSize",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "flProtect",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpPageInformation",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 6
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwInfoLength",
+            "SequenceNumber": 7,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpNumberOfBytesWritten",
+            "SequenceNumber": 8,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveError",
+            "SequenceNumber": 9,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "InitializeEnclave",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.10240"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "InitializeEnclave",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "hProcess",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpAddress",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveInformation",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwInfoLength",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveError",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "LoadEnclaveImageA",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "LoadEnclaveImageA",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PSTR",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveAddress",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpImageName",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "LoadEnclaveImageW",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "LoadEnclaveImageW",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpEnclaveAddress",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpImageName",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "CallEnclave",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "CallEnclave",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "IntPtr"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "BOOL",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Pointer",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Void"
+                }
+              }
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpRoutine",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpParameter",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "fWaitForThread",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpReturnValue",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "TerminateEnclave",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "TerminateEnclave",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "BOOL",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpAddress",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "fWait",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "DeleteEnclave",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "DeleteEnclave",
+          "Attributes": [
+            "ExactSpelling",
+            "SetLastError",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "lpAddress",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveGetAttestationReport",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveGetAttestationReport",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Byte"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "EnclaveData",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountConst",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int32"
+                    },
+                    "Value": 64
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Report",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferSize",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "OutputSize",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveVerifyAttestationReport",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveVerifyAttestationReport",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "EnclaveType",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Report",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ReportSize",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveSealData",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveSealData",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Environment",
+              "Name": "ENCLAVE_SEALING_IDENTITY_POLICY",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 7,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DataToEncrypt",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DataToEncryptSize",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "IdentityPolicy",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "RuntimePolicy",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProtectedBlob",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 5
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferSize",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProtectedBlobSize",
+            "SequenceNumber": 7,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveUnsealData",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveUnsealData",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Environment",
+                "Name": "ENCLAVE_IDENTITY",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 7,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProtectedBlob",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ProtectedBlobSize",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DecryptedData",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferSize",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DecryptedDataSize",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "SealingIdentity",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "UnsealingFlags",
+            "SequenceNumber": 7,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveGetEnclaveInformation",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows10.0.16299"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveGetEnclaveInformation",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Environment",
+                "Name": "ENCLAVE_INFORMATION",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "InformationSize",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "EnclaveInformation",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 0
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "SetEnvironmentStringsW",
         "Attributes": [
           "PrivateScope",
@@ -2827,2897 +4966,6 @@
           }
         ],
         "GenericParameters": []
-      },
-      {
-        "Name": "IsEnclaveTypeSupported",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.10240"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "IsEnclaveTypeSupported",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "KERNEL32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "flEnclaveType",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "CreateEnclave",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.10240"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "CreateEnclave",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "KERNEL32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HANDLE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UIntPtr"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UIntPtr"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 8,
-          "ReturnType": {
-            "Kind": "Pointer",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Void"
-            }
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hProcess",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpAddress",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwSize",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwInitialCommitment",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "flEnclaveType",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveInformation",
-            "SequenceNumber": 6,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 6
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwInfoLength",
-            "SequenceNumber": 7,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveError",
-            "SequenceNumber": 8,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "LoadEnclaveData",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.10240"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "LoadEnclaveData",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "KERNEL32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HANDLE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UIntPtr"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UIntPtr"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 9,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hProcess",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpAddress",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpBuffer",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 3
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "nSize",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "flProtect",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpPageInformation",
-            "SequenceNumber": 6,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 6
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwInfoLength",
-            "SequenceNumber": 7,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpNumberOfBytesWritten",
-            "SequenceNumber": 8,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveError",
-            "SequenceNumber": 9,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "InitializeEnclave",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.10240"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "InitializeEnclave",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "KERNEL32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HANDLE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 5,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hProcess",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpAddress",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveInformation",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 3
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwInfoLength",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveError",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "LoadEnclaveImageA",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "LoadEnclaveImageA",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PSTR",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveAddress",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpImageName",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "LoadEnclaveImageW",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "LoadEnclaveImageW",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpEnclaveAddress",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpImageName",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "CallEnclave",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "CallEnclave",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "IntPtr"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "BOOL",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Pointer",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Void"
-                }
-              }
-            }
-          ],
-          "RequiredParameterCount": 4,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpRoutine",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpParameter",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "fWaitForThread",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpReturnValue",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "TerminateEnclave",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "TerminateEnclave",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "BOOL",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpAddress",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "fWait",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "DeleteEnclave",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "DeleteEnclave",
-          "Attributes": [
-            "ExactSpelling",
-            "SetLastError",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "api-ms-win-core-enclave-l1-1-1.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "BOOL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpAddress",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnclaveGetAttestationReport",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "EnclaveGetAttestationReport",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Byte"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 4,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "EnclaveData",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Optional"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "Report",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 2
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "BufferSize",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "OutputSize",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnclaveVerifyAttestationReport",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "EnclaveVerifyAttestationReport",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            }
-          ],
-          "RequiredParameterCount": 3,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "EnclaveType",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "Report",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 2
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ReportSize",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnclaveSealData",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "EnclaveSealData",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Environment",
-              "Name": "ENCLAVE_SEALING_IDENTITY_POLICY",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 7,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "DataToEncrypt",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 1
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "DataToEncryptSize",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "IdentityPolicy",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "RuntimePolicy",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ProtectedBlob",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 5
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "BufferSize",
-            "SequenceNumber": 6,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ProtectedBlobSize",
-            "SequenceNumber": 7,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnclaveUnsealData",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "EnclaveUnsealData",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Void"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "ENCLAVE_IDENTITY",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt32"
-              }
-            }
-          ],
-          "RequiredParameterCount": 7,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ProtectedBlob",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              },
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 1
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ProtectedBlobSize",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "DecryptedData",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 3
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "BufferSize",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "DecryptedDataSize",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "SealingIdentity",
-            "SequenceNumber": 6,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "UnsealingFlags",
-            "SequenceNumber": 7,
-            "Attributes": [
-              "Out",
-              "Optional"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnclaveGetEnclaveInformation",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "windows10.0.16299"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "EnclaveGetEnclaveInformation",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "vertdll.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "ENCLAVE_INFORMATION",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "InformationSize",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "EnclaveInformation",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
-                "FixedArguments": [],
-                "NamedArguments": [
-                  {
-                    "Kind": "Field",
-                    "Name": "BytesParamIndex",
-                    "Type": {
-                      "Kind": "Primitive",
-                      "Name": "Int16"
-                    },
-                    "Value": 0
-                  }
-                ]
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Environment",
-    "Name": "VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_EXCEPTION",
-    "BaseType": "System.MulticastDelegate",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "Sealed",
-      "AutoClass",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System.Runtime.InteropServices",
-              "Name": "CallingConvention",
-              "Comment": "TypeReference"
-            },
-            "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X64"
-            ]
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [
-      {
-        "Name": ".ctor",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "HideBySig",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Object"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "IntPtr"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "object",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "method",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Invoke",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "VBS_BASIC_ENCLAVE_EXCEPTION_AMD64",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ExceptionRecord",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Environment",
-    "Name": "VBS_BASIC_ENCLAVE_BASIC_CALL_TERMINATE_THREAD",
-    "BaseType": "System.MulticastDelegate",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "Sealed",
-      "AutoClass",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System.Runtime.InteropServices",
-              "Name": "CallingConvention",
-              "Comment": "TypeReference"
-            },
-            "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X64",
-              "Arm64"
-            ]
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [
-      {
-        "Name": ".ctor",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "HideBySig",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Object"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "IntPtr"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "object",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "method",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Invoke",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ThreadDescriptor",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Environment",
-    "Name": "VBS_BASIC_ENCLAVE_BASIC_CALL_INTERRUPT_THREAD",
-    "BaseType": "System.MulticastDelegate",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "Sealed",
-      "AutoClass",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System.Runtime.InteropServices",
-              "Name": "CallingConvention",
-              "Comment": "TypeReference"
-            },
-            "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X64",
-              "Arm64"
-            ]
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [
-      {
-        "Name": ".ctor",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "HideBySig",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Object"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "IntPtr"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "object",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "method",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Invoke",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ThreadDescriptor",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Environment",
-    "Name": "VBS_BASIC_ENCLAVE_BASIC_CALL_CREATE_THREAD",
-    "BaseType": "System.MulticastDelegate",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "Sealed",
-      "AutoClass",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System.Runtime.InteropServices",
-              "Name": "CallingConvention",
-              "Comment": "TypeReference"
-            },
-            "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X64",
-              "Arm64"
-            ]
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [
-      {
-        "Name": ".ctor",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "HideBySig",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Object"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "IntPtr"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "object",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "method",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Invoke",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Environment",
-                "Name": "VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ThreadDescriptor",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
       }
     ],
     "NestedTypes": [],
@@ -6483,7 +5731,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -7163,24 +6417,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X86",
-              "Arm64"
-            ]
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -7350,23 +6586,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X86"
-            ]
           }
         ],
         "NamedArguments": []
@@ -7541,23 +6760,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X86"
-            ]
           }
         ],
         "NamedArguments": []
@@ -8330,23 +7532,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Winapi"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation.Metadata",
-              "Name": "Architecture",
-              "Comment": "TypeReference"
-            },
-            "Value": [
-              "X86"
-            ]
           }
         ],
         "NamedArguments": []
@@ -9172,6 +8357,21 @@
                 "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
                 "FixedArguments": [],
                 "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountConst",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int32"
+                    },
+                    "Value": 64
+                  }
+                ]
               }
             ],
             "DefaultValue": null

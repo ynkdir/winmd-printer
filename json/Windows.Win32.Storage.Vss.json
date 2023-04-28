@@ -8719,32 +8719,6 @@
   },
   {
     "Namespace": "Windows.Win32.Storage.Vss",
-    "Name": "IVssExamineWriterMetadata",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.Vss",
     "Name": "IVssWMFiledesc",
     "BaseType": null,
     "IsNested": false,
@@ -15593,1415 +15567,6 @@
   },
   {
     "Namespace": "Windows.Win32.Storage.Vss",
-    "Name": "IVssWriterImpl",
-    "BaseType": null,
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "ClassSemanticsMask",
-      "Abstract"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [
-      {
-        "Interface": {
-          "Kind": "TypeReference",
-          "TypeReference": {
-            "Name": "IUnknown",
-            "Namespace": "Windows.Win32.System.Com"
-          },
-          "TypeSpecification": null
-        },
-        "CustomAttributes": []
-      }
-    ],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [
-      {
-        "Name": "Initialize",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Guid",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Storage.Vss",
-              "Name": "VSS_USAGE_TYPE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Storage.Vss",
-              "Name": "VSS_SOURCE_TYPE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Storage.Vss",
-              "Name": "VSS_APPLICATION_LEVEL",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Storage.Vss",
-              "Name": "VSS_ALTERNATE_WRITER_STATE",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            }
-          ],
-          "RequiredParameterCount": 11,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "writerId",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wszWriterName",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wszWriterInstanceName",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In",
-              "Optional"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwMajorVersion",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwMinorVersion",
-            "SequenceNumber": 5,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ut",
-            "SequenceNumber": 6,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "st",
-            "SequenceNumber": 7,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "nLevel",
-            "SequenceNumber": 8,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwTimeout",
-            "SequenceNumber": 9,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "aws",
-            "SequenceNumber": 10,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "bIOThrottlingOnly",
-            "SequenceNumber": 11,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Subscribe",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwSubscribeTimeout",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "dwEventFlags",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Unsubscribe",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Uninitialize",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetCurrentVolumeArray",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Pointer",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            }
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetCurrentVolumeCount",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "UInt32"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetSnapshotDeviceName",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.Foundation",
-                "Name": "PWSTR",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wszOriginalVolume",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "ppwszSnapshotDevice",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetCurrentSnapshotSetId",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "System",
-            "Name": "Guid",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetContext",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetCurrentLevel",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Storage.Vss",
-            "Name": "VSS_APPLICATION_LEVEL",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "IsPathAffected",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "wszPath",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "IsBootableSystemStateBackedUp",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "AreComponentsSelected",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetBackupType",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Storage.Vss",
-            "Name": "VSS_BACKUP_TYPE",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetRestoreType",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Storage.Vss",
-            "Name": "VSS_RESTORE_TYPE",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "SetWriterFailure",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HRESULT",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hr",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "IsPartialFileSupportEnabled",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "InstallAlternateWriter",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Guid",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Guid",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "idWriter",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "clsid",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetIdentityInformation",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Pointer",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Storage.Vss",
-              "Name": "IVssExamineWriterMetadata",
-              "Comment": "TypeDefinition"
-            }
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "SetWriterFailureEx",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HRESULT",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "HRESULT",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PWSTR",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 3,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hr",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "hrApplication",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wszApplicationMessage",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetSessionId",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "System",
-                "Name": "Guid",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "idSession",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "IsWriterShuttingDown",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask",
-          "Abstract"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "ThisCall",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.Vss",
     "Name": "IVssCreateExpressWriterMetadata",
     "BaseType": null,
     "IsNested": false,
@@ -18537,116 +17102,6 @@
         "GenericParameters": []
       }
     ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.Vss",
-    "Name": "VssSnapshotMgmt",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 190458962
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 16057
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 18186
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 150
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 226
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 108
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 109
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 69
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 112
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 228
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 15
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
     "NestedTypes": [],
     "GenericParameters": []
   },
@@ -22643,7 +21098,7 @@
   },
   {
     "Namespace": "Windows.Win32.Storage.Vss",
-    "Name": "VSSCoordinator",
+    "Name": "VssSnapshotMgmt",
     "BaseType": "System.ValueType",
     "IsNested": false,
     "Attributes": [
@@ -22664,77 +21119,77 @@
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 3849956191
+            "Value": 190458962
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 7364
+            "Value": 16057
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 17588
+            "Value": 18186
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 190
+            "Value": 150
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 217
+            "Value": 226
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 222
+            "Value": 108
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 9
+            "Value": 109
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 145
+            "Value": 69
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 255
+            "Value": 112
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 6
+            "Value": 228
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 35
+            "Value": 15
           }
         ],
         "NamedArguments": []
@@ -23576,6 +22031,116 @@
         "GenericParameters": []
       }
     ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.Vss",
+    "Name": "VSSCoordinator",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 3849956191
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 7364
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 17588
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 190
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 217
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 222
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 9
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 145
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 255
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 6
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 35
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
     "NestedTypes": [],
     "GenericParameters": []
   },
@@ -24441,7 +23006,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARIANT",
               "Comment": "TypeReference"
             }
@@ -27964,7 +26529,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARIANT",
               "Comment": "TypeReference"
             }

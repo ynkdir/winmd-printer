@@ -3186,6 +3186,119 @@
         "GenericParameters": []
       },
       {
+        "Name": "HcsCreateOperationWithNotifications",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "HcsCreateOperationWithNotifications",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "computecore.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.HostComputeSystem",
+              "Name": "HCS_OPERATION_OPTIONS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.HostComputeSystem",
+              "Name": "HCS_EVENT_CALLBACK",
+              "Comment": "TypeDefinition"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.System.HostComputeSystem",
+            "Name": "HCS_OPERATION",
+            "Comment": "TypeDefinition"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "eventTypes",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "context",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "callback",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "HcsCloseOperation",
         "Attributes": [
           "PrivateScope",
@@ -3903,6 +4016,132 @@
             "Attributes": [
               "Out",
               "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "HcsAddResourceToOperation",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "HcsAddResourceToOperation",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "computecore.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.HostComputeSystem",
+              "Name": "HCS_OPERATION",
+              "Comment": "TypeDefinition"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.HostComputeSystem",
+              "Name": "HCS_RESOURCE_TYPE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "operation",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "type",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "uri",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "handle",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null

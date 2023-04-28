@@ -96406,6 +96406,218 @@
         "GenericParameters": []
       },
       {
+        "Name": "SetAdditionalForegroundBoostProcesses",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "SetAdditionalForegroundBoostProcesses",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "USER32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HWND",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HANDLE",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "topLevelWindow",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "processHandleCount",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "processHandleArray",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "RegisterForTooltipDismissNotification",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "RegisterForTooltipDismissNotification",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "USER32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HWND",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.UI.WindowsAndMessaging",
+              "Name": "TOOLTIP_DISMISS_FLAGS",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "hWnd",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "tdFlags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "CreateResourceIndexer",
         "Attributes": [
           "PrivateScope",
@@ -100998,7 +101210,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -101128,7 +101346,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -109319,7 +109543,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -114498,7 +114728,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -114585,7 +114821,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -114787,7 +115029,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -114890,7 +115138,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -115039,7 +115293,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -115184,7 +115444,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -115329,7 +115595,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -115392,7 +115664,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0

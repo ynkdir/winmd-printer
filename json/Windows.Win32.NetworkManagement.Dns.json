@@ -11743,6 +11743,184 @@
         "GenericParameters": []
       },
       {
+        "Name": "DnsConnectionGetProxyInfoForHostUrlEx",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "DnsConnectionGetProxyInfoForHostUrlEx",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "DNSAPI.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Byte"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.NetworkManagement.Dns",
+                "Name": "DNS_CONNECTION_PROXY_INFO_EX",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 6,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pwszHostUrl",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pSelectionContext",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwSelectionContextLength",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "dwExplicitInterfaceIndex",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pwszConnectionName",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pProxyInfoEx",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "DnsConnectionFreeProxyInfoEx",
         "Attributes": [
           "PrivateScope",
@@ -14187,7 +14365,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
       }
@@ -14379,7 +14557,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -14760,7 +14944,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16257,7 +16447,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16318,7 +16514,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16377,7 +16579,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16450,7 +16658,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16666,7 +16880,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16839,7 +17059,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16954,7 +17180,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17013,7 +17245,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17102,7 +17340,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17191,7 +17435,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17320,7 +17570,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17439,7 +17695,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17558,7 +17820,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17673,7 +17941,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17746,7 +18020,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -17946,7 +18226,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -18021,7 +18307,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -19407,7 +19699,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -19508,7 +19806,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -19998,7 +20302,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -20117,7 +20427,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -20176,7 +20492,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -20237,7 +20559,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -20296,7 +20624,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -26455,7 +26789,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0

@@ -10126,6 +10126,115 @@
         "GenericParameters": []
       },
       {
+        "Name": "HdvInitializeDeviceHostEx",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "HdvInitializeDeviceHostEx",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vmdevicehost.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.HostComputeSystem",
+              "Name": "HCS_SYSTEM",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Hypervisor",
+              "Name": "HDV_DEVICE_HOST_FLAGS",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Pointer",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Void"
+                }
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "computeSystem",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "flags",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "deviceHostHandle",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "HdvTeardownDeviceHost",
         "Attributes": [
           "PrivateScope",
@@ -17982,7 +18091,13 @@
             "Attributes": [
               "Public"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null,
             "Offset": 0,
             "RelativeVirtualAddress": 0
@@ -36160,7 +36275,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0

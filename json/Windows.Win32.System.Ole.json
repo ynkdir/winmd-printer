@@ -11174,166 +11174,6 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "VARIANT_NOVALUEPROP",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 1
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_ALPHABOOL",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 2
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_NOUSEROVERRIDE",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 4
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_CALENDAR_HIJRI",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 8
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_LOCALBOOL",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 16
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_CALENDAR_THAI",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 32
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_CALENDAR_GREGORIAN",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 64
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "VARIANT_USE_NLS",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 128
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
         "Name": "VAR_TIMEVALUEONLY",
         "Signature": {
           "Kind": "Primitive",
@@ -12165,354 +12005,6 @@
     },
     "MethodDefinitions": [
       {
-        "Name": "DosDateTimeToVariantTime",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "DosDateTimeToVariantTime",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Double"
-              }
-            }
-          ],
-          "RequiredParameterCount": 3,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "wDosDate",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wDosTime",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvtime",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantTimeToDosDateTime",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantTimeToDosDateTime",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Double"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt16"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "UInt16"
-              }
-            }
-          ],
-          "RequiredParameterCount": 3,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "vtime",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pwDosDate",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pwDosTime",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "SystemTimeToVariantTime",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "SystemTimeToVariantTime",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.Foundation",
-                "Name": "SYSTEMTIME",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Primitive",
-                "Name": "Double"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "lpSystemTime",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvtime",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantTimeToSystemTime",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantTimeToSystemTime",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Double"
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.Foundation",
-                "Name": "SYSTEMTIME",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Int32"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "vtime",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lpSystemTime",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
         "Name": "SafeArrayAllocDescriptor",
         "Attributes": [
           "PrivateScope",
@@ -12646,7 +12138,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -12833,7 +12325,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -12933,7 +12425,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -15256,7 +14748,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARENUM",
                 "Comment": "TypeReference"
               }
@@ -15341,7 +14833,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -15436,7 +14928,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -15498,633 +14990,6 @@
           {
             "Name": "pvExtra",
             "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantInit",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantInit",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "pvarg",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantClear",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantClear",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvarg",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantCopy",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantCopy",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvargDest",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvargSrc",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantCopyInd",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantCopyInd",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvarDest",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvargSrc",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantChangeType",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantChangeType",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
-              "Name": "VARENUM",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 4,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvargDest",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvarSrc",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wFlags",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "vt",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "VariantChangeTypeEx",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Static",
-          "HideBySig",
-          "PinvokeImpl"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": {
-          "Name": "VariantChangeTypeEx",
-          "Attributes": [
-            "ExactSpelling",
-            "CallingConventionWinApi"
-          ],
-          "Module": {
-            "Name": "OLEAUT32.dll",
-            "CustomAttributes": []
-          }
-        },
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Pointer",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
-                "Name": "VARIANT",
-                "Comment": "TypeReference"
-              }
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
-              "Name": "VARENUM",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 5,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvargDest",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In",
-              "Out"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "pvarSrc",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [
-              {
-                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
-                "FixedArguments": [],
-                "NamedArguments": []
-              }
-            ],
-            "DefaultValue": null
-          },
-          {
-            "Name": "lcid",
-            "SequenceNumber": 3,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "wFlags",
-            "SequenceNumber": 4,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "vt",
-            "SequenceNumber": 5,
             "Attributes": [
               "In"
             ],
@@ -37803,7 +36668,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -37908,7 +36773,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -37917,7 +36782,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -37926,7 +36791,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38022,7 +36887,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38031,7 +36896,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38040,7 +36905,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38136,7 +37001,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38145,7 +37010,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38154,7 +37019,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38250,7 +37115,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38259,7 +37124,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38268,7 +37133,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38364,7 +37229,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38373,7 +37238,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38382,7 +37247,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38478,7 +37343,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38487,7 +37352,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38496,7 +37361,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38592,7 +37457,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38601,7 +37466,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38610,7 +37475,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38706,7 +37571,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38715,7 +37580,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38724,7 +37589,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38820,7 +37685,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38829,7 +37694,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38838,7 +37703,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38934,7 +37799,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38943,7 +37808,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -38952,7 +37817,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39048,7 +37913,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39057,7 +37922,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39066,7 +37931,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39162,7 +38027,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39171,7 +38036,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39180,7 +38045,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39276,7 +38141,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39285,7 +38150,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39294,7 +38159,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39390,7 +38255,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39399,7 +38264,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39486,7 +38351,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39495,7 +38360,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39582,7 +38447,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39591,7 +38456,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39678,7 +38543,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39687,7 +38552,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39774,7 +38639,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39783,7 +38648,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39870,7 +38735,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39883,7 +38748,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39979,7 +38844,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -39988,7 +38853,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -43368,7 +42233,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -43523,7 +42388,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -43647,7 +42512,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -43814,7 +42679,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -43981,7 +42846,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -44389,7 +43254,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -46173,7 +45038,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -46181,7 +45046,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -46487,7 +45352,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -46899,7 +45764,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             },
@@ -46920,7 +45785,7 @@
                 "Kind": "Pointer",
                 "Type": {
                   "Kind": "Type",
-                  "Namespace": "Windows.Win32.System.Com",
+                  "Namespace": "Windows.Win32.System.Variant",
                   "Name": "VARIANT",
                   "Comment": "TypeReference"
                 }
@@ -46930,7 +45795,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -57981,7 +56846,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARIANT",
               "Comment": "TypeReference"
             },
@@ -58074,7 +56939,7 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARIANT",
               "Comment": "TypeReference"
             },
@@ -67623,7 +66488,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -68682,7 +67553,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -68732,7 +67609,7 @@
         "Name": "varDefaultValue",
         "Signature": {
           "Kind": "Type",
-          "Namespace": "Windows.Win32.System.Com",
+          "Namespace": "Windows.Win32.System.Variant",
           "Name": "VARIANT",
           "Comment": "TypeReference"
         },
@@ -71620,7 +70497,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -71717,7 +70594,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -71827,7 +70704,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -71942,7 +70819,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -72048,7 +70925,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -73485,7 +72362,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -73831,7 +72708,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -76726,7 +75603,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -76832,7 +75709,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -76963,7 +75840,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -77085,7 +75962,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -91743,7 +90620,7 @@
         "Name": "vt",
         "Signature": {
           "Kind": "Type",
-          "Namespace": "Windows.Win32.System.Com",
+          "Namespace": "Windows.Win32.System.Variant",
           "Name": "VARENUM",
           "Comment": "TypeReference"
         },
@@ -91893,7 +90770,7 @@
         "Name": "vtReturn",
         "Signature": {
           "Kind": "Type",
-          "Namespace": "Windows.Win32.System.Com",
+          "Namespace": "Windows.Win32.System.Variant",
           "Name": "VARENUM",
           "Comment": "TypeReference"
         },
@@ -109579,7 +108456,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -112849,7 +111726,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -116054,7 +114931,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -116842,7 +115725,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -119567,7 +118456,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -119576,7 +118465,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -132195,7 +131084,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -133507,7 +132396,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -133516,7 +132405,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }
@@ -133527,7 +132416,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.System.Com",
+              "Namespace": "Windows.Win32.System.Variant",
               "Name": "VARENUM",
               "Comment": "TypeReference"
             }
@@ -133942,7 +132831,7 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.System.Com",
+                "Namespace": "Windows.Win32.System.Variant",
                 "Name": "VARIANT",
                 "Comment": "TypeReference"
               }

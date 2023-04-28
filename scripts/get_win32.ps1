@@ -1,4 +1,4 @@
-$winmdver = "49.0.21"
+$winmdver = "50.0.71"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.win32metadata.${winmdver}-preview.nupkg"
 curl.exe -o winmd.zip $url
 tar.exe -xvf winmd.zip Windows.Win32.winmd

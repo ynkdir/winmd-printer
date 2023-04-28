@@ -463,6 +463,84 @@
         "GenericParameters": []
       },
       {
+        "Name": "IsCrossIsolatedEnvironmentClipboardContent",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "IsCrossIsolatedEnvironmentClipboardContent",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "IsolatedWindowsEnvironmentUtils.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "BOOL",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "isCrossIsolatedEnvironmentClipboardContent",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "CreateAppContainerProfile",
         "Attributes": [
           "PrivateScope",
@@ -1225,116 +1303,6 @@
   },
   {
     "Namespace": "Windows.Win32.Security.Isolation",
-    "Name": "IsolatedAppLauncher",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 3162580016
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 59230
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 20433
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 150
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 65
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 31
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 159
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 30
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 45
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 154
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 31
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Security.Isolation",
     "Name": "IsolatedAppLauncherTelemetryParameters",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -1628,6 +1596,116 @@
         "GenericParameters": []
       }
     ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.Isolation",
+    "Name": "IsolatedAppLauncher",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 3162580016
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 59230
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 20433
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 150
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 65
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 31
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 159
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 30
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 45
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 154
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 31
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
     "NestedTypes": [],
     "GenericParameters": []
   }

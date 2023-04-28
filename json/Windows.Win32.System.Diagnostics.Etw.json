@@ -17187,6 +17187,815 @@
         "GenericParameters": []
       },
       {
+        "Name": "OpenTraceFromBufferStream",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "OpenTraceFromBufferStream",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_OPEN_TRACE_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+              "Name": "PETW_BUFFER_COMPLETION_CALLBACK",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt64"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Options",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferCompletionCallback",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferCompletionContext",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "OpenTraceFromRealTimeLogger",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "OpenTraceFromRealTimeLogger",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_OPEN_TRACE_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "TRACE_LOGFILE_HEADER",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt64"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LoggerName",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Options",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LogFileHeader",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "OpenTraceFromRealTimeLoggerWithAllocationOptions",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "OpenTraceFromRealTimeLoggerWithAllocationOptions",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_OPEN_TRACE_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UIntPtr"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HANDLE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "TRACE_LOGFILE_HEADER",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt64"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LoggerName",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Options",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "AllocationSize",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "MemoryPartitionHandle",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LogFileHeader",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "OpenTraceFromFile",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "OpenTraceFromFile",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "PWSTR",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_OPEN_TRACE_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "TRACE_LOGFILE_HEADER",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt64"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LogFileName",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Options",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "LogFileHeader",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ProcessTraceBufferIncrementReference",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "ProcessTraceBufferIncrementReference",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_BUFFER_HEADER",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TraceHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Buffer",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ProcessTraceBufferDecrementReference",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "ProcessTraceBufferDecrementReference",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_BUFFER_HEADER",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Buffer",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ProcessTraceAddBufferToBufferStream",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "ProcessTraceAddBufferToBufferStream",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ADVAPI32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+                "Name": "ETW_BUFFER_HEADER",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TraceHandle",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "Buffer",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferSize",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "QueryTraceProcessingHandle",
         "Attributes": [
           "PrivateScope",
@@ -24939,7 +25748,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
       }
@@ -24999,7 +25808,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
       }
@@ -25059,7 +25868,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
       }
@@ -31690,7 +32499,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -31965,7 +32780,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -33309,7 +34130,7 @@
                 "Kind": "Type",
                 "Namespace": "Windows.Win32.System.Diagnostics.Etw",
                 "Name": "ETW_BUFFER_HEADER",
-                "Comment": "TypeDefinition"
+                "Comment": "TypeReference"
               }
             },
             {
@@ -33754,7 +34575,7 @@
                 "Kind": "Type",
                 "Namespace": "Windows.Win32.System.Diagnostics.Etw",
                 "Name": "ETW_BUFFER_HEADER",
-                "Comment": "TypeDefinition"
+                "Comment": "TypeReference"
               }
             },
             {
@@ -36867,7 +37688,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -36984,7 +37811,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -37837,7 +38670,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -37896,7 +38735,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -38106,7 +38951,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -39389,7 +40240,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -42661,7 +43518,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -43481,7 +44344,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -43800,7 +44669,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -43946,7 +44821,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -44021,7 +44902,13 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -44271,116 +45158,6 @@
         "RelativeVirtualAddress": 0
       }
     ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Diagnostics.Etw",
-    "Name": "CTraceRelogger",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 2067822893
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 1535
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 17604
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 144
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 88
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 244
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 64
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 199
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 31
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 23
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 212
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -46586,6 +47363,116 @@
         "GenericParameters": []
       }
     ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Etw",
+    "Name": "CTraceRelogger",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 2067822893
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 1535
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 17604
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 144
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 88
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 244
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 64
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 199
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 31
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 23
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 212
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
     "NestedTypes": [],
     "GenericParameters": []
   }

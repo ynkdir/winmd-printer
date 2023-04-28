@@ -35016,6 +35016,282 @@
         "GenericParameters": []
       },
       {
+        "Name": "WebAuthNGetPlatformCredentialList",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "WebAuthNGetPlatformCredentialList",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "webauthn.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+                "Name": "WEBAUTHN_GET_CREDENTIALS_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Pointer",
+                "Type": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+                  "Name": "WEBAUTHN_CREDENTIAL_DETAILS_LIST",
+                  "Comment": "TypeReference"
+                }
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pGetCredentialsOptions",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "ppCredentialDetailsList",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "WebAuthNFreePlatformCredentialList",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "WebAuthNFreePlatformCredentialList",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "webauthn.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+                "Name": "WEBAUTHN_CREDENTIAL_DETAILS_LIST",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "pCredentialDetailsList",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "WebAuthNDeletePlatformCredential",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "WebAuthNDeletePlatformCredential",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "webauthn.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Byte"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "cbCredentialId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pbCredentialId",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 0
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "WebAuthNGetErrorName",
         "Attributes": [
           "PrivateScope",
@@ -35177,84 +35453,6 @@
   },
   {
     "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_XML_READER",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_XML_WRITER",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_XML_BUFFER",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
     "Name": "WS_CHANNEL",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -35267,34 +35465,29 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_OPERATION_CONTEXT",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35319,8 +35512,29 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35345,8 +35559,29 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35371,8 +35606,29 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35397,112 +35653,29 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_SECURITY_TOKEN",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
     ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_SECURITY_CONTEXT",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
     ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_SERVICE_HOST",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
-    "Name": "WS_SERVICE_PROXY",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [],
-    "Fields": [],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35527,8 +35700,76 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_OPERATION_CONTEXT",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -35553,8 +35794,358 @@
       "Sealed",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
-    "Fields": [],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_SECURITY_CONTEXT",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_SECURITY_TOKEN",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_SERVICE_HOST",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_SERVICE_PROXY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_XML_BUFFER",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_XML_READER",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.WindowsWebServices",
+    "Name": "WS_XML_WRITER",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "SequentialLayout",
+      "Sealed",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
