@@ -1,35 +1,21 @@
-$winsdkroot = "C:\Program Files (x86)\Windows Kits"
-$sdkversion = "10.0.22621.0"
-$platform = "${winsdkroot}\10\Platforms\UAP\${sdkversion}\Platform.xml"
-$extension_windows_desktop = "${winsdkroot}\10\Extension SDKs\WindowsDesktop\${sdkversion}\SDKManifest.xml"
-$extension_windows_mobile = "${winsdkroot}\10\Extension SDKs\WindowsMobile\${sdkversion}\SDKManifest.xml"
-$extension_windows_team = "${winsdkroot}\10\Extension SDKs\WindowsTeam\${sdkversion}\SDKManifest.xml"
-$reference = "${winsdkroot}\10\References\${sdkversion}"
-$unionmetadata = "${winsdkroot}\10\UnionMetadata\${sdkversion}"
+# https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts
 
+$version = "10.0.22621.2"
+$url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.contracts.$version.nupkg"
 
-function GetPlatformMetadata() {
-    if (-not (Test-Path winrt)) {
-        New-Item winrt -ItemType Directory
-    }
-
-    Remove-Item winrt\*
-
-    $xml = [XML](Get-Content $platform)
-    foreach ($ApiContract in $xml.ApplicationPlatform.ContainedApiContracts.ApiContract) {
-        Write-Output $ApiContract.name
-        Copy-Item "${reference}\$($ApiContract.name)\$($ApiContract.version)\$($ApiContract.name).winmd" winrt
-        cmd /c "dotnet run `"winrt\$($ApiContract.name).winmd`" > `"winrt\$($ApiContract.name).json`""
-    }
-
-    Write-Output "make Windows.WinRT.json ..."
-    py -c "import json, glob; json.dump([td for f in glob.glob('winrt/*.json') for td in json.load(open(f))], open('Windows.WinRT.json', 'w'), indent=2)"
+if (-not (Test-Path winrt)) {
+    New-Item winrt -ItemType Directory
 }
+Remove-Item winrt\*
 
-# ?
-function GetUnionMetadata() {
-    cmd /c "dotnet run `"${unionmetadata}\Windows.winmd`" > Windows.WinRT.json"
-}
+curl.exe -o winrt.zip $url
+tar.exe -C winrt -xvf winrt.zip 'ref/netstandard2.0/*.winmd'
+Move-Item winrt\ref\netstandard2.0\*.winmd winrt\
+Remove-Item -Recurse winrt\ref
 
-GetUnionMetadata
-py scripts\split_namespace.py Windows.WinRT.json
+Get-ChildItem winrt\*.winmd | ForEach-Object { Write-Host $_.Name; cmd /c "dotnet run `"$_`" > `"winrt\$($_.BaseName).json`""}
+
+Write-Output "make Windows.WinRT.json ..."
+py -c "import json, glob; json.dump([td for f in glob.glob('winrt/*.json') for td in json.load(open(f))], open('Windows.WinRT.json', 'w'), indent=2)"
+
+py $PSScriptRoot\split_namespace.py Windows.WinRT.json

@@ -1,6 +1,120 @@
 [
   {
     "Namespace": "Windows.Phone.ApplicationModel",
+    "Name": "ApplicationProfileModes",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed",
+      "WindowsRuntime"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Phone.PhoneContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Private",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Default",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Phone.ApplicationModel",
+          "Name": "ApplicationProfileModes",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Alternate",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Phone.ApplicationModel",
+          "Name": "ApplicationProfileModes",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Phone.ApplicationModel",
     "Name": "ApplicationProfile",
     "BaseType": "System.Object",
     "IsNested": false,
@@ -129,23 +243,18 @@
   },
   {
     "Namespace": "Windows.Phone.ApplicationModel",
-    "Name": "ApplicationProfileModes",
-    "BaseType": "System.Enum",
+    "Name": "IApplicationProfileStatics",
+    "BaseType": null,
     "IsNested": false,
     "Attributes": [
       "AutoLayout",
       "AnsiClass",
       "Class",
-      "Public",
-      "Sealed",
+      "ClassSemanticsMask",
+      "Abstract",
       "WindowsRuntime"
     ],
     "CustomAttributes": [
-      {
-        "Type": "System.FlagsAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
@@ -167,94 +276,7 @@
           }
         ],
         "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "value__",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Private",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
       },
-      {
-        "Name": "Default",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.Phone.ApplicationModel",
-          "Name": "ApplicationProfileModes",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 0
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "Alternate",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.Phone.ApplicationModel",
-          "Name": "ApplicationProfileModes",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 1
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Phone.ApplicationModel",
-    "Name": "IApplicationProfileStatics",
-    "BaseType": null,
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "ClassSemanticsMask",
-      "Abstract",
-      "WindowsRuntime"
-    ],
-    "CustomAttributes": [
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -349,28 +371,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Windows.Phone.ApplicationModel.ApplicationProfile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Phone.PhoneContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
