@@ -699,12 +699,9 @@ class MetadataPrinter {
         using var fs = new FileStream(args[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         using var pe = new PEReader(fs);
         var reader = pe.GetMetadataReader(MetadataReaderOptions.None);
-        var target = args.Length >= 2 ? args[1] : "";
         Console.WriteLine(JsonSerializer.Serialize(
             from h in reader.TypeDefinitions
-            let td = new JsTypeDefinition(reader, reader.GetTypeDefinition(h))
-            where target == "" || target == td.Namespace || target == $"{td.Namespace}.{td.Name}"
-            select td,
+            select new JsTypeDefinition(reader, reader.GetTypeDefinition(h)),
             new JsonSerializerOptions { WriteIndented = true}));
     }
 }
