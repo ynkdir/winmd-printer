@@ -13,7 +13,7 @@ tar.exe -C winrt -xvf winrt.zip 'ref/netstandard2.0/*.winmd'
 Move-Item winrt\ref\netstandard2.0\*.winmd winrt\
 Remove-Item -Recurse winrt\ref
 
-Get-ChildItem winrt\*.winmd | ForEach-Object { Write-Host $_.Name; cmd /c "dotnet run `"$_`" > `"winrt\$($_.BaseName).json`""}
+Get-ChildItem winrt\*.winmd | ForEach-Object { Write-Host $_.Name; dotnet run -o "winrt\$($_.BaseName).json" $_ }
 
 Write-Output "make Windows.WinRT.json ..."
 py -c "import json, glob; json.dump([td for f in glob.glob('winrt/*.json') for td in json.load(open(f))], open('Windows.WinRT.json', 'w'), indent=2)"

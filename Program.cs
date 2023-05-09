@@ -695,11 +695,38 @@ class JsModuleReference {
 }
 
 class MetadataPrinter {
+    public static void usage() {
+        Console.WriteLine("winmd-printer [-h] [-o output.json] input.winmd");
+    }
+
     public static void Main(string[] args) {
-        using var fs = new FileStream(args[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        string? input = null;
+        string? output = null;
+
+        for (int i = 0; i < args.Length; ++i) {
+            switch (args[i]) {
+                case "-h":
+                    usage();
+                    return;
+                case "-o":
+                    output = args[++i];
+                    break;
+                default:
+                    input = args[i];
+                    break;
+            }
+        }
+
+        if (input is null) {
+            usage();
+            return;
+        }
+
+        using var fs = new FileStream(input, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         using var pe = new PEReader(fs);
         var reader = pe.GetMetadataReader(MetadataReaderOptions.None);
-        Console.WriteLine(JsonSerializer.Serialize(
+        using var writer = (output is null) ? Console.Out : new StreamWriter(output);
+        writer.Write(JsonSerializer.Serialize(
             from h in reader.TypeDefinitions
             select new JsTypeDefinition(reader, reader.GetTypeDefinition(h)),
             new JsonSerializerOptions { WriteIndented = true}));

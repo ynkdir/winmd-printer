@@ -5,6 +5,6 @@ $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.win32metadata
 
 curl.exe -o win32.zip $url
 tar.exe -xvf win32.zip Windows.Win32.winmd
-cmd /c "dotnet run Windows.Win32.winmd > Windows.Win32.json.$version"
+dotnet run -o Windows.Win32.json.$version Windows.Win32.winmd
 
 py $PSScriptRoot\split_namespace.py Windows.Win32.json.$version
