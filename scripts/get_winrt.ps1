@@ -15,7 +15,7 @@ Remove-Item -Recurse winrt\ref
 
 Get-ChildItem winrt\*.winmd | ForEach-Object { Write-Host $_.Name; dotnet run -o "winrt\$($_.BaseName).json" $_ }
 
-Write-Output "make Windows.WinRT.json ..."
-py -c "import json, glob; json.dump([td for f in glob.glob('winrt/*.json') for td in json.load(open(f))], open('Windows.WinRT.json', 'w'), indent=2)"
+Write-Host "make Windows.WinRT.json ..."
+py -X utf8 $PSScriptRoot\join_metadata.py -o Windows.WinRT.json (Get-Item winrt/*.json)
 
-py $PSScriptRoot\split_namespace.py Windows.WinRT.json
+py -X utf8 $PSScriptRoot\split_namespace.py -d json Windows.WinRT.json

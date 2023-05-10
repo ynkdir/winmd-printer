@@ -1,18 +1,18 @@
+import argparse
+import itertools
 import json
-import sys
 
-def main():
-    ns = {}
-    meta_all = json.load(open(sys.argv[1]))
-    for td in meta_all:
-        if td["Namespace"] == "":
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--dir", default=".")
+parser.add_argument("input")
+
+args = parser.parse_args()
+
+with open(args.input) as f:
+    meta_all = sorted(json.load(f), key=lambda td: td["Namespace"])
+    for namespace, meta_g in itertools.groupby(meta_all, key=lambda td: td["Namespace"]):
+        if namespace == "":
             continue
-        if td["Namespace"] not in ns:
-            ns[td["Namespace"]] = []
-        ns[td["Namespace"]].append(td)
-    for namespace, meta in ns.items():
         print(namespace)
-        json.dump(meta, open(f"json/{namespace}.json", "w"), indent=2)
-
-if __name__ == "__main__":
-    main()
+        with open(f"{args.dir}/{namespace}.json", "w") as g:
+            json.dump(list(meta_g), g, indent=2)
