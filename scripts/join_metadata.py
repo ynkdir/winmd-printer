@@ -19,4 +19,4 @@ else:
     output = open(args.output, "w")
 
 with output:
-    json.dump(meta, output)
+    json.dump(meta, output, indent=2)
