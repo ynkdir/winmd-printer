@@ -2988,8 +2988,8 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-                "Name": "FilterFindHandle",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HANDLE",
                 "Comment": "TypeReference"
               }
             }
@@ -3070,7 +3070,21 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "FilterFindClose"
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -3410,8 +3424,8 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-                "Name": "FilterVolumeFindHandle",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HANDLE",
                 "Comment": "TypeReference"
               }
             }
@@ -3492,7 +3506,21 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "FilterVolumeFindClose"
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -3838,8 +3866,8 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-                "Name": "FilterInstanceFindHandle",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HANDLE",
                 "Comment": "TypeReference"
               }
             }
@@ -3935,7 +3963,21 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "FilterInstanceFindClose"
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -4281,8 +4323,8 @@
               "Kind": "Pointer",
               "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-                "Name": "FilterVolumeInstanceFindHandle",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HANDLE",
                 "Comment": "TypeReference"
               }
             }
@@ -4378,7 +4420,21 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "FilterVolumeInstanceFindClose"
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -5950,350 +6006,6 @@
       },
       {
         "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "Value",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "IntPtr"
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-    "Name": "FilterFindHandle",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "FilterFindClose"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": -1
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": 0
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "Value",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "IntPtr"
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-    "Name": "FilterVolumeFindHandle",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "FilterVolumeFindClose"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": -1
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": 0
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "Value",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "IntPtr"
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-    "Name": "FilterInstanceFindHandle",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "FilterInstanceFindClose"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": -1
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": 0
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "Value",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "IntPtr"
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "MethodDefinitions": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.Storage.InstallableFileSystems",
-    "Name": "FilterVolumeInstanceFindHandle",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "AutoLayout",
-      "AnsiClass",
-      "Class",
-      "Public",
-      "SequentialLayout",
-      "Sealed",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "FilterVolumeInstanceFindClose"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": -1
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Int64"
-            },
-            "Value": 0
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.MetadataTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
       }
