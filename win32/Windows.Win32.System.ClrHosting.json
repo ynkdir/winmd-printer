@@ -105,7 +105,7 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "UInt32",
-          "Value": 30319
+          "Value": 22220
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -4874,10 +4874,15 @@
             "Name": "ppInterface",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -5672,8 +5677,7 @@
             "Name": "pFiberCookie",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -7080,6 +7084,28 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RUNTIME_INFO_REQUEST_ARM64",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.ClrHosting",
+          "Name": "RUNTIME_INFO_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8192
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -7402,7 +7428,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -8470,8 +8502,7 @@
             "Name": "phNewWaitObject",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8498,8 +8529,7 @@
             "Name": "Context",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8526,7 +8556,6 @@
             "Name": "result",
             "SequenceNumber": 7,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -8626,7 +8655,6 @@
             "Name": "result",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -8724,8 +8752,7 @@
             "Name": "Context",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8743,7 +8770,6 @@
             "Name": "result",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -8843,8 +8869,7 @@
             "Name": "phNewTimer",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8862,8 +8887,7 @@
             "Name": "Parameter",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8890,7 +8914,6 @@
             "Name": "result",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9001,7 +9024,6 @@
             "Name": "result",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9101,7 +9123,6 @@
             "Name": "result",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9274,8 +9295,7 @@
             "Name": "Context",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -9284,7 +9304,6 @@
             "Name": "result",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9436,7 +9455,6 @@
             "Name": "MaxWorkerThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9446,7 +9464,6 @@
             "Name": "MaxIOCompletionThreads",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9521,7 +9538,6 @@
             "Name": "AvailableWorkerThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -9531,7 +9547,6 @@
             "Name": "AvailableIOCompletionThreads",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -10009,7 +10024,6 @@
             "Name": "pbAttached",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -10683,8 +10697,7 @@
             "Name": "pFiberCookie",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -10754,7 +10767,6 @@
             "Name": "pFiberCookie",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -10822,7 +10834,6 @@
             "Name": "pCount",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -10907,7 +10918,6 @@
             "Name": "hMapAddress",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -11321,7 +11331,6 @@
             "Name": "hEnum",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -11398,8 +11407,7 @@
             "Name": "hEnum",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -11475,8 +11483,7 @@
             "Name": "hEnum",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -12598,7 +12605,6 @@
             "Name": "ppMem",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -12647,10 +12653,11 @@
               "Comment": "TypeReference"
             },
             {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
-              "Name": "PSTR",
-              "Comment": "TypeReference"
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Byte"
+              }
             },
             {
               "Kind": "Primitive",
@@ -12792,8 +12799,7 @@
             "Name": "pMem",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13177,8 +13183,7 @@
             "Name": "pAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13223,7 +13228,6 @@
             "Name": "ppMem",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13299,8 +13303,7 @@
             "Name": "lpAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13403,8 +13406,7 @@
             "Name": "lpAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13413,7 +13415,6 @@
             "Name": "lpBuffer",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13432,7 +13433,6 @@
             "Name": "pResult",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13515,8 +13515,7 @@
             "Name": "lpAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13543,7 +13542,6 @@
             "Name": "pflOldProtect",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13618,7 +13616,6 @@
             "Name": "pMemoryLoad",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13628,7 +13625,6 @@
             "Name": "pAvailableBytes",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -13766,8 +13762,7 @@
             "Name": "startAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13847,8 +13842,7 @@
             "Name": "startAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -13924,8 +13918,7 @@
             "Name": "startAddress",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -14232,7 +14225,6 @@
             "Name": "memUsage",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -14518,7 +14510,6 @@
             "Name": "pbNeedsPriorityScheduling",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -14636,7 +14627,6 @@
             "Name": "pLockCount",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -15353,7 +15343,6 @@
             "Name": "pPriority",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -16160,7 +16149,6 @@
             "Name": "pTaskType",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -16456,8 +16444,7 @@
             "Name": "pParameter",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -16817,7 +16804,6 @@
             "Name": "pbCallNeedsHostHook",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -17363,7 +17349,6 @@
             "Name": "pGuarantee",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -17638,8 +17623,7 @@
             "Name": "Context",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -17779,7 +17763,6 @@
             "Name": "pdwMaxWorkerThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -17847,7 +17830,6 @@
             "Name": "pdwAvailableWorkerThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -17979,7 +17961,6 @@
             "Name": "pdwMinIOCompletionThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -18195,8 +18176,7 @@
             "Name": "pvOverlapped",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -18387,7 +18367,6 @@
             "Name": "phPort",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -18585,7 +18564,6 @@
             "Name": "pdwMaxIOCompletionThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -18653,7 +18631,6 @@
             "Name": "pdwAvailableIOCompletionThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -18721,7 +18698,6 @@
             "Name": "pcbSize",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -18855,8 +18831,7 @@
             "Name": "pvOverlapped",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -19068,7 +19043,6 @@
             "Name": "pdwMinIOCompletionThreads",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -19472,9 +19446,25 @@
             "Name": "ppCLRTask",
             "SequenceNumber": 3,
             "Attributes": [
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -19605,8 +19595,7 @@
             "Name": "pacl",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -19678,7 +19667,6 @@
             "Name": "pacl",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -19748,7 +19736,6 @@
             "Name": "pbAttached",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -20639,7 +20626,6 @@
             "Name": "pParams",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -20741,10 +20727,25 @@
             "Name": "items",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -21119,7 +21120,6 @@
             "Name": "pbSucceeded",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -22011,7 +22011,6 @@
             "Name": "lpPreviousCount",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -22296,7 +22295,6 @@
             "Name": "pIterator",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -25685,8 +25683,7 @@
             "Name": "data",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -27971,7 +27968,6 @@
             "Name": "pbIsStronglyNamed",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -28354,8 +28350,7 @@
             "Name": "pbApplicationPolicy",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -28520,8 +28515,7 @@
             "Name": "pbApplicationPolicy",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -28574,7 +28568,6 @@
             "Name": "pdwPoliciesApplied",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -29794,8 +29787,7 @@
             "Name": "pBindInfo",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -29804,7 +29796,6 @@
             "Name": "pAssemblyId",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -29814,7 +29805,6 @@
             "Name": "pContext",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -29927,8 +29917,7 @@
             "Name": "pBindInfo",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -29937,7 +29926,6 @@
             "Name": "pdwModuleId",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -30432,7 +30420,6 @@
             "Name": "ppObject",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -30728,7 +30715,6 @@
             "Name": "ppObject",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -31353,8 +31339,7 @@
             "Name": "cookie",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -31421,7 +31406,6 @@
             "Name": "pdwAppDomainId",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -31584,7 +31568,6 @@
             "Name": "pReturnValue",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -31736,7 +31719,6 @@
             "Name": "pReturnValue",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -32876,7 +32858,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -32974,7 +32962,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -33041,7 +33035,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -33139,7 +33139,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -33206,7 +33212,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -33302,7 +33314,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -33371,7 +33389,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -34120,7 +34144,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -34398,7 +34428,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -34467,7 +34503,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -36339,7 +36381,6 @@
             "Name": "phThreadToken",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -38148,10 +38189,20 @@
             "Name": "ppRuntime",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -38340,7 +38391,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -38424,7 +38481,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -38582,10 +38645,20 @@
             "Name": "ppUnk",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -39329,7 +39402,6 @@
             "Name": "pdwConfigFlags",
             "SequenceNumber": 8,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -39354,10 +39426,20 @@
             "Name": "ppRuntime",
             "SequenceNumber": 10,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -39619,10 +39701,25 @@
             "Name": "pvClientData",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 5
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -40049,7 +40146,6 @@
             "Name": "phModule",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -40320,8 +40416,7 @@
             "Name": "pMaxDebuggerSupportedVersion",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -40347,7 +40442,13 @@
             "Attributes": [
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -40364,7 +40465,6 @@
             "Name": "pdwFlags",
             "SequenceNumber": 8,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -40836,10 +40936,15 @@
             "Name": "pbLoaded",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -41058,10 +41163,15 @@
             "Name": "phndModule",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -41150,10 +41260,15 @@
             "Name": "ppProc",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -41269,10 +41384,20 @@
             "Name": "ppUnk",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ComOutPtrAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -41339,10 +41464,15 @@
             "Name": "pbLoadable",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -41505,7 +41635,6 @@
             "Name": "pdwStartupFlags",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -41668,7 +41797,6 @@
             "Name": "pbStarted",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -41678,7 +41806,6 @@
             "Name": "pdwStartupFlags",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -41917,10 +42044,25 @@
             "Name": "pbHash",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -41936,7 +42078,6 @@
             "Name": "pchHash",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42053,10 +42194,25 @@
             "Name": "pbHash",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42072,7 +42228,6 @@
             "Name": "pchHash",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42169,8 +42324,7 @@
             "Name": "pbBlob",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -42198,10 +42352,25 @@
             "Name": "pbHash",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 4
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42217,7 +42386,6 @@
             "Name": "pchHash",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42334,10 +42502,25 @@
             "Name": "pbHash",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42353,7 +42536,6 @@
             "Name": "pchHash",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42470,10 +42652,25 @@
             "Name": "pbHash",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42489,7 +42686,6 @@
             "Name": "pchHash",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42600,10 +42796,25 @@
             "Name": "pbHash",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42619,7 +42830,6 @@
             "Name": "pchHash",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -42729,10 +42939,15 @@
             "Name": "pdwResult",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -42797,8 +43012,7 @@
             "Name": "pbMemory",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -42896,7 +43110,23 @@
               "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -42989,10 +43219,25 @@
             "Name": "pbBase",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -43008,10 +43253,25 @@
             "Name": "pbBlob",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 3
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -43128,8 +43388,7 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -43147,7 +43406,6 @@
             "Name": "ppbPublicKeyBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43157,7 +43415,6 @@
             "Name": "pcbPublicKeyBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43238,10 +43495,15 @@
             "Name": "pcbSize",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -43422,7 +43684,6 @@
             "Name": "ppbKeyBlob",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43432,7 +43693,6 @@
             "Name": "pcbKeyBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43557,7 +43817,6 @@
             "Name": "ppbKeyBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43567,7 +43826,6 @@
             "Name": "pcbKeyBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43660,8 +43918,7 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -43800,8 +44057,7 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -43819,7 +44075,6 @@
             "Name": "ppbSignatureBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43829,7 +44084,6 @@
             "Name": "pcbSignatureBlob",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43964,8 +44218,7 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -43983,7 +44236,6 @@
             "Name": "ppbSignatureBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -43993,7 +44245,6 @@
             "Name": "pcbSignatureBlob",
             "SequenceNumber": 6,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44081,8 +44332,7 @@
             "Name": "pbPublicKeyBlob",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -44100,8 +44350,7 @@
             "Name": "pcbSize",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -44202,10 +44451,15 @@
             "Name": "pdwOutFlags",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -44306,10 +44560,15 @@
             "Name": "pfWasVerified",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -44389,8 +44648,7 @@
             "Name": "pbBase",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -44417,10 +44675,15 @@
             "Name": "pdwOutFlags",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetValAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           }
         ],
@@ -44516,7 +44779,6 @@
             "Name": "ppbStrongNameToken",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44526,7 +44788,6 @@
             "Name": "pcbStrongNameToken",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44642,7 +44903,6 @@
             "Name": "ppbStrongNameToken",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44652,7 +44912,6 @@
             "Name": "pcbStrongNameToken",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44662,7 +44921,6 @@
             "Name": "ppbPublicKeyBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44672,7 +44930,6 @@
             "Name": "pcbPublicKeyBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44761,8 +45018,7 @@
             "Name": "pbPublicKeyBlob",
             "SequenceNumber": 1,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -44780,7 +45036,6 @@
             "Name": "ppbStrongNameToken",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -44790,7 +45045,6 @@
             "Name": "pcbStrongNameToken",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45030,8 +45284,7 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -45049,7 +45302,6 @@
             "Name": "ppbPublicKeyBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45059,7 +45311,6 @@
             "Name": "pcbPublicKeyBlob",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45192,8 +45443,7 @@
             "Name": "pbEcmaPublicKey",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -45211,7 +45461,6 @@
             "Name": "pfWasVerified",
             "SequenceNumber": 5,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45436,7 +45685,6 @@
             "Name": "ppbDigestBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45446,7 +45694,6 @@
             "Name": "pcbDigestBlob",
             "SequenceNumber": 3,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45584,10 +45831,25 @@
             "Name": "pbKeyBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -45603,10 +45865,25 @@
             "Name": "pbDigestBlob",
             "SequenceNumber": 4,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 4
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -45631,7 +45908,6 @@
             "Name": "ppbSignatureBlob",
             "SequenceNumber": 7,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45641,7 +45917,6 @@
             "Name": "pcbSignatureBlob",
             "SequenceNumber": 8,
             "Attributes": [
-              "In",
               "Out"
             ],
             "CustomAttributes": [],
@@ -45743,10 +46018,25 @@
             "Name": "pbSignatureBlob",
             "SequenceNumber": 2,
             "Attributes": [
-              "In",
-              "Out"
+              "In"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 2
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           },
           {
