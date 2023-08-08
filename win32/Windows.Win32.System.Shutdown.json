@@ -1601,7 +1601,13 @@
       "Public",
       "Sealed"
     ],
-    "CustomAttributes": [],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
     "Fields": [
       {
         "Name": "value__",
@@ -1616,28 +1622,6 @@
         ],
         "CustomAttributes": [],
         "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "EWX_HYBRID_SHUTDOWN",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.Win32.System.Shutdown",
-          "Name": "EXIT_WINDOWS_FLAGS",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 4194304
-        },
         "Offset": -1,
         "RelativeVirtualAddress": 0
       },
@@ -1664,7 +1648,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "EWX_POWEROFF",
+        "Name": "EWX_SHUTDOWN",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Shutdown",
@@ -1680,7 +1664,7 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "UInt32",
-          "Value": 8
+          "Value": 1
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -1708,6 +1692,94 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "EWX_FORCE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_POWEROFF",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_FORCEIFHUNG",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_QUICKRESOLVE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "EWX_RESTARTAPPS",
         "Signature": {
           "Kind": "Type",
@@ -1730,7 +1802,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "EWX_SHUTDOWN",
+        "Name": "EWX_HYBRID_SHUTDOWN",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Shutdown",
@@ -1746,7 +1818,95 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "UInt32",
-          "Value": 1
+          "Value": 4194304
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_BOOTOPTIONS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16777216
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_ARSO",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 67108864
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_CHECK_SAFE_FOR_SERVER",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 134217728
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EWX_SYSTEM_INITIATED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Shutdown",
+          "Name": "EXIT_WINDOWS_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 268435456
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -2083,7 +2243,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdowna"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdowna"
               }
             ],
             "NamedArguments": []
@@ -2251,7 +2411,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownw"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownw"
               }
             ],
             "NamedArguments": []
@@ -2419,7 +2579,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-abortsystemshutdowna"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-abortsystemshutdowna"
               }
             ],
             "NamedArguments": []
@@ -2528,7 +2688,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-abortsystemshutdownw"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-abortsystemshutdownw"
               }
             ],
             "NamedArguments": []
@@ -2637,7 +2797,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownexa"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownexa"
               }
             ],
             "NamedArguments": []
@@ -2820,7 +2980,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownexw"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiatesystemshutdownexw"
               }
             ],
             "NamedArguments": []
@@ -3003,7 +3163,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiateshutdowna"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiateshutdowna"
               }
             ],
             "NamedArguments": []
@@ -3168,7 +3328,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-initiateshutdownw"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winreg/nf-winreg-initiateshutdownw"
               }
             ],
             "NamedArguments": []
@@ -3420,7 +3580,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-exitwindowsex"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-exitwindowsex"
               }
             ],
             "NamedArguments": []
@@ -3538,7 +3698,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-lockworkstation"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-lockworkstation"
               }
             ],
             "NamedArguments": []
@@ -3625,7 +3785,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasoncreate"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasoncreate"
               }
             ],
             "NamedArguments": []
@@ -3749,7 +3909,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasonquery"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasonquery"
               }
             ],
             "NamedArguments": []
@@ -3901,7 +4061,7 @@
                   "Kind": "Primitive",
                   "Name": "String"
                 },
-                "Value": "https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasondestroy"
+                "Value": "https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-shutdownblockreasondestroy"
               }
             ],
             "NamedArguments": []
