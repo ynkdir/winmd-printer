@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.Windows.SDK.Win32Metadata/
 
-$version = "54.0.44"
+$version = "55.0.45"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.win32metadata.${version}-preview.nupkg"
 
 curl.exe -o win32.zip $url
