@@ -6,7 +6,7 @@ $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.contracts.$ve
 function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile
     Remove-Item $tmpfile
-    return New-Item -Path $tmpfile.FullName -ItemType directory
+    return New-Item -Path $tmpfile -ItemType directory
 }
 
 if (-not (Test-Path winrt)) {

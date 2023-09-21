@@ -6,7 +6,7 @@ $url = "https://globalcdn.nuget.org/packages/microsoft.windowsappsdk.$version.nu
 function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile
     Remove-Item $tmpfile
-    return New-Item -Path $tmpfile.FullName -ItemType directory
+    return New-Item -Path $tmpfile -ItemType directory
 }
 
 if (-not (Test-Path appsdk)) {
