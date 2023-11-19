@@ -215,21 +215,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -250,6 +235,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
       },
       {
         "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
@@ -302,6 +302,38 @@
           {
             "Type": "Windows.Foundation.Metadata.DefaultAttribute",
             "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IAddPackageOptions2",
+            "Namespace": "Windows.Management.Deployment"
+          },
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Windows.Foundation.UniversalApiContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 983040
+              }
+            ],
             "NamedArguments": []
           }
         ]
@@ -1946,6 +1978,175 @@
           }
         ],
         "GenericParameters": []
+      },
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_LimitToExistingPackages",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Boolean"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_LimitToExistingPackages",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
       }
     ],
     "NestedTypes": [],
@@ -1965,6 +2166,35 @@
       "WindowsRuntime"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.IAppInstallerManagerStatics"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 851968
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
@@ -2013,35 +2243,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.IAppInstallerManagerStatics"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 851968
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
           }
         ],
         "NamedArguments": []
@@ -2377,17 +2578,23 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Management.Deployment.IAutoUpdateSettingsOptionsStatics"
-          },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "FixedArguments": [
           {
             "Type": {
               "Kind": "Primitive",
@@ -2406,16 +2613,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
               "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Name": "MarshalingType",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -2443,23 +2650,17 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
-        "FixedArguments": [
+            "Value": "Windows.Management.Deployment.IAutoUpdateSettingsOptionsStatics"
+          },
           {
             "Type": {
               "Kind": "Primitive",
@@ -4390,36 +4591,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -4440,6 +4611,36 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -4719,6 +4920,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 655360
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.AddPackageOptions"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -4797,43 +5035,6 @@
               "Name": "Byte"
             },
             "Value": 192
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 655360
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.AddPackageOptions"
           }
         ],
         "NamedArguments": []
@@ -6450,6 +6651,322 @@
   },
   {
     "Namespace": "Windows.Management.Deployment",
+    "Name": "IAddPackageOptions2",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "ClassSemanticsMask",
+      "Abstract",
+      "WindowsRuntime"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 3998308392
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 48947
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 16631
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 132
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 175
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 27
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 111
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 173
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 41
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 25
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 215
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.AddPackageOptions"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 983040
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_LimitToExistingPackages",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Boolean"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_LimitToExistingPackages",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Management.Deployment",
     "Name": "IAppInstallerManager",
     "BaseType": null,
     "IsNested": false,
@@ -6480,21 +6997,6 @@
               "Name": "UInt32"
             },
             "Value": 851968
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.AppInstallerManager"
           }
         ],
         "NamedArguments": []
@@ -6578,6 +7080,21 @@
               "Name": "Byte"
             },
             "Value": 61
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.AppInstallerManager"
           }
         ],
         "NamedArguments": []
@@ -6799,6 +7316,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.AppInstallerManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 851968
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -6877,43 +7431,6 @@
               "Name": "Byte"
             },
             "Value": 52
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 851968
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.AppInstallerManager"
           }
         ],
         "NamedArguments": []
@@ -7046,43 +7563,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.AutoUpdateSettingsOptions"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 851968
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -7161,6 +7641,43 @@
               "Name": "Byte"
             },
             "Value": 211
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.AutoUpdateSettingsOptions"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 851968
           }
         ],
         "NamedArguments": []
@@ -8589,7 +9106,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -8598,14 +9115,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Windows.Management.Deployment.DeploymentResult"
           }
         ],
         "NamedArguments": []
@@ -8694,7 +9204,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -8703,7 +9213,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Management.Deployment.DeploymentResult"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -9350,48 +9867,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -9470,6 +9945,48 @@
               "Name": "Byte"
             },
             "Value": 83
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -11082,48 +11599,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 851968
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11204,6 +11679,48 @@
             "Value": 187
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 851968
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -11349,26 +11866,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11447,6 +11944,26 @@
               "Name": "Byte"
             },
             "Value": 149
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
           }
         ],
         "NamedArguments": []
@@ -11609,6 +12126,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -11619,11 +12141,6 @@
                 "Value": "StagePackageWithOptionsAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -12541,6 +13058,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -12551,11 +13073,6 @@
                 "Value": "StageUserDataAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -12648,6 +13165,48 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12726,48 +13285,6 @@
               "Name": "Byte"
             },
             "Value": 114
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
           }
         ],
         "NamedArguments": []
@@ -14234,6 +14751,33 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 196608
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -14317,11 +14861,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
@@ -14332,28 +14871,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
           }
         ],
         "NamedArguments": []
@@ -14469,21 +14986,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -14587,6 +15089,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -14609,16 +15126,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -14629,6 +15136,16 @@
                 "Value": "AddPackageToVolumeAndOptionalPackagesAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -14822,16 +15339,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -14842,6 +15349,16 @@
                 "Value": "StagePackageToVolumeAndOptionalPackagesAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -15035,6 +15552,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -15045,11 +15567,6 @@
                 "Value": "RegisterPackageByFamilyNameAndOptionalPackagesAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -15271,6 +15788,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
         "FixedArguments": [],
         "NamedArguments": []
@@ -15293,21 +15825,6 @@
               "Name": "UInt32"
             },
             "Value": 327680
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
           }
         ],
         "NamedArguments": []
@@ -16499,21 +17016,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -16531,6 +17033,21 @@
               "Name": "UInt32"
             },
             "Value": 393216
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
           }
         ],
         "NamedArguments": []
@@ -16797,28 +17314,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 458752
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -16912,6 +17407,28 @@
               "Comment": "TypeReference"
             },
             "Value": "Windows.Management.Deployment.PackageManager"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 458752
           }
         ],
         "NamedArguments": []
@@ -17036,26 +17553,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -17075,6 +17572,11 @@
             "Value": 655360
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       },
       {
@@ -17156,6 +17658,21 @@
               "Name": "Byte"
             },
             "Value": 167
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManager"
           }
         ],
         "NamedArguments": []
@@ -17256,6 +17773,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -17266,11 +17788,6 @@
                 "Value": "AddPackageByUriAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -17490,6 +18007,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -17500,11 +18022,6 @@
                 "Value": "RegisterPackageByUriAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -17607,11 +18124,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -17622,6 +18134,11 @@
                 "Value": "RegisterPackagesByFullNameAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -17983,21 +18500,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageManagerDebugSettings"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -18015,6 +18517,21 @@
               "Name": "UInt32"
             },
             "Value": 262144
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageManagerDebugSettings"
           }
         ],
         "NamedArguments": []
@@ -18040,6 +18557,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -18050,11 +18572,6 @@
                 "Value": "SetContentGroupStateAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -18533,43 +19050,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.PackageVolume"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18648,6 +19128,43 @@
               "Name": "Byte"
             },
             "Value": 83
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.PackageVolume"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -20400,28 +20917,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -20500,6 +20995,28 @@
               "Name": "Byte"
             },
             "Value": 216
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 196608
           }
         ],
         "NamedArguments": []
@@ -20710,43 +21227,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 655360
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Management.Deployment.RegisterPackageOptions"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -20825,6 +21305,43 @@
               "Name": "Byte"
             },
             "Value": 191
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.RegisterPackageOptions"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 655360
           }
         ],
         "NamedArguments": []
@@ -22004,6 +22521,219 @@
   },
   {
     "Namespace": "Windows.Management.Deployment",
+    "Name": "IRegisterPackageOptions2",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "ClassSemanticsMask",
+      "Abstract",
+      "WindowsRuntime"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1039832899
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 34559
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 18961
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 188
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 147
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 67
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 78
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 182
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 190
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 58
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 11
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 983040
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.RegisterPackageOptions"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Management.Deployment",
     "Name": "IStagePackageOptions",
     "BaseType": null,
     "IsNested": false,
@@ -22016,6 +22746,28 @@
       "WindowsRuntime"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 655360
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
@@ -22110,28 +22862,6 @@
               "Name": "Byte"
             },
             "Value": 107
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 655360
           }
         ],
         "NamedArguments": []
@@ -23336,6 +24066,219 @@
   },
   {
     "Namespace": "Windows.Management.Deployment",
+    "Name": "IStagePackageOptions2",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "ClassSemanticsMask",
+      "Abstract",
+      "WindowsRuntime"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 2567720140
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 25126
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 16786
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 186
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 146
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 121
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 135
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 95
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 206
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 13
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 156
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 983040
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Management.Deployment.StagePackageOptions"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Management.Deployment",
     "Name": "PackageAllUserProvisioningOptions",
     "BaseType": "System.Object",
     "IsNested": false,
@@ -23349,16 +24292,23 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 851968
           }
         ],
         "NamedArguments": []
@@ -23399,23 +24349,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 851968
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -23812,8 +24755,60 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
+      },
+      {
         "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
         "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
         "NamedArguments": []
       },
       {
@@ -23850,58 +24845,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
       }
     ],
     "Fields": [],
@@ -25962,6 +26905,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -25972,11 +26920,6 @@
                 "Value": "StagePackageWithOptionsAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -26894,11 +27837,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -26909,6 +27847,11 @@
                 "Value": "StageUserDataAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -27301,6 +28244,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -27311,11 +28259,6 @@
                 "Value": "RegisterPackageWithAppDataVolumeAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -28155,6 +29098,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -28165,11 +29113,6 @@
                 "Value": "StagePackageToVolumeAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -28313,11 +29256,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -28328,6 +29266,11 @@
                 "Value": "StageUserDataWithOptionsAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -28506,11 +29449,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -28521,6 +29459,11 @@
                 "Value": "AddPackageToVolumeAndOptionalPackagesAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           },
           {
@@ -28719,6 +29662,16 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -28729,16 +29682,6 @@
                 "Value": "StagePackageToVolumeAndOptionalPackagesAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -29720,6 +30663,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -29730,11 +30678,6 @@
                 "Value": "StagePackageToVolumeAndRelatedSetAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -30149,6 +31092,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -30159,11 +31107,6 @@
                 "Value": "RequestAddPackageAndRelatedSetAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -30545,11 +31488,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -30560,6 +31498,11 @@
                 "Value": "AddPackageByUriAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -30662,11 +31605,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -30677,6 +31615,11 @@
                 "Value": "StagePackageByUriAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -30896,11 +31839,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -30911,6 +31849,11 @@
                 "Value": "RegisterPackagesByFullNameAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -31304,21 +32247,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
@@ -31332,6 +32260,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
       },
       {
         "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
@@ -31808,11 +32751,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "System.FlagsAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -31832,6 +32770,11 @@
             "Value": 65536
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -32097,11 +33040,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "System.FlagsAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -32121,6 +33059,11 @@
             "Value": 65536
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -32421,21 +33364,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -32456,6 +33384,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -32618,21 +33561,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 1
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -32668,6 +33596,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -34665,21 +35608,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -34700,6 +35628,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -34717,6 +35660,38 @@
           {
             "Type": "Windows.Foundation.Metadata.DefaultAttribute",
             "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IRegisterPackageOptions2",
+            "Namespace": "Windows.Management.Deployment"
+          },
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Windows.Foundation.UniversalApiContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 983040
+              }
+            ],
             "NamedArguments": []
           }
         ]
@@ -35924,6 +36899,72 @@
           }
         ],
         "GenericParameters": []
+      },
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
       }
     ],
     "NestedTypes": [],
@@ -35944,11 +36985,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "System.FlagsAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -35968,6 +37004,11 @@
             "Value": 65536
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -36144,6 +37185,41 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 655360
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -36179,41 +37255,6 @@
             "Value": 1
           }
         ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 655360
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -36231,6 +37272,38 @@
           {
             "Type": "Windows.Foundation.Metadata.DefaultAttribute",
             "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IStagePackageOptions2",
+            "Namespace": "Windows.Management.Deployment"
+          },
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Windows.Foundation.UniversalApiContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 983040
+              }
+            ],
             "NamedArguments": []
           }
         ]
@@ -37457,6 +38530,72 @@
             "SequenceNumber": 1,
             "Attributes": [
               "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_ExpectedDigests",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Collections",
+              "Name": "IMap`2",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "Uri",
+                "Comment": "TypeReference"
+              },
+              {
+                "Kind": "Primitive",
+                "Name": "String"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null

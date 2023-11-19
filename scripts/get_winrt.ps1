@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts
 
-$version = "10.0.22621.2"
+$version = "10.0.22621.2428"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.contracts.$version.nupkg"
 
 function New-TemporaryFolder() {
@@ -25,9 +25,9 @@ Get-Item $tmpdir\winrt\ref\netstandard2.0\*.winmd | ForEach-Object {
     dotnet run -o "$tmpdir\$($_.BaseName).json" $_
 }
 
-Write-Host "make Windows.WinRT.json ..."
-py -X utf8 $PSScriptRoot\join_metadata.py -o Windows.WinRT.json (Get-Item $tmpdir\*.json)
+Write-Host "make WindowsSDK.json ..."
+py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsSDK.json (Get-Item $tmpdir\*.json)
 
-py -X utf8 $PSScriptRoot\split_namespace.py -d winrt Windows.WinRT.json
+py -X utf8 $PSScriptRoot\split_namespace.py -d winrt WindowsSDK.json
 
 Remove-Item -Recurse $tmpdir

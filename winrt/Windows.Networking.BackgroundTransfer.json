@@ -136,6 +136,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
         "FixedArguments": [
           {
@@ -146,6 +161,35 @@
               "Comment": "TypeReference"
             },
             "Value": "Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods"
           },
           {
             "Type": {
@@ -180,17 +224,8 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
         "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundDownloaderUserConsent"
-          },
           {
             "Type": {
               "Kind": "Primitive",
@@ -238,26 +273,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -280,21 +295,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -304,7 +304,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods"
+            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundDownloaderUserConsent"
           },
           {
             "Type": {
@@ -2189,6 +2189,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
             "FixedArguments": [
               {
@@ -2222,11 +2227,6 @@
                 "Value": "Windows.Foundation.UniversalApiContract"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -2406,6 +2406,24 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "GetCurrentDownloadsForGroupAsync"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
             "FixedArguments": [
               {
@@ -2437,24 +2455,6 @@
                   "Name": "String"
                 },
                 "Value": "Windows.Foundation.UniversalApiContract"
-              }
-            ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "GetCurrentDownloadsForGroupAsync"
               }
             ],
             "NamedArguments": []
@@ -2663,6 +2663,36 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -2700,36 +2730,6 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -2955,23 +2955,16 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -2992,16 +2985,23 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -3176,6 +3176,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
@@ -3211,16 +3226,23 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -3250,28 +3272,6 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -3782,28 +3782,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
@@ -3858,6 +3836,28 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -4059,16 +4059,23 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -4089,23 +4096,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -4526,6 +4526,36 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 167772164
+          }
+        ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -4546,36 +4576,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 167772164
-          }
-        ]
       }
     ],
     "Fields": [],
@@ -5283,7 +5283,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -5292,7 +5292,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory"
+            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderUserConsent"
           },
           {
             "Type": {
@@ -5307,6 +5307,21 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -5350,28 +5365,8 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderUserConsent"
+            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods2"
           },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
-        "FixedArguments": [
           {
             "Type": {
               "Kind": "Primitive",
@@ -5405,22 +5400,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -5429,8 +5409,28 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods2"
+            "Value": "Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory"
           },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "FixedArguments": [
           {
             "Type": {
               "Kind": "Primitive",
@@ -5954,11 +5954,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -5969,6 +5964,11 @@
                 "Value": "CreateUploadWithSubTypeAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -6089,6 +6089,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -6099,11 +6104,6 @@
                 "Value": "CreateUploadWithSubTypeAndBoundaryAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -7802,19 +7802,6 @@
             "NamedArguments": []
           },
           {
-            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "GetCurrentUploadsForGroupAsync"
-              }
-            ],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
             "FixedArguments": [
               {
@@ -7846,6 +7833,19 @@
                   "Name": "String"
                 },
                 "Value": "Windows.Foundation.UniversalApiContract"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "GetCurrentUploadsForGroupAsync"
               }
             ],
             "NamedArguments": []
@@ -7946,16 +7946,23 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -7985,6 +7992,21 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -8029,28 +8051,6 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -10190,21 +10190,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -10222,6 +10207,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
           }
         ],
         "NamedArguments": []
@@ -10682,6 +10682,28 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -10760,28 +10782,6 @@
               "Name": "Byte"
             },
             "Value": 121
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -11349,21 +11349,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11467,6 +11452,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -11546,28 +11546,6 @@
       "WindowsRuntime"
     ],
     "CustomAttributes": [
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -11665,6 +11643,28 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -11759,21 +11759,6 @@
       "WindowsRuntime"
     ],
     "CustomAttributes": [
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
-          }
-        ],
-        "NamedArguments": []
-      },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
@@ -11875,6 +11860,21 @@
               "Name": "Byte"
             },
             "Value": 80
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
           }
         ],
         "NamedArguments": []
@@ -11991,11 +11991,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -12042,6 +12037,11 @@
                 "Value": "Windows.Foundation.UniversalApiContract"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -12139,6 +12139,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12217,21 +12232,6 @@
               "Name": "Byte"
             },
             "Value": 254
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
           }
         ],
         "NamedArguments": []
@@ -12380,21 +12380,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12478,28 +12463,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
         "FixedArguments": [
           {
@@ -12531,6 +12494,43 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundDownloader"
           }
         ],
         "NamedArguments": []
@@ -13778,6 +13778,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroupTriggerDetails"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -13878,21 +13893,6 @@
               "Name": "Byte"
             },
             "Value": 91
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroupTriggerDetails"
           }
         ],
         "NamedArguments": []
@@ -14049,6 +14049,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -14127,43 +14164,6 @@
               "Name": "Byte"
             },
             "Value": 230
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -14644,21 +14644,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferError"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -14762,6 +14747,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferError"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -14855,43 +14855,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferGroup"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -14970,6 +14933,43 @@
               "Name": "Byte"
             },
             "Value": 119
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundTransferGroup"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -16200,28 +16200,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 327680
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
@@ -16315,6 +16293,28 @@
               "Name": "Byte"
             },
             "Value": 92
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 327680
           }
         ],
         "NamedArguments": []
@@ -16508,6 +16508,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -16608,21 +16623,6 @@
               "Name": "Byte"
             },
             "Value": 206
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
           }
         ],
         "NamedArguments": []
@@ -16839,6 +16839,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -16849,11 +16854,6 @@
                 "Value": "CreateUploadWithFormDataAndAutoBoundaryAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -16961,11 +16961,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -16976,6 +16971,11 @@
                 "Value": "CreateUploadWithSubTypeAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -17096,6 +17096,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -17106,11 +17111,6 @@
                 "Value": "CreateUploadWithSubTypeAndBoundaryAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -17251,6 +17251,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -17351,21 +17366,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
           }
         ],
         "NamedArguments": []
@@ -17933,6 +17933,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -18036,21 +18051,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -18131,43 +18131,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18246,6 +18209,43 @@
               "Name": "Byte"
             },
             "Value": 87
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
           }
         ],
         "NamedArguments": []
@@ -18344,43 +18344,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18459,6 +18422,43 @@
               "Name": "Byte"
             },
             "Value": 223
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -18588,11 +18588,6 @@
             "NamedArguments": []
           },
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
             "FixedArguments": [
               {
@@ -18626,6 +18621,11 @@
                 "Value": "Windows.Foundation.UniversalApiContract"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -19047,21 +19047,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
         "FixedArguments": [
           {
@@ -19118,6 +19103,21 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.BackgroundUploader"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -19139,11 +19139,6 @@
           "Abstract"
         ],
         "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
           {
             "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
             "FixedArguments": [
@@ -19178,6 +19173,11 @@
                 "Value": "Windows.Foundation.UniversalApiContract"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -19277,21 +19277,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.ContentPrefetcher"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -19309,6 +19294,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.ContentPrefetcher"
           }
         ],
         "NamedArguments": []
@@ -19593,21 +19593,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.ContentPrefetcher"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -19686,6 +19671,21 @@
               "Name": "Byte"
             },
             "Value": 175
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.ContentPrefetcher"
           }
         ],
         "NamedArguments": []
@@ -19802,21 +19802,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.DownloadOperation"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -19834,6 +19819,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.DownloadOperation"
           }
         ],
         "NamedArguments": []
@@ -20285,6 +20285,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -20363,28 +20385,6 @@
               "Name": "Byte"
             },
             "Value": 56
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -21164,6 +21164,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 393216
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -21260,28 +21282,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 393216
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -21348,43 +21348,6 @@
       "WindowsRuntime"
     ],
     "CustomAttributes": [
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 655360
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.DownloadOperation"
-          }
-        ],
-        "NamedArguments": []
-      },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -21464,6 +21427,43 @@
               "Name": "Byte"
             },
             "Value": 165
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 655360
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.DownloadOperation"
           }
         ],
         "NamedArguments": []
@@ -21615,6 +21615,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.ResponseInformation"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -21693,43 +21730,6 @@
               "Name": "Byte"
             },
             "Value": 46
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.ResponseInformation"
           }
         ],
         "NamedArguments": []
@@ -21975,7 +21975,43 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN."
+          },
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "DeprecationType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Deprecate"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 196608
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -21984,7 +22020,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -22073,7 +22116,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -22082,50 +22125,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN."
-          },
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "DeprecationType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Deprecate"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult"
           }
         ],
         "NamedArguments": []
@@ -22244,6 +22244,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -22322,21 +22337,6 @@
               "Name": "Byte"
             },
             "Value": 174
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
           }
         ],
         "NamedArguments": []
@@ -22651,6 +22651,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -22729,21 +22744,6 @@
               "Name": "Byte"
             },
             "Value": 247
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
           }
         ],
         "NamedArguments": []
@@ -22849,7 +22849,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -22858,7 +22858,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 393216
           }
         ],
         "NamedArguments": []
@@ -22947,7 +22954,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -22956,14 +22963,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 393216
+            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
           }
         ],
         "NamedArguments": []
@@ -23034,21 +23034,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -23066,6 +23051,21 @@
               "Name": "UInt32"
             },
             "Value": 655360
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Networking.BackgroundTransfer.UploadOperation"
           }
         ],
         "NamedArguments": []
@@ -23300,6 +23300,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -23317,21 +23332,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -23595,43 +23595,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.DeprecatedAttribute",
         "FixedArguments": [
           {
@@ -23668,6 +23631,21 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
@@ -23678,6 +23656,28 @@
               "Comment": "TypeReference"
             },
             "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -23814,6 +23814,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -23831,21 +23846,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
