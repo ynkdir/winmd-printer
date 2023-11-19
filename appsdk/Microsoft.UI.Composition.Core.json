@@ -14,36 +14,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
         "FixedArguments": [
           {
@@ -59,6 +29,21 @@
               "Name": "String"
             },
             "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -81,6 +66,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -123,6 +123,62 @@
       "Size": 0
     },
     "MethodDefinitions": [
+      {
+        "Name": "EnsurePreviousCommitCompletedAsync",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Foundation",
+            "Name": "IAsyncAction",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "operation",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
       {
         "Name": "remove_CommitNeeded",
         "Attributes": [
@@ -218,14 +274,15 @@
         "GenericParameters": []
       },
       {
-        "Name": "Commit",
+        "Name": "get_Compositor",
         "Attributes": [
           "PrivateScope",
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "VtableLayoutMask"
+          "VtableLayoutMask",
+          "SpecialName"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -248,59 +305,15 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [],
-        "GenericParameters": []
-      },
-      {
-        "Name": "EnsurePreviousCommitCompletedAsync",
-        "Attributes": [
-          "PrivateScope",
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "VtableLayoutMask"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "Runtime"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
             "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "IAsyncAction",
+            "Namespace": "Microsoft.UI.Composition",
+            "Name": "Compositor",
             "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
-            "Name": "operation",
+            "Name": "value",
             "SequenceNumber": 0,
             "Attributes": [
               "None"
@@ -394,15 +407,14 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_Compositor",
+        "Name": "Commit",
         "Attributes": [
           "PrivateScope",
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "VtableLayoutMask",
-          "SpecialName"
+          "VtableLayoutMask"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -425,23 +437,11 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Microsoft.UI.Composition",
-            "Name": "Compositor",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
+        "Parameters": [],
         "GenericParameters": []
       },
       {
@@ -517,6 +517,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Composition.Core.CompositorController"
           }
         ],
         "NamedArguments": []
@@ -600,21 +615,6 @@
               "Name": "Byte"
             },
             "Value": 107
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Composition.Core.CompositorController"
           }
         ],
         "NamedArguments": []

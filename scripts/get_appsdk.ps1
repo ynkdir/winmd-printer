@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.WindowsAppSDK
 
-$version = "1.3.230502000"
+$version = "1.4.231115000"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windowsappsdk.$version.nupkg"
 
 function New-TemporaryFolder() {
@@ -25,9 +25,9 @@ Get-Item $tmpdir\appsdk\lib\uap10.0\*.winmd, $tmpdir\appsdk\lib\uap10.0.18362\*.
     dotnet run -o "$tmpdir\$($_.BaseName).json" $_
 }
 
-Write-Host "make appsdk.json ..."
-py -X utf8 $PSScriptRoot\join_metadata.py -o appsdk.json (Get-Item $tmpdir\*.json)
+Write-Host "make WindowsAppSDK.json ..."
+py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item $tmpdir\*.json)
 
-py -X utf8 $PSScriptRoot\split_namespace.py -d appsdk appsdk.json
+py -X utf8 $PSScriptRoot\split_namespace.py -d appsdk WindowsAppSDK.json
 
 Remove-Item -Recurse $tmpdir
