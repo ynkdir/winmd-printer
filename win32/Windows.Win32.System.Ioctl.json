@@ -19295,7 +19295,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "FSCTL_DELETE_LCN_WEAK_REFERENCE",
+        "Name": "FSCTL_CLEAR_LCN_WEAK_REFERENCE",
         "Signature": {
           "Kind": "Primitive",
           "Name": "UInt32"
@@ -19335,7 +19335,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "FSCTL_DELETE_LCN_WEAK_REFERENCES",
+        "Name": "FSCTL_CLEAR_ALL_LCN_WEAK_REFERENCES",
         "Signature": {
           "Kind": "Primitive",
           "Name": "UInt32"
@@ -19410,6 +19410,106 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 590968
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FSCTL_REFS_CHECKPOINT_VOLUME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 590972
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FSCTL_REFS_QUERY_VOLUME_TOTAL_SHARED_LCNS",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 590976
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FSCTL_UPGRADE_VOLUME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 590980
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FSCTL_REFS_SET_VOLUME_IO_METRICS_INFO",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 590984
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FSCTL_REFS_QUERY_VOLUME_IO_METRICS_INFO",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 590988
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -22535,6 +22635,46 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "PERSISTENT_VOLUME_STATE_DEV_VOLUME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8192
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PERSISTENT_VOLUME_STATE_TRUSTED_VOLUME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16384
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "OPLOCK_LEVEL_CACHE_READ",
         "Signature": {
           "Kind": "Primitive",
@@ -22710,6 +22850,26 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -23958,26 +24118,6 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "CHECKSUM_TYPE_UNCHANGED",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "Int32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "Int32",
-          "Value": -1
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
         "Name": "CHECKSUM_TYPE_NONE",
         "Signature": {
           "Kind": "Primitive",
@@ -24058,7 +24198,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "CHECKSUM_TYPE_FIRST_UNUSED_TYPE",
+        "Name": "CHECKSUM_TYPE_SHA256",
         "Signature": {
           "Kind": "Primitive",
           "Name": "UInt32"
@@ -24073,6 +24213,26 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CHECKSUM_TYPE_FIRST_UNUSED_TYPE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 5
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -72236,6 +72396,38 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "MetadataChecksumType",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved0",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "Size": 6
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "Reserved",
         "Signature": {
           "Kind": "Array",
@@ -72243,7 +72435,7 @@
             "Kind": "Primitive",
             "Name": "Int64"
           },
-          "Size": 9
+          "Size": 8
         },
         "Attributes": [
           "Public"

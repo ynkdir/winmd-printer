@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.Windows.SDK.Win32Metadata/
 
-$version = "56.0.13"
+$version = "57.0.42"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.win32metadata.${version}-preview.nupkg"
 
 function New-TemporaryFolder() {

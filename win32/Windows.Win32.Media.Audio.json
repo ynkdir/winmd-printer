@@ -2593,86 +2593,6 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "DEVICE_STATE_ACTIVE",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 1
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "DEVICE_STATE_DISABLED",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 2
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "DEVICE_STATE_NOTPRESENT",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 4
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "DEVICE_STATE_UNPLUGGED",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 8
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
         "Name": "DEVICE_STATEMASK_ALL",
         "Signature": {
           "Kind": "Primitive",
@@ -32462,6 +32382,135 @@
   },
   {
     "Namespace": "Windows.Win32.Media.Audio",
+    "Name": "DEVICE_STATE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "Sealed"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DEVICE_STATE_ACTIVE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Media.Audio",
+          "Name": "DEVICE_STATE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DEVICE_STATE_DISABLED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Media.Audio",
+          "Name": "DEVICE_STATE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DEVICE_STATE_NOTPRESENT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Media.Audio",
+          "Name": "DEVICE_STATE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DEVICE_STATE_UNPLUGGED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Media.Audio",
+          "Name": "DEVICE_STATE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Media.Audio",
     "Name": "AUDIO_VOLUME_NOTIFICATION_DATA",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -59292,8 +59341,10 @@
               "Comment": "TypeReference"
             },
             {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Media.Audio",
+              "Name": "DEVICE_STATE",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 2,
@@ -60268,8 +60319,8 @@
           "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Type",
-            "Namespace": "Windows.Win32.Foundation",
-            "Name": "HRESULT",
+            "Namespace": "Windows.Win32.Media.Audio",
+            "Name": "DEVICE_STATE",
             "Comment": "TypeReference"
           }
         },
@@ -61049,8 +61100,10 @@
               "Comment": "TypeReference"
             },
             {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Media.Audio",
+              "Name": "DEVICE_STATE",
+              "Comment": "TypeReference"
             },
             {
               "Kind": "Pointer",
