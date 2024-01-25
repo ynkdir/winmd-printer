@@ -6705,6 +6705,163 @@
         "GenericParameters": []
       },
       {
+        "Name": "StgConvertPropertyToVariant",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Static",
+          "HideBySig",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.SupportedOSPlatformAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "windows5.0"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "https://learn.microsoft.com/windows/win32/api/propidl/nf-propidl-stgconvertpropertytovariant"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "StgConvertPropertyToVariant",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "ole32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Com.StructuredStorage",
+                "Name": "SERIALIZEDPROPERTYVALUE",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Com.StructuredStorage",
+                "Name": "PROPVARIANT",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Com.StructuredStorage",
+              "Name": "IMemoryAllocator",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 4,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOLEAN",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pprop",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "CodePage",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pvar",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pma",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "StgPropertyLengthAsVariant",
         "Attributes": [
           "PrivateScope",
@@ -32312,6 +32469,187 @@
       "Size": 0
     },
     "MethodDefinitions": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Com.StructuredStorage",
+    "Name": "IMemoryAllocator",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "AutoLayout",
+      "AnsiClass",
+      "Class",
+      "Public",
+      "ClassSemanticsMask",
+      "Abstract"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "https://learn.microsoft.com/windows/win32/Stg/imemoryallocator"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "MethodDefinitions": [
+      {
+        "Name": "Allocate",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "https://learn.microsoft.com/windows/win32/Stg/imemoryallocator-allocate"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "ThisCall",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Pointer",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Void"
+            }
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "cbSize",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "Free",
+        "Attributes": [
+          "PrivateScope",
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "VtableLayoutMask",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "https://learn.microsoft.com/windows/win32/Stg/imemoryallocator-free"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "ThisCall",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "pv",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In",
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
     "NestedTypes": [],
     "GenericParameters": []
   },
