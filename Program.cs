@@ -315,7 +315,7 @@ class JsTypeDefinition {
 
     public JsTypeLayout Layout { get => new JsTypeLayout(_td.GetLayout()); }
 
-    public IEnumerable<JsMethodDefinition> MethodDefinitions { get =>
+    public IEnumerable<JsMethodDefinition> Methods { get =>
         from h in _td.GetMethods()
         select new JsMethodDefinition(_reader, _reader.GetMethodDefinition(h)); }
 
