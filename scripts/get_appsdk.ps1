@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.WindowsAppSDK
 
-$version = "1.5.240227000"
+$version = "1.5.240311000"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windowsappsdk.$version.nupkg"
 
 function New-TemporaryFolder() {
