@@ -36,6 +36,21 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.System.RemoteDesktop.InteractiveSession"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -114,21 +129,6 @@
               "Name": "Byte"
             },
             "Value": 206
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.System.RemoteDesktop.InteractiveSession"
           }
         ],
         "NamedArguments": []
@@ -211,31 +211,30 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
+            "Value": "Windows.System.RemoteDesktop.IInteractiveSessionStatics"
+          },
           {
             "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "UInt32"
             },
-            "Value": "Standard"
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
           }
         ],
         "NamedArguments": []
@@ -263,30 +262,31 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.System.RemoteDesktop.IInteractiveSessionStatics"
-          },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
           {
             "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
             },
-            "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Standard"
           }
         ],
         "NamedArguments": []

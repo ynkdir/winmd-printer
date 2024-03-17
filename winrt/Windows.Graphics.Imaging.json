@@ -266,21 +266,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.GCPressureAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "amount",
-            "Type": {
-              "Kind": "SerializedName",
-              "Name": "Windows.Foundation.Metadata.GCPressureAmount"
-            },
-            "Value": "High"
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -303,21 +288,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 167772160
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
@@ -331,6 +301,36 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GCPressureAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "amount",
+            "Type": {
+              "Kind": "SerializedName",
+              "Name": "Windows.Foundation.Metadata.GCPressureAmount"
+            },
+            "Value": "High"
+          }
+        ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "version",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 167772160
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -731,6 +731,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -748,21 +763,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -1033,16 +1033,30 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Windows.Graphics.Imaging.IBitmapDecoderStatics2"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 458752
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
           }
         ],
         "NamedArguments": []
@@ -1099,30 +1113,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Graphics.Imaging.IBitmapDecoderStatics2"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 458752
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -2022,6 +2022,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -2032,11 +2037,6 @@
                 "Value": "GetPixelDataAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -2102,6 +2102,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -2112,11 +2117,6 @@
                 "Value": "GetPixelDataTransformedAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -2258,11 +2258,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -2273,6 +2268,11 @@
                 "Value": "GetSoftwareBitmapAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -2449,6 +2449,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -2459,11 +2464,6 @@
                 "Value": "GetSoftwareBitmapTransformedAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -3103,6 +3103,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -3113,11 +3118,6 @@
                 "Value": "CreateAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -3197,6 +3197,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -3207,11 +3212,6 @@
                 "Value": "CreateWithIdAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -3315,28 +3315,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -3361,6 +3339,21 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -3395,16 +3388,23 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -6120,11 +6120,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -6135,6 +6130,11 @@
                 "Value": "GetPixelDataTransformedAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -6276,6 +6276,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -6286,11 +6291,6 @@
                 "Value": "GetSoftwareBitmapAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -6356,11 +6356,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -6371,6 +6366,11 @@
                 "Value": "GetSoftwareBitmapConvertedAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -7540,6 +7540,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -7557,21 +7572,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -7714,16 +7714,16 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
               "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Name": "MarshalingType",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -7749,16 +7749,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
               "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Agile"
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -8645,21 +8645,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
         "FixedArguments": [
           {
@@ -8697,6 +8682,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -9418,6 +9418,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
         "FixedArguments": [
           {
@@ -9472,28 +9494,6 @@
               "Name": "String"
             },
             "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -9929,6 +9929,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapBuffer"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -10029,21 +10044,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapBuffer"
           }
         ],
         "NamedArguments": []
@@ -10294,6 +10294,21 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapCodecInformation"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -10311,21 +10326,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapCodecInformation"
           }
         ],
         "NamedArguments": []
@@ -10593,6 +10593,28 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -10671,28 +10693,6 @@
               "Name": "Byte"
             },
             "Value": 230
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -11024,21 +11024,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapDecoder"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -11056,6 +11041,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapDecoder"
           }
         ],
         "NamedArguments": []
@@ -11678,6 +11678,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -11688,11 +11693,6 @@
                 "Value": "CreateWithIdAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -11796,21 +11796,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapDecoder"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11911,6 +11896,21 @@
               "Name": "UInt32"
             },
             "Value": 458752
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapDecoder"
           }
         ],
         "NamedArguments": []
@@ -12067,21 +12067,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapEncoder"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12160,6 +12145,21 @@
               "Name": "Byte"
             },
             "Value": 98
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapEncoder"
           }
         ],
         "NamedArguments": []
@@ -12857,11 +12857,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -12872,6 +12867,11 @@
                 "Value": "GoToNextFrameAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -12926,11 +12926,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -12941,6 +12936,11 @@
                 "Value": "GoToNextFrameWithEncodingOptionsAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -13718,11 +13718,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -13733,6 +13728,11 @@
                 "Value": "CreateWithEncodingOptionsAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -14058,43 +14058,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapEncoder"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 458752
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -14173,6 +14136,43 @@
               "Name": "Byte"
             },
             "Value": 22
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapEncoder"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 458752
           }
         ],
         "NamedArguments": []
@@ -15098,11 +15098,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -15113,6 +15108,11 @@
                 "Value": "GetPixelDataAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -15342,6 +15342,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -15423,28 +15445,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -15479,11 +15479,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -15494,6 +15489,11 @@
                 "Value": "GetSoftwareBitmapAsync"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -15559,6 +15559,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -15569,11 +15574,6 @@
                 "Value": "GetSoftwareBitmapConvertedAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -15670,6 +15670,11 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -15680,11 +15685,6 @@
                 "Value": "GetSoftwareBitmapTransformedAsync"
               }
             ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -16315,6 +16315,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
@@ -16408,28 +16430,6 @@
               "Name": "Byte"
             },
             "Value": 52
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -17111,6 +17111,28 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -17189,28 +17211,6 @@
               "Name": "Byte"
             },
             "Value": 137
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -17343,43 +17343,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.BitmapTypedValue"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -17458,6 +17421,43 @@
               "Name": "Byte"
             },
             "Value": 139
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.BitmapTypedValue"
           }
         ],
         "NamedArguments": []
@@ -17569,6 +17569,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.PixelDataProvider"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -17672,21 +17687,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.PixelDataProvider"
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -17767,6 +17767,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.SoftwareBitmap"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -17845,43 +17882,6 @@
               "Name": "Byte"
             },
             "Value": 115
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.SoftwareBitmap"
           }
         ],
         "NamedArguments": []
@@ -18662,6 +18662,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18740,28 +18762,6 @@
               "Name": "Byte"
             },
             "Value": 248
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -19030,6 +19030,21 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.Graphics.Imaging.SoftwareBitmap"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -19108,21 +19123,6 @@
               "Name": "Byte"
             },
             "Value": 134
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Graphics.Imaging.SoftwareBitmap"
           }
         ],
         "NamedArguments": []
@@ -21347,23 +21347,31 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
           {
             "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
             },
-            "Value": 65536
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -21398,36 +21406,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "version",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 167772160
-          }
-        ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.GCPressureAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "amount",
-            "Type": {
-              "Kind": "SerializedName",
-              "Name": "Windows.Foundation.Metadata.GCPressureAmount"
-            },
-            "Value": "High"
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -21457,34 +21435,56 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Windows.Foundation.UniversalApiContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
+        "Type": "Windows.Foundation.Metadata.DualApiPartitionAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
           {
+            "Kind": "Field",
+            "Name": "version",
             "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "UInt32"
             },
-            "Value": "Agile"
+            "Value": 167772160
           }
-        ],
-        "NamedArguments": []
+        ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GCPressureAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "amount",
+            "Type": {
+              "Kind": "SerializedName",
+              "Name": "Windows.Foundation.Metadata.GCPressureAmount"
+            },
+            "Value": "High"
+          }
+        ]
       }
     ],
     "Fields": [],

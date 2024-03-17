@@ -1,6 +1,6 @@
 # https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts
 
-$version = "10.0.22621.2428"
+$version = "10.0.22621.3233"
 $url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.contracts.$version.nupkg"
 
 function New-TemporaryFolder() {
