@@ -299,7 +299,61 @@ class JsTypeDefinition {
 
     public bool IsNested { get => _td.IsNested; }
 
-    public IEnumerable<string> Attributes { get => _td.Attributes.ToString().Split(", "); }
+    public IEnumerable<string> Attributes { get {
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NotPublic)
+            yield return "NotPublic";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.Public)
+            yield return "Public";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedPublic)
+            yield return "NestedPublic";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedPrivate)
+            yield return "NestedPrivate";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedFamily)
+            yield return "NestedFamily";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedAssembly)
+            yield return "NestedAssembly";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedFamANDAssem)
+            yield return "NestedFamANDAssem";
+        if ((_td.Attributes & TypeAttributes.VisibilityMask) == TypeAttributes.NestedFamORAssem)
+            yield return "NestedFamORAssem";
+        if ((_td.Attributes & TypeAttributes.LayoutMask) == TypeAttributes.AutoLayout)
+            yield return "AutoLayout";
+        if ((_td.Attributes & TypeAttributes.LayoutMask) == TypeAttributes.SequentialLayout)
+            yield return "SequentialLayout";
+        if ((_td.Attributes & TypeAttributes.LayoutMask) == TypeAttributes.ExplicitLayout)
+            yield return "ExplicitLayout";
+        if ((_td.Attributes & TypeAttributes.ClassSemanticsMask) == TypeAttributes.Class)
+            yield return "Class";
+        if ((_td.Attributes & TypeAttributes.ClassSemanticsMask) == TypeAttributes.Interface)
+            yield return "Interface";
+        if (_td.Attributes.HasFlag(TypeAttributes.Abstract))
+            yield return "Abstract";
+        if (_td.Attributes.HasFlag(TypeAttributes.Sealed))
+            yield return "Sealed";
+        if (_td.Attributes.HasFlag(TypeAttributes.SpecialName))
+            yield return "SpecialName";
+        if (_td.Attributes.HasFlag(TypeAttributes.Import))
+            yield return "Import";
+        // obsolate
+        //if (_td.Attributes.HasFlag(TypeAttributes.Serializable))
+        //    yield return "Serializable";
+        if (_td.Attributes.HasFlag(TypeAttributes.WindowsRuntime))
+            yield return "WindowsRuntime";
+        if ((_td.Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.AnsiClass)
+            yield return "AnsiClass";
+        if ((_td.Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.UnicodeClass)
+            yield return "UnicodeClass";
+        if ((_td.Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.AutoClass)
+            yield return "AutoClass";
+        if ((_td.Attributes & TypeAttributes.StringFormatMask) == TypeAttributes.CustomFormatClass)
+            yield return "CustomFormatClass";
+        if (_td.Attributes.HasFlag(TypeAttributes.BeforeFieldInit))
+            yield return "BeforeFieldInit";
+        if (_td.Attributes.HasFlag(TypeAttributes.RTSpecialName))
+            yield return "RTSpecialName";
+        if (_td.Attributes.HasFlag(TypeAttributes.HasSecurity))
+            yield return "HasSecurity";
+    } }
 
     public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
         from h in _td.GetCustomAttributes()
@@ -576,13 +630,85 @@ class JsMethodDefinition {
 
     public string Name { get => _reader.GetString(_md.Name); }
 
-    public IEnumerable<string> Attributes { get => _md.Attributes.ToString().Split(", "); }
+    public IEnumerable<string> Attributes { get {
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.PrivateScope)
+            yield return "PrivateScope";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.Private)
+            yield return "Private";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.FamANDAssem)
+            yield return "FamANDAssem";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.Assembly)
+            yield return "Assembly";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.Family)
+            yield return "Family";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.FamORAssem)
+            yield return "FamORAssem";
+        if ((_md.Attributes & MethodAttributes.MemberAccessMask) == MethodAttributes.Public)
+            yield return "Public";
+        if (_md.Attributes.HasFlag(MethodAttributes.Static))
+            yield return "Static";
+        if (_md.Attributes.HasFlag(MethodAttributes.Final))
+            yield return "Final";
+        if (_md.Attributes.HasFlag(MethodAttributes.Virtual))
+            yield return "Virtual";
+        if (_md.Attributes.HasFlag(MethodAttributes.HideBySig))
+            yield return "HideBySig";
+        if (_md.Attributes.HasFlag(MethodAttributes.CheckAccessOnOverride))
+            yield return "CheckAccessOnOverride";
+        if ((_md.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.ReuseSlot)
+            yield return "ReuseSlot";
+        if ((_md.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)
+            yield return "NewSlot";
+        if (_md.Attributes.HasFlag(MethodAttributes.Abstract))
+            yield return "Abstract";
+        if (_md.Attributes.HasFlag(MethodAttributes.SpecialName))
+            yield return "SpecialName";
+        if (_md.Attributes.HasFlag(MethodAttributes.PinvokeImpl))
+            yield return "PinvokeImpl";
+        if (_md.Attributes.HasFlag(MethodAttributes.UnmanagedExport))
+            yield return "UnmanagedExport";
+        if (_md.Attributes.HasFlag(MethodAttributes.RTSpecialName))
+            yield return "RTSpecialName";
+        if (_md.Attributes.HasFlag(MethodAttributes.HasSecurity))
+            yield return "HasSecurity";
+        if (_md.Attributes.HasFlag(MethodAttributes.RequireSecObject))
+            yield return "RequireSecObject";
+    } }
 
     public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
         from h in _md.GetCustomAttributes()
         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
 
-    public IEnumerable<string> ImplAttributes { get => _md.ImplAttributes.ToString().Split(", "); }
+    public IEnumerable<string> ImplAttributes { get {
+        if ((_md.ImplAttributes & MethodImplAttributes.CodeTypeMask) == MethodImplAttributes.IL)
+            yield return "IL";
+        if ((_md.ImplAttributes & MethodImplAttributes.CodeTypeMask) == MethodImplAttributes.Native)
+            yield return "Native";
+        if ((_md.ImplAttributes & MethodImplAttributes.CodeTypeMask) == MethodImplAttributes.OPTIL)
+            yield return "OPTIL";
+        if ((_md.ImplAttributes & MethodImplAttributes.CodeTypeMask) == MethodImplAttributes.Runtime)
+            yield return "Runtime";
+        if ((_md.ImplAttributes & MethodImplAttributes.ManagedMask) == MethodImplAttributes.Unmanaged)
+            yield return "Unmanaged";
+        if ((_md.ImplAttributes & MethodImplAttributes.ManagedMask) == MethodImplAttributes.Managed)
+            yield return "Managed";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.ForwardRef))
+            yield return "ForwardRef";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.PreserveSig))
+            yield return "PreserveSig";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.InternalCall))
+            yield return "InternalCall";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.Synchronized))
+            yield return "Synchronized";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.NoInlining))
+            yield return "NoInlining";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.AggressiveInlining))
+            yield return "AggressiveInlining";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.NoOptimization))
+            yield return "NoOptimization";
+        if (_md.ImplAttributes.HasFlag(MethodImplAttributes.AggressiveOptimization))
+            yield return "AggressiveOptimization";
+    } }
 
     public int RelativeVirtualAddress { get => _md.RelativeVirtualAddress; }
 
@@ -673,7 +799,38 @@ class JsMethodImport {
 
     public string Name { get => _reader.GetString(_mi.Name); }
 
-    public IEnumerable<string> Attributes { get => _mi.Attributes.ToString().Split(", "); }
+    public IEnumerable<string> Attributes { get {
+        if (_mi.Attributes == MethodImportAttributes.None)
+            yield return "None";
+        if (_mi.Attributes.HasFlag(MethodImportAttributes.ExactSpelling))
+            yield return "ExactSpelling";
+        if ((_mi.Attributes & MethodImportAttributes.BestFitMappingMask) == MethodImportAttributes.BestFitMappingEnable)
+            yield return "BestFitMappingEnable";
+        if ((_mi.Attributes & MethodImportAttributes.BestFitMappingMask) == MethodImportAttributes.BestFitMappingDisable)
+            yield return "BestFitMappingDisable";
+        if ((_mi.Attributes & MethodImportAttributes.CharSetMask) == MethodImportAttributes.CharSetAnsi)
+            yield return "CharSetAnti";
+        if ((_mi.Attributes & MethodImportAttributes.CharSetMask) == MethodImportAttributes.CharSetUnicode)
+            yield return "CharSetUnicode";
+        if ((_mi.Attributes & MethodImportAttributes.CharSetMask) == MethodImportAttributes.CharSetAuto)
+            yield return "CharSetAuto";
+        if ((_mi.Attributes & MethodImportAttributes.ThrowOnUnmappableCharMask) == MethodImportAttributes.ThrowOnUnmappableCharEnable)
+            yield return "ThrowOnUnmappableCharEnable";
+        if ((_mi.Attributes & MethodImportAttributes.ThrowOnUnmappableCharMask) == MethodImportAttributes.ThrowOnUnmappableCharDisable)
+            yield return "ThrowOnUnmappableCharDisable";
+        if (_mi.Attributes.HasFlag(MethodImportAttributes.SetLastError))
+            yield return "SetLastError";
+        if ((_mi.Attributes & MethodImportAttributes.CallingConventionMask) == MethodImportAttributes.CallingConventionWinApi)
+            yield return "CallingConventionWinApi";
+        if ((_mi.Attributes & MethodImportAttributes.CallingConventionMask) == MethodImportAttributes.CallingConventionCDecl)
+            yield return "CallingConventionCDecl";
+        if ((_mi.Attributes & MethodImportAttributes.CallingConventionMask) == MethodImportAttributes.CallingConventionStdCall)
+            yield return "CallingConventionStdCall";
+        if ((_mi.Attributes & MethodImportAttributes.CallingConventionMask) == MethodImportAttributes.CallingConventionThisCall)
+            yield return "CallingConventionThisCall";
+        if ((_mi.Attributes & MethodImportAttributes.CallingConventionMask) == MethodImportAttributes.CallingConventionFastCall)
+            yield return "CallingConventionFastCall";
+    } }
 
     public JsModuleReference Module { get => new JsModuleReference(_reader, _reader.GetModuleReference(_mi.Module)); }
 }
