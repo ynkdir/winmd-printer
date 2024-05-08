@@ -26073,26 +26073,6 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "RT_MANIFEST",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "UInt32",
-          "Value": 24
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
         "Name": "CREATEPROCESS_MANIFEST_RESOURCE_ID",
         "Signature": {
           "Kind": "Primitive",
@@ -56707,6 +56687,48 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RT_MANIFEST",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "PWSTR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt16",
+          "Value": 24
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IDC_STATIC",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": -1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -60918,6 +60940,11 @@
             "NamedArguments": []
           },
           {
+            "Type": "Windows.Win32.Foundation.Metadata.CanReturnMultipleSuccessValuesAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
             "FixedArguments": [
               {
@@ -61111,6 +61138,11 @@
           },
           {
             "Type": "Windows.Win32.Foundation.Metadata.UnicodeAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.CanReturnMultipleSuccessValuesAttribute",
             "FixedArguments": [],
             "NamedArguments": []
           },
@@ -97504,6 +97536,11 @@
             "NamedArguments": []
           },
           {
+            "Type": "Windows.Win32.Foundation.Metadata.CanReturnMultipleSuccessValuesAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
             "FixedArguments": [
               {
@@ -119083,7 +119120,21 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.AssociatedEnumAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "WINDOW_STYLE"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -119135,8 +119186,10 @@
       {
         "Name": "dwExStyle",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.UI.WindowsAndMessaging",
+          "Name": "WINDOW_EX_STYLE",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"
@@ -119321,7 +119374,21 @@
         "Attributes": [
           "Public"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.AssociatedEnumAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "WINDOW_STYLE"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -119373,8 +119440,10 @@
       {
         "Name": "dwExStyle",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.UI.WindowsAndMessaging",
+          "Name": "WINDOW_EX_STYLE",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"

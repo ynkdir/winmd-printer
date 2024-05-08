@@ -32619,7 +32619,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
+              "Namespace": "Windows.Win32.Security",
               "Name": "PSID",
               "Comment": "TypeReference"
             }
@@ -39482,6 +39482,96 @@
         "GenericParameters": []
       },
       {
+        "Name": "GetProcessHandleFromHwnd",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "https://learn.microsoft.com/windows/win32/WinAuto/getprocesshandlefromhwnd"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "GetProcessHandleFromHwnd",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "OLEACC.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "HWND",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HANDLE",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "hwnd",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "AttachThreadInput",
         "Attributes": [
           "Public",
@@ -39502,6 +39592,11 @@
                 "Value": "windows5.1.2600"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.CanReturnMultipleSuccessValuesAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           },
           {
@@ -46397,7 +46492,7 @@
             },
             {
               "Kind": "Type",
-              "Namespace": "Windows.Win32.Foundation",
+              "Namespace": "Windows.Win32.Security",
               "Name": "PSID",
               "Comment": "TypeReference"
             }
@@ -49032,6 +49127,19 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": 0
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
@@ -49091,6 +49199,19 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Int64"
+            },
+            "Value": 0
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
         "FixedArguments": [],
         "NamedArguments": []
@@ -49136,6 +49257,19 @@
       "BeforeFieldInit"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "DeleteProcThreadAttributeList"
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
         "FixedArguments": [],
@@ -49185,6 +49319,19 @@
       "BeforeFieldInit"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "CloseThreadpoolIo"
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
         "FixedArguments": [
@@ -49245,6 +49392,19 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "CloseThreadpoolTimer"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
         "FixedArguments": [
           {
@@ -49304,6 +49464,19 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "CloseThreadpoolWait"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
         "FixedArguments": [
           {
@@ -49362,6 +49535,19 @@
       "BeforeFieldInit"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.RAIIFreeAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "CloseThreadpoolWork"
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Win32.Foundation.Metadata.InvalidHandleValueAttribute",
         "FixedArguments": [
