@@ -64,7 +64,11 @@ class TType {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Name { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public int? Size { get; set; }
+    public int[]? LowerBounds { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public int? Rank { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public int[]? Sizes { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public IEnumerable<TType>? TypeArguments { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -108,17 +112,13 @@ class TGenericContext {
 
 class TypeProvider : ISignatureTypeProvider<TType, TGenericContext>, ICustomAttributeTypeProvider<TType> {
     public TType GetArrayType(TType elementType, ArrayShape shape) {
-        Debug.Assert((from x in shape.LowerBounds where x != 0 select x).Count() == 0);
-        Debug.Assert(shape.Sizes.Count() == shape.Rank);
-        TType type = elementType;
-        foreach (var size in shape.Sizes) {
-            type = new TType() {
-                Kind = "Array",
-                Type = type,
-                Size = size
-            };
-        }
-        return type;
+        return new TType() {
+            Kind = "Array",
+            Type = elementType,
+            LowerBounds = shape.LowerBounds.ToArray(),
+            Rank = shape.Rank,
+            Sizes = shape.Sizes.ToArray(),
+        };
     }
 
     public TType GetByReferenceType(TType elementType) {
