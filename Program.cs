@@ -306,7 +306,7 @@ class JsTypeDefinition {
     private string FormatType(TType type) {
         if (type.Kind == "Generic") {
             var arguments = FormatTypeArguments(type);
-            return $"{type.Type.Namespace}.{type.Type.Name}[{arguments}]";
+            return $"{type.Type!.Namespace}.{type.Type!.Name}[{arguments}]";
         } else if (type.Kind == "Type") {
             return $"{type.Namespace}.{type.Name}";
         } else if (type.Kind == "GenericParameter") {
@@ -591,8 +591,8 @@ class JsEntityHandle {
             TypeReference = new JsTypeReference(_reader, _reader.GetTypeReference((TypeReferenceHandle)_interface));
         } else if (_interface.Kind == HandleKind.TypeDefinition) {
             // FIXME: ?
-            Kind = "TypeReference";
-            TypeReference = new JsTypeReference(_reader, _reader.GetTypeDefinition((TypeDefinitionHandle)_interface));
+            Kind = "TypeDefinition";
+            TypeDefinition = new JsTypeDefinitionNamespaceAndNameOnly(_reader, _reader.GetTypeDefinition((TypeDefinitionHandle)_interface));
         } else if (_interface.Kind == HandleKind.TypeSpecification) {
             Kind = "TypeSpecification";
             TypeSpecification = new JsTypeSpecification(_reader, _reader.GetTypeSpecification((TypeSpecificationHandle)_interface), _gc);
@@ -605,27 +605,38 @@ class JsEntityHandle {
 
     public JsTypeReference? TypeReference { get; set; }
 
+    public JsTypeDefinitionNamespaceAndNameOnly? TypeDefinition { get; set; }
+
     public JsTypeSpecification? TypeSpecification { get; set; }
 }
 
+
 class JsTypeReference {
+    MetadataReader _reader;
+    TypeReference _tr;
+
     public JsTypeReference(MetadataReader reader, TypeReference tr) {
-        Name = reader.GetString(tr.Namespace);
-        Namespace = reader.GetString(tr.Name);
-        Comment = "TypeReference";
+        _reader = reader;
+        _tr = tr;
     }
 
-    public JsTypeReference(MetadataReader reader, TypeDefinition td) {
-        Name = reader.GetString(td.Namespace);
-        Namespace = reader.GetString(td.Name);
-        Comment = "TypeDefinition";
+    public string Name { get => _reader.GetString(_tr.Name); }
+
+    public string Namespace { get => _reader.GetString(_tr.Namespace); }
+}
+
+class JsTypeDefinitionNamespaceAndNameOnly {
+    MetadataReader _reader;
+    TypeDefinition _td;
+
+    public JsTypeDefinitionNamespaceAndNameOnly(MetadataReader reader, TypeDefinition td) {
+        _reader = reader;
+        _td = td;
     }
 
-    public string Name { get; set; }
+    public string Name { get => _reader.GetString(_td.Name); }
 
-    public string Namespace { get; set; }
-
-    public string Comment { get; set; }
+    public string Namespace { get => _reader.GetString(_td.Namespace); }
 }
 
 class JsTypeSpecification {
