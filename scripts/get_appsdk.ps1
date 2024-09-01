@@ -5,6 +5,12 @@ param(
     [string]$version
 )
 
+$ErrorActionPreference = "Stop"
+
+function ExitOnError() {
+    exit 1
+}
+
 $url = "https://globalcdn.nuget.org/packages/microsoft.windowsappsdk.$version.nupkg"
 
 function New-TemporaryFolder() {
@@ -19,19 +25,19 @@ if (-not (Test-Path appsdk)) {
 
 $tmpdir = New-TemporaryFolder
 
-curl.exe -o $tmpdir\appsdk.zip $url
+curl.exe -f -o $tmpdir\appsdk.zip $url || ExitOnError
 
 New-Item $tmpdir\appsdk -ItemType Directory
-tar.exe -C $tmpdir\appsdk -xvf $tmpdir\appsdk.zip
+tar.exe -C $tmpdir\appsdk -xvf $tmpdir\appsdk.zip || ExitOnError
 
 Get-Item $tmpdir\appsdk\lib\uap10.0\*.winmd, $tmpdir\appsdk\lib\uap10.0.18362\*.winmd | ForEach-Object {
     Write-Host $_.Name
-    dotnet run -o "$tmpdir\$($_.BaseName).json" $_
+    dotnet run -o "$tmpdir\$($_.BaseName).json" $_ || ExitOnError
 }
 
 Write-Host "make WindowsAppSDK.json ..."
-py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item $tmpdir\*.json)
+py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item $tmpdir\*.json) || ExitOnError
 
-py -X utf8 $PSScriptRoot\split_namespace.py -d appsdk WindowsAppSDK.json
+py -X utf8 $PSScriptRoot\split_namespace.py -d appsdk WindowsAppSDK.json || ExitOnError
 
 Remove-Item -Recurse $tmpdir
