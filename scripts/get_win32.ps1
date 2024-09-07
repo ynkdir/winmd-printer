@@ -21,6 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path win32)) {
     New-Item win32 -ItemType Directory
+} else {
+    Remove-Item win32\*
 }
 
 $tmpdir = New-TemporaryFolder

@@ -21,6 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path webview2)) {
     New-Item webview2 -ItemType Directory
+} else {
+    Remove-Item webview2\*
 }
 
 $tmpdir = New-TemporaryFolder

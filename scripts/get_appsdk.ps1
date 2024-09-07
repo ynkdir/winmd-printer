@@ -21,6 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path appsdk)) {
     New-Item appsdk -ItemType Directory
+} else {
+    Remove-Item appsdk\*
 }
 
 $tmpdir = New-TemporaryFolder
