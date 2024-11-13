@@ -9668,6 +9668,86 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "COPYFILE2_MESSAGE_COPY_OFFLOAD",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPYFILE2_IO_CYCLE_SIZE_MIN",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4096
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPYFILE2_IO_CYCLE_SIZE_MAX",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1073741824
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPYFILE2_IO_RATE_MIN",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 512
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "ClfsNullRecord",
         "Signature": {
           "Kind": "Primitive",
@@ -19755,7 +19835,13 @@
               "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetainedAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -21987,7 +22073,13 @@
               "In",
               "Out"
             ],
-            "CustomAttributes": [],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.RetainedAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
             "DefaultValue": null
           },
           {
@@ -63626,8 +63718,10 @@
               }
             },
             {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Storage.FileSystem",
+              "Name": "COPYFILE_FLAGS",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 6,
@@ -63828,8 +63922,10 @@
               }
             },
             {
-              "Kind": "Primitive",
-              "Name": "UInt32"
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Storage.FileSystem",
+              "Name": "COPYFILE_FLAGS",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 6,
@@ -78359,6 +78455,697 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.FileSystem",
+    "Name": "COPYFILE_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_FAIL_IF_EXISTS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_RESTARTABLE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_OPEN_SOURCE_FOR_WRITE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_ALLOW_DECRYPTED_DESTINATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_COPY_SYMLINK",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2048
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_NO_BUFFERING",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4096
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_REQUEST_SECURITY_PRIVILEGES",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8192
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_RESUME_FROM_PAUSE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16384
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_NO_OFFLOAD",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 262144
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_IGNORE_EDP_BLOCK",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4194304
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_IGNORE_SOURCE_ENCRYPTION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8388608
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_DONT_REQUEST_DEST_WRITE_DAC",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 33554432
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_REQUEST_COMPRESSED_TRAFFIC",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 268435456
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_OPEN_AND_COPY_REPARSE_POINT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2097152
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_DIRECTORY",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 128
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_SKIP_ALTERNATE_STREAMS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32768
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_DISABLE_PRE_ALLOCATION",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 67108864
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_ENABLE_LOW_FREE_SPACE_MODE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 134217728
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE_ENABLE_SPARSE_COPY",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 536870912
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.FileSystem",
+    "Name": "COPYFILE2_V2_FLAGS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE2_V2_DONT_COPY_JUNCTIONS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE2_V2_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "COPY_FILE2_V2_VALID_FLAGS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE2_V2_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.FileSystem",
+    "Name": "COPYPROGRESSROUTINE_PROGRESS",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PROGRESS_CONTINUE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYPROGRESSROUTINE_PROGRESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PROGRESS_CANCEL",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYPROGRESSROUTINE_PROGRESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PROGRESS_STOP",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYPROGRESSROUTINE_PROGRESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PROGRESS_QUIET",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYPROGRESSROUTINE_PROGRESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 3
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -121835,8 +122622,10 @@
           ],
           "RequiredParameterCount": 9,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "UInt32"
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Storage.FileSystem",
+            "Name": "COPYPROGRESSROUTINE_PROGRESS",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
@@ -123775,8 +124564,10 @@
       {
         "Name": "dwCopyFlags",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"
@@ -123881,8 +124672,10 @@
       {
         "Name": "dwCopyFlags",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE_FLAGS",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"
@@ -123947,8 +124740,10 @@
       {
         "Name": "dwCopyFlagsV2",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.FileSystem",
+          "Name": "COPYFILE2_V2_FLAGS",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"

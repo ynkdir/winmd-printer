@@ -16,6 +16,46 @@
     "CustomAttributes": [],
     "Fields": [
       {
+        "Name": "NET_IF_COMPARTMENT_ID_UNSPECIFIED",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NET_IF_COMPARTMENT_ID_PRIMARY",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "IOCTL_NDIS_RESERVED5",
         "Signature": {
           "Kind": "Primitive",
@@ -52699,6 +52739,52 @@
   },
   {
     "Namespace": "Windows.Win32.NetworkManagement.Ndis",
+    "Name": "NET_IF_COMPARTMENT_ID",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.NetworkManagement.Ndis",
     "Name": "NET_IF_OPER_STATUS",
     "BaseType": "System.Enum",
     "IsNested": false,
@@ -55355,8 +55441,10 @@
       {
         "Name": "CompartmentId",
         "Signature": {
-          "Kind": "Primitive",
-          "Name": "UInt32"
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.NetworkManagement.Ndis",
+          "Name": "NET_IF_COMPARTMENT_ID",
+          "Comment": "TypeReference"
         },
         "Attributes": [
           "Public"
