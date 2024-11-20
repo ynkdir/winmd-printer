@@ -11,7 +11,7 @@ function ExitOnError() {
     exit 1
 }
 
-$url = "https://globalcdn.nuget.org/packages/microsoft.windowsappsdk.$version.nupkg"
+$url = "https://api.nuget.org/v3-flatcontainer/microsoft.windowsappsdk/$version/microsoft.windowsappsdk.$version.nupkg"
 
 function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile

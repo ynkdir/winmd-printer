@@ -11,7 +11,7 @@ function ExitOnError() {
     exit 1
 }
 
-$url = "https://globalcdn.nuget.org/packages/microsoft.windows.sdk.win32metadata.${version}-preview.nupkg"
+$url = "https://api.nuget.org/v3-flatcontainer/microsoft.windows.sdk.win32metadata/$version-preview/microsoft.windows.sdk.win32metadata.$version-preview.nupkg"
 
 function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile

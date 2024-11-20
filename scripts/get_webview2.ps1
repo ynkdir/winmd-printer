@@ -11,7 +11,7 @@ function ExitOnError() {
     exit 1
 }
 
-$url = "https://globalcdn.nuget.org/packages/microsoft.web.webview2.$version.nupkg"
+$url = "https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/$version/microsoft.web.webview2.$version.nupkg"
 
 function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile
