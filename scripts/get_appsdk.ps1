@@ -42,7 +42,4 @@ py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item $tmpdi
 
 py -X utf8 $PSScriptRoot\split_namespace.py -d appsdk WindowsAppSDK.json || ExitOnError
 
-Write-Host "make WindowsAppSDK.json with webview2 ..."
-py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item appsdk\*.json, webview2\*.json) || ExitOnError
-
 Remove-Item -Recurse $tmpdir

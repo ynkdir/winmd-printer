@@ -35,7 +35,4 @@ dotnet run -o Microsoft.Web.WebView2.Core.json $tmpdir\lib\Microsoft.Web.WebView
 
 py -X utf8 $PSScriptRoot\split_namespace.py -d webview2 Microsoft.Web.WebView2.Core.json || ExitOnError
 
-Write-Host "make WindowsAppSDK.json ..."
-py -X utf8 $PSScriptRoot\join_metadata.py -o WindowsAppSDK.json (Get-Item appsdk\*.json, webview2\*.json) || ExitOnError
-
 Remove-Item -Recurse $tmpdir
