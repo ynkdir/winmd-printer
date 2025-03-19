@@ -14,23 +14,16 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -65,16 +58,23 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -209,6 +209,39 @@
             "NamedArguments": []
           }
         ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IAppWindow4",
+            "Namespace": "Microsoft.UI.Windowing"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 65543
+              }
+            ],
+            "NamedArguments": []
+          }
+        ]
       }
     ],
     "Layout": {
@@ -218,29 +251,16 @@
     },
     "Methods": [
       {
-        "Name": "Show",
+        "Name": "add_Closing",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot"
+          "NewSlot",
+          "SpecialName"
         ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "ShowWithActivation"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
+        "CustomAttributes": [],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -261,19 +281,49 @@
           },
           "ParameterTypes": [
             {
-              "Kind": "Primitive",
-              "Name": "Boolean"
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "TypedEventHandler`2",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Windowing",
+                  "Name": "AppWindow",
+                  "Comment": "TypeReference"
+                },
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Windowing",
+                  "Name": "AppWindowClosingEventArgs",
+                  "Comment": "TypeReference"
+                }
+              ]
             }
           ],
           "RequiredParameterCount": 1,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
+            "Kind": "Type",
+            "Namespace": "Windows.Foundation",
+            "Name": "EventRegistrationToken",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
-            "Name": "activateWindow",
+            "Name": "token",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "handler",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -795,14 +845,13 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_Id",
+        "Name": "Destroy",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot",
-          "SpecialName"
+          "NewSlot"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -826,23 +875,11 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Microsoft.UI",
-            "Name": "WindowId",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
+        "Parameters": [],
         "GenericParameters": []
       },
       {
@@ -1008,29 +1045,16 @@
         "GenericParameters": []
       },
       {
-        "Name": "MoveAndResize",
+        "Name": "get_Id",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot"
+          "NewSlot",
+          "SpecialName"
         ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "MoveAndResizeRelativeToDisplayArea"
-              }
-            ],
-            "NamedArguments": []
-          }
-        ],
+        "CustomAttributes": [],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -1049,41 +1073,21 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Graphics",
-              "Name": "RectInt32",
-              "Comment": "TypeReference"
-            },
-            {
-              "Kind": "Type",
-              "Namespace": "Microsoft.UI.Windowing",
-              "Name": "DisplayArea",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 2,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
+            "Kind": "Type",
+            "Namespace": "Microsoft.UI",
+            "Name": "WindowId",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
-            "Name": "rect",
-            "SequenceNumber": 1,
+            "Name": "value",
+            "SequenceNumber": 0,
             "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "displayarea",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -1483,7 +1487,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "Destroy",
+        "Name": "Show",
         "Attributes": [
           "Public",
           "Final",
@@ -1491,7 +1495,21 @@
           "HideBySig",
           "NewSlot"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ShowWithActivation"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -1510,14 +1528,29 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            }
+          ],
+          "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Primitive",
             "Name": "Void"
           }
         },
-        "Parameters": [],
+        "Parameters": [
+          {
+            "Name": "activateWindow",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
         "GenericParameters": []
       },
       {
@@ -1661,16 +1694,29 @@
         "GenericParameters": []
       },
       {
-        "Name": "add_Closing",
+        "Name": "MoveAndResize",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot",
-          "SpecialName"
+          "NewSlot"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "MoveAndResizeRelativeToDisplayArea"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -1691,50 +1737,37 @@
           },
           "ParameterTypes": [
             {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation",
-                "Name": "TypedEventHandler`2",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Windowing",
-                  "Name": "AppWindow",
-                  "Comment": "TypeReference"
-                },
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Windowing",
-                  "Name": "AppWindowClosingEventArgs",
-                  "Comment": "TypeReference"
-                }
-              ]
+              "Kind": "Type",
+              "Namespace": "Windows.Graphics",
+              "Name": "RectInt32",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI.Windowing",
+              "Name": "DisplayArea",
+              "Comment": "TypeReference"
             }
           ],
-          "RequiredParameterCount": 1,
+          "RequiredParameterCount": 2,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "EventRegistrationToken",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
-            "Name": "token",
-            "SequenceNumber": 0,
+            "Name": "rect",
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
           },
           {
-            "Name": "handler",
-            "SequenceNumber": 1,
+            "Name": "displayarea",
+            "SequenceNumber": 2,
             "Attributes": [
               "In"
             ],
@@ -2320,6 +2353,288 @@
         "GenericParameters": []
       },
       {
+        "Name": "SetTaskbarIcon",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTaskbarIcon"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconPath",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTaskbarIcon",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTaskbarIconWithIconId"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI",
+              "Name": "IconId",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTitleBarIcon",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTitleBarIcon"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconPath",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTitleBarIcon",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTitleBarIconWithIconId"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI",
+              "Name": "IconId",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "Create",
         "Attributes": [
           "Public",
@@ -2846,7 +3161,7 @@
     },
     "Methods": [
       {
-        "Name": "get_DidPositionChange",
+        "Name": "get_DidPresenterChange",
         "Attributes": [
           "Public",
           "Final",
@@ -2895,7 +3210,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_DidPresenterChange",
+        "Name": "get_DidPositionChange",
         "Attributes": [
           "Public",
           "Final",
@@ -3258,21 +3573,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -3290,6 +3590,21 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -3443,6 +3758,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ComposableAttribute",
         "FixedArguments": [
           {
@@ -3476,43 +3828,6 @@
               "Name": "String"
             },
             "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -3783,7 +4098,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -3792,7 +4107,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Windowing.IAppWindowTitleBarStatics"
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
           },
           {
             "Type": {
@@ -3800,13 +4115,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
           }
         ],
         "NamedArguments": []
@@ -3842,7 +4150,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -3851,7 +4159,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+            "Value": "Microsoft.UI.Windowing.IAppWindowTitleBarStatics"
           },
           {
             "Type": {
@@ -3859,6 +4167,13 @@
               "Name": "UInt32"
             },
             "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
           }
         ],
         "NamedArguments": []
@@ -3916,6 +4231,39 @@
             "NamedArguments": []
           }
         ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IAppWindowTitleBar3",
+            "Namespace": "Microsoft.UI.Windowing"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 65543
+              }
+            ],
+            "NamedArguments": []
+          }
+        ]
       }
     ],
     "Layout": {
@@ -3925,7 +4273,7 @@
     },
     "Methods": [
       {
-        "Name": "get_ButtonInactiveForegroundColor",
+        "Name": "put_ButtonPressedBackgroundColor",
         "Attributes": [
           "Public",
           "Final",
@@ -3953,32 +4301,37 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Generic",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "IReference`1",
-              "Comment": "TypeReference"
-            },
-            "TypeArguments": [
-              {
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
                 "Kind": "Type",
-                "Namespace": "Windows.UI",
-                "Name": "Color",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
                 "Comment": "TypeReference"
-              }
-            ]
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Type",
+                  "Namespace": "Windows.UI",
+                  "Name": "Color",
+                  "Comment": "TypeReference"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 0,
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -4699,7 +5052,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_ButtonPressedBackgroundColor",
+        "Name": "get_BackgroundColor",
         "Attributes": [
           "Public",
           "Final",
@@ -4828,7 +5181,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_BackgroundColor",
+        "Name": "get_ButtonPressedBackgroundColor",
         "Attributes": [
           "Public",
           "Final",
@@ -4890,7 +5243,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "put_ButtonPressedBackgroundColor",
+        "Name": "get_ButtonInactiveForegroundColor",
         "Attributes": [
           "Public",
           "Final",
@@ -4918,37 +5271,32 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation",
-                "Name": "IReference`1",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Type",
-                  "Namespace": "Windows.UI",
-                  "Name": "Color",
-                  "Comment": "TypeReference"
-                }
-              ]
-            }
-          ],
-          "RequiredParameterCount": 1,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Type",
+                "Namespace": "Windows.UI",
+                "Name": "Color",
+                "Comment": "TypeReference"
+              }
+            ]
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 1,
+            "SequenceNumber": 0,
             "Attributes": [
-              "In"
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -6070,6 +6418,113 @@
         "GenericParameters": []
       },
       {
+        "Name": "get_PreferredTheme",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Microsoft.UI.Windowing",
+            "Name": "TitleBarTheme",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredTheme",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI.Windowing",
+              "Name": "TitleBarTheme",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "IsCustomizationSupported",
         "Attributes": [
           "Public",
@@ -6135,16 +6590,23 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -6179,23 +6641,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -6243,6 +6698,57 @@
       "Size": 0
     },
     "Methods": [
+      {
+        "Name": "get_InitialSize",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Microsoft.UI.Windowing",
+            "Name": "CompactOverlaySize",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
       {
         "Name": "put_InitialSize",
         "Attributes": [
@@ -6292,57 +6798,6 @@
             "SequenceNumber": 1,
             "Attributes": [
               "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_InitialSize",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Microsoft.UI.Windowing",
-            "Name": "CompactOverlaySize",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -6549,21 +7004,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -6588,6 +7028,58 @@
               "Name": "String"
             },
             "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -6620,43 +7112,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -6686,6 +7141,57 @@
       "Size": 0
     },
     "Methods": [
+      {
+        "Name": "get_OuterBounds",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Graphics",
+            "Name": "RectInt32",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
       {
         "Name": "get_IsPrimary",
         "Attributes": [
@@ -6770,57 +7276,6 @@
             "Kind": "Type",
             "Namespace": "Microsoft.UI",
             "Name": "DisplayId",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_OuterBounds",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Graphics",
-            "Name": "RectInt32",
             "Comment": "TypeReference"
           }
         },
@@ -7502,6 +7957,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -7519,21 +7989,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -7567,7 +8022,7 @@
     },
     "Methods": [
       {
-        "Name": "add_Added",
+        "Name": "remove_Added",
         "Attributes": [
           "Public",
           "Final",
@@ -7597,49 +8052,21 @@
           },
           "ParameterTypes": [
             {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation",
-                "Name": "TypedEventHandler`2",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Windowing",
-                  "Name": "DisplayAreaWatcher",
-                  "Comment": "TypeReference"
-                },
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Windowing",
-                  "Name": "DisplayArea",
-                  "Comment": "TypeReference"
-                }
-              ]
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "EventRegistrationToken",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 1,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "EventRegistrationToken",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
             "Name": "token",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "handler",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -7727,6 +8154,90 @@
         "GenericParameters": []
       },
       {
+        "Name": "add_Added",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "TypedEventHandler`2",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Windowing",
+                  "Name": "DisplayAreaWatcher",
+                  "Comment": "TypeReference"
+                },
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Windowing",
+                  "Name": "DisplayArea",
+                  "Comment": "TypeReference"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Foundation",
+            "Name": "EventRegistrationToken",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "token",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "handler",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "get_Status",
         "Attributes": [
           "Public",
@@ -7770,62 +8281,6 @@
             "SequenceNumber": 0,
             "Attributes": [
               "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "remove_Added",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "EventRegistrationToken",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "token",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -8781,6 +9236,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -8798,21 +9268,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindow"
           }
         ],
         "NamedArguments": []
@@ -9961,11 +10416,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          },
-          {
             "Type": "Windows.Foundation.Metadata.OverloadAttribute",
             "FixedArguments": [
               {
@@ -9976,6 +10426,11 @@
                 "Value": "SetPresenter"
               }
             ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
             "NamedArguments": []
           }
         ],
@@ -10649,43 +11104,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindow"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65537
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -10764,6 +11182,43 @@
               "Name": "Byte"
             },
             "Value": 188
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65537
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
           }
         ],
         "NamedArguments": []
@@ -11071,43 +11526,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65540
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindow"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11186,6 +11604,43 @@
               "Name": "Byte"
             },
             "Value": 47
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65540
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
           }
         ],
         "NamedArguments": []
@@ -11311,7 +11766,7 @@
   },
   {
     "Namespace": "Microsoft.UI.Windowing",
-    "Name": "IAppWindowChangedEventArgs",
+    "Name": "IAppWindow4",
     "BaseType": null,
     "IsNested": false,
     "Attributes": [
@@ -11340,11 +11795,418 @@
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 65536
+            "Value": 65543
           }
         ],
         "NamedArguments": []
       },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 943455121
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 59945
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 21524
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 128
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 205
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 108
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 118
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 217
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 129
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 235
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 49
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "SetTaskbarIcon",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTaskbarIcon"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconPath",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTaskbarIcon",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTaskbarIconWithIconId"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI",
+              "Name": "IconId",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTitleBarIcon",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTitleBarIcon"
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultOverloadAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconPath",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SetTitleBarIcon",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.OverloadAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SetTitleBarIconWithIconId"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI",
+              "Name": "IconId",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "iconId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Microsoft.UI.Windowing",
+    "Name": "IAppWindowChangedEventArgs",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "NotPublic",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
       {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
@@ -11439,6 +12301,28 @@
               "Name": "Byte"
             },
             "Value": 29
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -11667,6 +12551,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65537
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -11760,28 +12666,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Microsoft.UI.Windowing.AppWindowChangedEventArgs"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65537
           }
         ],
         "NamedArguments": []
@@ -12012,6 +12896,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
@@ -12105,28 +13011,6 @@
               "Name": "Byte"
             },
             "Value": 84
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -12277,6 +13161,28 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12355,28 +13261,6 @@
               "Name": "Byte"
             },
             "Value": 13
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -12460,43 +13344,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindowPresenter"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -12578,6 +13425,43 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindowPresenter"
+          }
+        ],
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -12605,6 +13489,21 @@
       "AnsiClass"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -12684,21 +13583,6 @@
               "Name": "Byte"
             },
             "Value": 203
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindow"
           }
         ],
         "NamedArguments": []
@@ -13058,21 +13942,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindow"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -13090,6 +13959,21 @@
               "Name": "UInt32"
             },
             "Value": 65540
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindow"
           }
         ],
         "NamedArguments": []
@@ -13315,21 +14199,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -13430,6 +14299,21 @@
               "Name": "Byte"
             },
             "Value": 244
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
           }
         ],
         "NamedArguments": []
@@ -15500,7 +16384,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -15509,14 +16393,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65537
+            "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
           }
         ],
         "NamedArguments": []
@@ -15605,7 +16482,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -15614,7 +16491,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65537
           }
         ],
         "NamedArguments": []
@@ -15741,6 +16625,260 @@
   },
   {
     "Namespace": "Microsoft.UI.Windowing",
+    "Name": "IAppWindowTitleBar3",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "NotPublic",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65543
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 118779508
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 1040
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 21911
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 171
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 167
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 26
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 242
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 118
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 210
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 174
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 7
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "get_PreferredTheme",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Microsoft.UI.Windowing",
+            "Name": "TitleBarTheme",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredTheme",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI.Windowing",
+              "Name": "TitleBarTheme",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Microsoft.UI.Windowing",
     "Name": "IAppWindowTitleBarStatics",
     "BaseType": null,
     "IsNested": false,
@@ -15764,6 +16902,28 @@
               "Comment": "TypeReference"
             },
             "Value": "Microsoft.UI.Windowing.AppWindowTitleBar"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -15850,28 +17010,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -15948,6 +17086,43 @@
       "AnsiClass"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.CompactOverlayPresenter"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -16027,43 +17202,6 @@
               "Name": "Byte"
             },
             "Value": 201
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.CompactOverlayPresenter"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -16203,6 +17341,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.CompactOverlayPresenter"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -16281,43 +17456,6 @@
               "Name": "Byte"
             },
             "Value": 110
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.CompactOverlayPresenter"
           }
         ],
         "NamedArguments": []
@@ -16400,6 +17538,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.DisplayArea"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -16478,43 +17653,6 @@
               "Name": "Byte"
             },
             "Value": 103
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.DisplayArea"
           }
         ],
         "NamedArguments": []
@@ -16749,6 +17887,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -16842,28 +18002,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Microsoft.UI.Windowing.DisplayArea"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -18484,6 +19622,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.FullScreenPresenter"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18584,21 +19737,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.FullScreenPresenter"
           }
         ],
         "NamedArguments": []
@@ -18827,6 +19965,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -18905,43 +20080,6 @@
               "Name": "Byte"
             },
             "Value": 132
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
           }
         ],
         "NamedArguments": []
@@ -19901,21 +21039,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -19933,6 +21056,21 @@
               "Name": "UInt32"
             },
             "Value": 65537
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
           }
         ],
         "NamedArguments": []
@@ -20086,6 +21224,653 @@
   },
   {
     "Namespace": "Microsoft.UI.Windowing",
+    "Name": "IOverlappedPresenter3",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "NotPublic",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65543
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1439850808
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 19512
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 22503
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 160
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 193
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 212
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 103
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 183
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 116
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 219
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 140
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "get_PreferredMinimumHeight",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMinimumHeight",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMinimumWidth",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMinimumWidth",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMaximumWidth",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMaximumWidth",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMaximumHeight",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMaximumHeight",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Microsoft.UI.Windowing",
     "Name": "IOverlappedPresenterStatics",
     "BaseType": null,
     "IsNested": false,
@@ -20098,6 +21883,28 @@
       "AnsiClass"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
@@ -20177,28 +21984,6 @@
               "Name": "Byte"
             },
             "Value": 226
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -20446,6 +22231,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65537
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -20539,28 +22346,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Microsoft.UI.Windowing.OverlappedPresenter"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65537
           }
         ],
         "NamedArguments": []
@@ -20753,6 +22538,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -20782,31 +22582,30 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
+            "Value": "Microsoft.UI.Windowing.IOverlappedPresenterStatics"
+          },
           {
             "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "UInt32"
             },
-            "Value": "Agile"
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
           }
         ],
         "NamedArguments": []
@@ -20834,30 +22633,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Windowing.IOverlappedPresenterStatics"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -20915,6 +22700,39 @@
             "NamedArguments": []
           }
         ]
+      },
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IOverlappedPresenter3",
+            "Namespace": "Microsoft.UI.Windowing"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 65543
+              }
+            ],
+            "NamedArguments": []
+          }
+        ]
       }
     ],
     "Layout": {
@@ -20924,13 +22742,14 @@
     },
     "Methods": [
       {
-        "Name": "Restore",
+        "Name": "put_IsMaximizable",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot"
+          "NewSlot",
+          "SpecialName"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -20951,14 +22770,29 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            }
+          ],
+          "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Primitive",
             "Name": "Void"
           }
         },
-        "Parameters": [],
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
         "GenericParameters": []
       },
       {
@@ -21163,7 +22997,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "put_IsMaximizable",
+        "Name": "get_PreferredMinimumHeight",
         "Attributes": [
           "Public",
           "Final",
@@ -21191,24 +23025,30 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Boolean"
-            }
-          ],
-          "RequiredParameterCount": 1,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 1,
+            "SequenceNumber": 0,
             "Attributes": [
-              "In"
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -21653,14 +23493,13 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_HasBorder",
+        "Name": "Restore",
         "Attributes": [
           "Public",
           "Final",
           "Virtual",
           "HideBySig",
-          "NewSlot",
-          "SpecialName"
+          "NewSlot"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -21685,20 +23524,10 @@
           "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Boolean"
+            "Name": "Void"
           }
         },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
+        "Parameters": [],
         "GenericParameters": []
       },
       {
@@ -21891,6 +23720,495 @@
         "Parameters": [
           {
             "Name": "activateWindow",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_HasBorder",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Boolean"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMinimumHeight",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMinimumWidth",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMinimumWidth",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMaximumWidth",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMaximumWidth",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_PreferredMaximumHeight",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Generic",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "IReference`1",
+              "Comment": "TypeReference"
+            },
+            "TypeArguments": [
+              {
+                "Kind": "Primitive",
+                "Name": "Int32"
+              }
+            ]
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_PreferredMaximumHeight",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "IReference`1",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Primitive",
+                  "Name": "Int32"
+                }
+              ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -22419,6 +24737,159 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Microsoft.UI.Windowing",
+    "Name": "TitleBarTheme",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65543
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Private",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Legacy",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Microsoft.UI.Windowing",
+          "Name": "TitleBarTheme",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "UseDefaultAppMode",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Microsoft.UI.Windowing",
+          "Name": "TitleBarTheme",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Light",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Microsoft.UI.Windowing",
+          "Name": "TitleBarTheme",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Dark",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Microsoft.UI.Windowing",
+          "Name": "TitleBarTheme",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0

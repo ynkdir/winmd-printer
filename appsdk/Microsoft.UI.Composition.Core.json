@@ -14,36 +14,23 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
             "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -64,23 +51,36 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ActivatableAttribute",
+        "FixedArguments": [
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
             "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
           }
         ],
         "NamedArguments": []
@@ -177,6 +177,44 @@
         "GenericParameters": []
       },
       {
+        "Name": "Commit",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [],
+        "GenericParameters": []
+      },
+      {
         "Name": "EnsurePreviousCommitCompletedAsync",
         "Attributes": [
           "Public",
@@ -230,100 +268,6 @@
             "DefaultValue": null
           }
         ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "remove_CommitNeeded",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "EventRegistrationToken",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "token",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "Close",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [],
         "GenericParameters": []
       },
       {
@@ -409,7 +353,63 @@
         "GenericParameters": []
       },
       {
-        "Name": "Commit",
+        "Name": "remove_CommitNeeded",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "EventRegistrationToken",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "token",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "Close",
         "Attributes": [
           "Public",
           "Final",
@@ -518,28 +518,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -618,6 +596,28 @@
               "Name": "Byte"
             },
             "Value": 107
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []

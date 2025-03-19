@@ -14,43 +14,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Composition.Effects.SceneLightingEffect"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -129,6 +92,43 @@
               "Name": "Byte"
             },
             "Value": 238
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Composition.Effects.SceneLightingEffect"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -680,21 +680,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Composition.Effects.SceneLightingEffect"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -773,6 +758,21 @@
               "Name": "Byte"
             },
             "Value": 128
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Composition.Effects.SceneLightingEffect"
           }
         ],
         "NamedArguments": []
@@ -1091,61 +1091,7 @@
     },
     "Methods": [
       {
-        "Name": "put_Name",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "String"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "name",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "put_SpecularAmount",
+        "Name": "put_SpecularShine",
         "Attributes": [
           "Public",
           "Final",
@@ -1177,6 +1123,62 @@
             {
               "Kind": "Primitive",
               "Name": "Single"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "put_ReflectanceModel",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Microsoft.UI.Composition.Effects",
+              "Name": "SceneLightingEffectReflectanceModel",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 1,
@@ -1248,7 +1250,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "put_SpecularShine",
+        "Name": "get_Name",
         "Attributes": [
           "Public",
           "Final",
@@ -1276,24 +1278,117 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Single"
-            }
-          ],
-          "RequiredParameterCount": 1,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Void"
+            "Name": "String"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "name",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_DiffuseAmount",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Single"
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 1,
+            "SequenceNumber": 0,
             "Attributes": [
-              "In"
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_SpecularAmount",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Single"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -1353,7 +1448,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "put_ReflectanceModel",
+        "Name": "put_NormalMapSource",
         "Attributes": [
           "Public",
           "Final",
@@ -1384,8 +1479,8 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Microsoft.UI.Composition.Effects",
-              "Name": "SceneLightingEffectReflectanceModel",
+              "Namespace": "Windows.Graphics.Effects",
+              "Name": "IGraphicsEffectSource",
               "Comment": "TypeReference"
             }
           ],
@@ -1409,7 +1504,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_Name",
+        "Name": "put_SpecularAmount",
         "Attributes": [
           "Public",
           "Final",
@@ -1437,19 +1532,24 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Single"
+            }
+          ],
+          "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "String"
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
-            "Name": "name",
-            "SequenceNumber": 0,
+            "Name": "value",
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -1561,7 +1661,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_DiffuseAmount",
+        "Name": "put_Name",
         "Attributes": [
           "Public",
           "Final",
@@ -1589,19 +1689,24 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
+          ],
+          "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Single"
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
-            "Name": "value",
-            "SequenceNumber": 0,
+            "Name": "name",
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -1699,111 +1804,6 @@
             "Namespace": "Windows.Graphics.Effects",
             "Name": "IGraphicsEffectSource",
             "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "put_NormalMapSource",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Graphics.Effects",
-              "Name": "IGraphicsEffectSource",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SpecularAmount",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Single"
           }
         },
         "Parameters": [

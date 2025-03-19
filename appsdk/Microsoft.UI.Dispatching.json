@@ -208,21 +208,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
@@ -284,6 +269,21 @@
               "Name": "String"
             },
             "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -383,7 +383,7 @@
     },
     "Methods": [
       {
-        "Name": "remove_ShutdownCompleted",
+        "Name": "add_ShutdownStarting",
         "Attributes": [
           "Public",
           "Final",
@@ -413,21 +413,49 @@
           },
           "ParameterTypes": [
             {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "EventRegistrationToken",
-              "Comment": "TypeReference"
+              "Kind": "Generic",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Foundation",
+                "Name": "TypedEventHandler`2",
+                "Comment": "TypeReference"
+              },
+              "TypeArguments": [
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Dispatching",
+                  "Name": "DispatcherQueue",
+                  "Comment": "TypeReference"
+                },
+                {
+                  "Kind": "Type",
+                  "Namespace": "Microsoft.UI.Dispatching",
+                  "Name": "DispatcherQueueShutdownStartingEventArgs",
+                  "Comment": "TypeReference"
+                }
+              ]
             }
           ],
           "RequiredParameterCount": 1,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Void"
+            "Kind": "Type",
+            "Namespace": "Windows.Foundation",
+            "Name": "EventRegistrationToken",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
             "Name": "token",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "handler",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -798,7 +826,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "add_ShutdownStarting",
+        "Name": "remove_ShutdownCompleted",
         "Attributes": [
           "Public",
           "Final",
@@ -828,49 +856,21 @@
           },
           "ParameterTypes": [
             {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation",
-                "Name": "TypedEventHandler`2",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Dispatching",
-                  "Name": "DispatcherQueue",
-                  "Comment": "TypeReference"
-                },
-                {
-                  "Kind": "Type",
-                  "Namespace": "Microsoft.UI.Dispatching",
-                  "Name": "DispatcherQueueShutdownStartingEventArgs",
-                  "Comment": "TypeReference"
-                }
-              ]
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation",
+              "Name": "EventRegistrationToken",
+              "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 1,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "EventRegistrationToken",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
             "Name": "token",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "handler",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -1488,58 +1488,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
         "FixedArguments": [
           {
@@ -1564,6 +1512,58 @@
               "Name": "String"
             },
             "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -1891,6 +1891,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -1969,28 +1991,6 @@
               "Name": "Byte"
             },
             "Value": 248
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -2391,6 +2391,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -2408,21 +2423,6 @@
               "Name": "UInt32"
             },
             "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -2456,7 +2456,7 @@
     },
     "Methods": [
       {
-        "Name": "get_IsRunning",
+        "Name": "put_IsRepeating",
         "Attributes": [
           "Public",
           "Final",
@@ -2484,19 +2484,24 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            }
+          ],
+          "RequiredParameterCount": 1,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Boolean"
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 0,
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -2561,7 +2566,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "put_IsRepeating",
+        "Name": "get_IsRunning",
         "Attributes": [
           "Public",
           "Final",
@@ -2589,24 +2594,19 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Primitive",
-              "Name": "Boolean"
-            }
-          ],
-          "RequiredParameterCount": 1,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Void"
+            "Name": "Boolean"
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 1,
+            "SequenceNumber": 0,
             "Attributes": [
-              "In"
+              "None"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -2947,6 +2947,11 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -2966,11 +2971,6 @@
             "Value": 65540
           }
         ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "System.FlagsAttribute",
-        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -3083,6 +3083,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65540
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherExitDeferral"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -3161,43 +3198,6 @@
               "Name": "Byte"
             },
             "Value": 158
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherExitDeferral"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65540
           }
         ],
         "NamedArguments": []
@@ -3283,28 +3283,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -3383,6 +3361,28 @@
               "Name": "Byte"
             },
             "Value": 232
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -4110,21 +4110,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueue"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -4225,6 +4210,21 @@
               "Name": "Byte"
             },
             "Value": 168
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueue"
           }
         ],
         "NamedArguments": []
@@ -4747,6 +4747,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -4825,21 +4840,6 @@
               "Name": "Byte"
             },
             "Value": 132
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
           }
         ],
         "NamedArguments": []
@@ -5001,7 +5001,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -5010,14 +5010,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65540
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
           }
         ],
         "NamedArguments": []
@@ -5106,7 +5099,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -5115,7 +5108,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65540
           }
         ],
         "NamedArguments": []
@@ -5208,21 +5208,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -5301,6 +5286,21 @@
               "Name": "Byte"
             },
             "Value": 55
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueueController"
           }
         ],
         "NamedArguments": []
@@ -5433,43 +5433,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueueShutdownStartingEventArgs"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -5548,6 +5511,43 @@
               "Name": "Byte"
             },
             "Value": 125
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueueShutdownStartingEventArgs"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -5630,6 +5630,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueue"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -5708,43 +5745,6 @@
               "Name": "Byte"
             },
             "Value": 60
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueue"
           }
         ],
         "NamedArguments": []
@@ -5827,6 +5827,43 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Dispatching.DispatcherQueueTimer"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -5905,43 +5942,6 @@
               "Name": "Byte"
             },
             "Value": 229
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Dispatching.DispatcherQueueTimer"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.Foundation.WindowsAppSDKContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
