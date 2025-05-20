@@ -1,7 +1,7 @@
 [
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "ILicenseManagerStatics",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolClientContext",
     "BaseType": null,
     "IsNested": false,
     "Attributes": [
@@ -14,101 +14,8 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.LicenseManager"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.GuidAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 3047963360
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 55879
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 20256
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 154
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 35
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 9
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 24
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 44
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 148
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 118
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 255
-          }
-        ],
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       },
       {
@@ -121,14 +28,112 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 196608
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1540964112
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 49322
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 18787
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 180
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 197
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 172
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 74
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 105
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 189
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 187
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 51
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolClientContext"
           }
         ],
         "NamedArguments": []
@@ -143,21 +148,16 @@
     },
     "Methods": [
       {
-        "Name": "AddLicenseAsync",
+        "Name": "put_OwnerWindowId",
         "Attributes": [
           "Public",
           "Virtual",
           "HideBySig",
           "NewSlot",
-          "Abstract"
+          "Abstract",
+          "SpecialName"
         ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
+        "CustomAttributes": [],
         "ImplAttributes": [
           "IL",
           "Managed"
@@ -179,31 +179,20 @@
           "ParameterTypes": [
             {
               "Kind": "Type",
-              "Namespace": "Windows.Storage.Streams",
-              "Name": "IBuffer",
+              "Namespace": "Windows.UI",
+              "Name": "WindowId",
               "Comment": "TypeReference"
             }
           ],
           "RequiredParameterCount": 1,
           "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "IAsyncAction",
-            "Comment": "TypeReference"
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
-            "Name": "action",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "license",
+            "Name": "value",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -215,21 +204,16 @@
         "GenericParameters": []
       },
       {
-        "Name": "GetSatisfactionInfosAsync",
+        "Name": "get_OwnerWindowId",
         "Attributes": [
           "Public",
           "Virtual",
           "HideBySig",
           "NewSlot",
-          "Abstract"
+          "Abstract",
+          "SpecialName"
         ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
+        "CustomAttributes": [],
         "ImplAttributes": [
           "IL",
           "Managed"
@@ -248,81 +232,21 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [
-            {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation.Collections",
-                "Name": "IIterable`1",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                }
-              ]
-            },
-            {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation.Collections",
-                "Name": "IIterable`1",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                }
-              ]
-            }
-          ],
-          "RequiredParameterCount": 2,
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Generic",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "IAsyncOperation`1",
-              "Comment": "TypeReference"
-            },
-            "TypeArguments": [
-              {
-                "Kind": "Type",
-                "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-                "Name": "LicenseSatisfactionResult",
-                "Comment": "TypeReference"
-              }
-            ]
+            "Kind": "Type",
+            "Namespace": "Windows.UI",
+            "Name": "WindowId",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
-            "Name": "operation",
+            "Name": "value",
             "SequenceNumber": 0,
             "Attributes": [
               "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "contentIds",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "keyIds",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -335,8 +259,8 @@
     "GenericParameters": []
   },
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "ILicenseManagerStatics2",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolClientContextFactory",
     "BaseType": null,
     "IsNested": false,
     "Attributes": [
@@ -358,7 +282,95 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.LicenseManager"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolClientContext"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 4021467697
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 5260
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 23255
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 171
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 143
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 79
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 14
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 97
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 84
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 254
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 219
           }
         ],
         "NamedArguments": []
@@ -373,97 +385,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 262144
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.GuidAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 2871968891
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 8057
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt16"
-            },
-            "Value": 17536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 184
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 126
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 44
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 73
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 158
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 96
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 27
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 163
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -476,90 +405,17 @@
       "PackingSize": 0,
       "Size": 0
     },
-    "Methods": [
-      {
-        "Name": "RefreshLicensesAsync",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-              "Name": "LicenseRefreshOption",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "IAsyncAction",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "action",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "refreshOption",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
+    "Methods": [],
     "NestedTypes": [],
     "GenericParameters": []
   },
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "ILicenseSatisfactionInfo",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolServer",
     "BaseType": null,
     "IsNested": false,
     "Attributes": [
-      "NotPublic",
+      "Public",
       "AutoLayout",
       "Interface",
       "Abstract",
@@ -568,43 +424,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -612,56 +431,42 @@
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 1019981967
+            "Value": 2641904413
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 56113
+            "Value": 21311
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 18645
+            "Value": 21981
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 131
+            "Value": 150
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 132
+            "Value": 146
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 250
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 23
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 200
+            "Value": 220
           },
           {
             "Type": {
@@ -675,21 +480,75 @@
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 116
+            "Value": 98
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 226
+            "Value": 240
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 187
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 57
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
       }
     ],
     "Fields": [],
-    "InterfaceImplementations": [],
+    "InterfaceImplementations": [
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IClosable",
+            "Namespace": "Windows.Foundation"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": []
+      }
+    ],
     "Layout": {
       "IsDefault": true,
       "PackingSize": 0,
@@ -697,7 +556,7 @@
     },
     "Methods": [
       {
-        "Name": "get_SatisfiedByDevice",
+        "Name": "get_Command",
         "Attributes": [
           "Public",
           "Virtual",
@@ -729,7 +588,7 @@
           "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Boolean"
+            "Name": "String"
           }
         },
         "Parameters": [
@@ -746,14 +605,13 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_SatisfiedByOpenLicense",
+        "Name": "GetCommandArguments",
         "Attributes": [
           "Public",
           "Virtual",
           "HideBySig",
           "NewSlot",
-          "Abstract",
-          "SpecialName"
+          "Abstract"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
@@ -777,13 +635,16 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
+            "Kind": "SZArray",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            }
           }
         },
         "Parameters": [
           {
-            "Name": "value",
+            "Name": "result",
             "SequenceNumber": 0,
             "Attributes": [
               "None"
@@ -795,7 +656,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_SatisfiedByTrial",
+        "Name": "get_Info",
         "Attributes": [
           "Public",
           "Virtual",
@@ -826,204 +687,10 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SatisfiedByPass",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SatisfiedByInstallMedia",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SatisfiedBySignedInUser",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_IsSatisfied",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
+            "Kind": "Type",
+            "Namespace": "Windows.AI.ModelContextProtocol",
+            "Name": "ModelContextProtocolServerInfo",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
@@ -1044,8 +711,8 @@
     "GenericParameters": []
   },
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "ILicenseSatisfactionResult",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolServerCatalog",
     "BaseType": null,
     "IsNested": false,
     "Attributes": [
@@ -1067,14 +734,355 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 196608
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 103516766
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 45348
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 17552
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 161
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 186
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 70
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 146
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 135
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 93
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 248
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 62
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolServerCatalog"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "GetServerInfos",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "SZArray",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.AI.ModelContextProtocol",
+              "Name": "ModelContextProtocolServerInfo",
+              "Comment": "TypeReference"
+            }
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ActivateServer",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Guid",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.AI.ModelContextProtocol",
+              "Name": "ModelContextProtocolClientContext",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.AI.ModelContextProtocol",
+            "Name": "IModelContextProtocolServer",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "serverId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "client",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "CreateClientContext",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.AI.ModelContextProtocol",
+            "Name": "ModelContextProtocolClientContext",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolServerCatalogFactory",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "NotPublic",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -1089,7 +1097,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolServerCatalog"
           }
         ],
         "NamedArguments": []
@@ -1102,42 +1110,63 @@
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 1013403507
+            "Value": 1851592335
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 15495
+            "Value": 30689
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt16"
             },
-            "Value": 20193
+            "Value": 23197
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 130
+            "Value": 185
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 1
+            "Value": 128
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 244
+            "Value": 7
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 121
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 179
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 177
           },
           {
             "Type": {
@@ -1151,656 +1180,13 @@
               "Kind": "Primitive",
               "Name": "Byte"
             },
-            "Value": 53
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 155
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 211
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Byte"
-            },
-            "Value": 175
+            "Value": 186
           }
         ],
         "NamedArguments": []
       }
     ],
     "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "Methods": [
-      {
-        "Name": "get_LicenseSatisfactionInfos",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Generic",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Collections",
-              "Name": "IMapView`2",
-              "Comment": "TypeReference"
-            },
-            "TypeArguments": [
-              {
-                "Kind": "Primitive",
-                "Name": "String"
-              },
-              {
-                "Kind": "Type",
-                "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-                "Name": "LicenseSatisfactionInfo",
-                "Comment": "TypeReference"
-              }
-            ]
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_ExtendedError",
-        "Attributes": [
-          "Public",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "Abstract",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "IL",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "HResult",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "LicenseManager",
-    "BaseType": "System.Object",
-    "IsNested": false,
-    "Attributes": [
-      "Public",
-      "AutoLayout",
-      "Class",
-      "Abstract",
-      "Sealed",
-      "WindowsRuntime",
-      "AnsiClass"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 196608
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "Methods": [
-      {
-        "Name": "RefreshLicensesAsync",
-        "Attributes": [
-          "Public",
-          "Static",
-          "HideBySig",
-          "ReuseSlot"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-              "Name": "LicenseRefreshOption",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "IAsyncAction",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "action",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "refreshOption",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "AddLicenseAsync",
-        "Attributes": [
-          "Public",
-          "Static",
-          "HideBySig",
-          "ReuseSlot"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Type",
-              "Namespace": "Windows.Storage.Streams",
-              "Name": "IBuffer",
-              "Comment": "TypeReference"
-            }
-          ],
-          "RequiredParameterCount": 1,
-          "ReturnType": {
-            "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "IAsyncAction",
-            "Comment": "TypeReference"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "action",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "license",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "GetSatisfactionInfosAsync",
-        "Attributes": [
-          "Public",
-          "Static",
-          "HideBySig",
-          "ReuseSlot"
-        ],
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.RemoteAsyncAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "None"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": false,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [
-            {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation.Collections",
-                "Name": "IIterable`1",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                }
-              ]
-            },
-            {
-              "Kind": "Generic",
-              "Type": {
-                "Kind": "Type",
-                "Namespace": "Windows.Foundation.Collections",
-                "Name": "IIterable`1",
-                "Comment": "TypeReference"
-              },
-              "TypeArguments": [
-                {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                }
-              ]
-            }
-          ],
-          "RequiredParameterCount": 2,
-          "ReturnType": {
-            "Kind": "Generic",
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation",
-              "Name": "IAsyncOperation`1",
-              "Comment": "TypeReference"
-            },
-            "TypeArguments": [
-              {
-                "Kind": "Type",
-                "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-                "Name": "LicenseSatisfactionResult",
-                "Comment": "TypeReference"
-              }
-            ]
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "operation",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "contentIds",
-            "SequenceNumber": 1,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          },
-          {
-            "Name": "keyIds",
-            "SequenceNumber": 2,
-            "Attributes": [
-              "In"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      }
-    ],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "LicenseRefreshOption",
-    "BaseType": "System.Enum",
-    "IsNested": false,
-    "Attributes": [
-      "Public",
-      "AutoLayout",
-      "Class",
-      "Sealed",
-      "WindowsRuntime",
-      "AnsiClass"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Windows.Foundation.UniversalApiContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "value__",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "Int32"
-        },
-        "Attributes": [
-          "Private",
-          "SpecialName",
-          "RTSpecialName"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "RunningLicenses",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-          "Name": "LicenseRefreshOption",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "Int32",
-          "Value": 0
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "AllLicenses",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-          "Name": "LicenseRefreshOption",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "Int32",
-          "Value": 1
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
     "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
@@ -1812,19 +1198,122 @@
     "GenericParameters": []
   },
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "LicenseSatisfactionInfo",
-    "BaseType": "System.Object",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolServerInfo",
+    "BaseType": null,
     "IsNested": false,
     "Attributes": [
-      "Public",
+      "NotPublic",
       "AutoLayout",
-      "Class",
-      "Sealed",
+      "Interface",
+      "Abstract",
       "WindowsRuntime",
       "AnsiClass"
     ],
     "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1345389242
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 33563
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 18405
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 185
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 123
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 231
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 176
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 98
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 9
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 221
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 139
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolServerInfo"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
@@ -1835,70 +1324,21 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 196608
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
+            "Value": 65536
           }
         ],
         "NamedArguments": []
       }
     ],
     "Fields": [],
-    "InterfaceImplementations": [
-      {
-        "Interface": {
-          "Kind": "TypeReference",
-          "TypeReference": {
-            "Name": "ILicenseSatisfactionInfo",
-            "Namespace": "Windows.ApplicationModel.Store.LicenseManagement"
-          },
-          "TypeDefinition": null,
-          "TypeSpecification": null
-        },
-        "CustomAttributes": [
-          {
-            "Type": "Windows.Foundation.Metadata.DefaultAttribute",
-            "FixedArguments": [],
-            "NamedArguments": []
-          }
-        ]
-      }
-    ],
+    "InterfaceImplementations": [],
     "Layout": {
       "IsDefault": true,
       "PackingSize": 0,
@@ -1906,18 +1346,18 @@
     },
     "Methods": [
       {
-        "Name": "get_SatisfiedByDevice",
+        "Name": "get_Id",
         "Attributes": [
           "Public",
-          "Final",
           "Virtual",
           "HideBySig",
           "NewSlot",
+          "Abstract",
           "SpecialName"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
-          "Runtime",
+          "IL",
           "Managed"
         ],
         "RelativeVirtualAddress": 0,
@@ -1937,8 +1377,10 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
+            "Kind": "Type",
+            "Namespace": "System",
+            "Name": "Guid",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
@@ -1955,18 +1397,18 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_SatisfiedByOpenLicense",
+        "Name": "get_Name",
         "Attributes": [
           "Public",
-          "Final",
           "Virtual",
           "HideBySig",
           "NewSlot",
+          "Abstract",
           "SpecialName"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
-          "Runtime",
+          "IL",
           "Managed"
         ],
         "RelativeVirtualAddress": 0,
@@ -1987,7 +1429,7 @@
           "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Boolean"
+            "Name": "String"
           }
         },
         "Parameters": [
@@ -2004,18 +1446,18 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_SatisfiedByTrial",
+        "Name": "get_Description",
         "Attributes": [
           "Public",
-          "Final",
           "Virtual",
           "HideBySig",
           "NewSlot",
+          "Abstract",
           "SpecialName"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
-          "Runtime",
+          "IL",
           "Managed"
         ],
         "RelativeVirtualAddress": 0,
@@ -2036,7 +1478,7 @@
           "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Primitive",
-            "Name": "Boolean"
+            "Name": "String"
           }
         },
         "Parameters": [
@@ -2053,18 +1495,17 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_SatisfiedByPass",
+        "Name": "GetPackage",
         "Attributes": [
           "Public",
-          "Final",
           "Virtual",
           "HideBySig",
           "NewSlot",
-          "SpecialName"
+          "Abstract"
         ],
         "CustomAttributes": [],
         "ImplAttributes": [
-          "Runtime",
+          "IL",
           "Managed"
         ],
         "RelativeVirtualAddress": 0,
@@ -2084,160 +1525,15 @@
           "ParameterTypes": [],
           "RequiredParameterCount": 0,
           "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
+            "Kind": "Type",
+            "Namespace": "Windows.ApplicationModel",
+            "Name": "Package",
+            "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SatisfiedByInstallMedia",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_SatisfiedBySignedInUser",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
-            "SequenceNumber": 0,
-            "Attributes": [
-              "None"
-            ],
-            "CustomAttributes": [],
-            "DefaultValue": null
-          }
-        ],
-        "GenericParameters": []
-      },
-      {
-        "Name": "get_IsSatisfied",
-        "Attributes": [
-          "Public",
-          "Final",
-          "Virtual",
-          "HideBySig",
-          "NewSlot",
-          "SpecialName"
-        ],
-        "CustomAttributes": [],
-        "ImplAttributes": [
-          "Runtime",
-          "Managed"
-        ],
-        "RelativeVirtualAddress": 0,
-        "Import": null,
-        "Signature": {
-          "GenericParameterCount": 0,
-          "Header": {
-            "Attributes": [
-              "Instance"
-            ],
-            "CallingConvention": "Default",
-            "HasExplicitThis": false,
-            "IsGeneric": false,
-            "IsInstance": true,
-            "Kind": "Method"
-          },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Primitive",
-            "Name": "Boolean"
-          }
-        },
-        "Parameters": [
-          {
-            "Name": "value",
+            "Name": "result",
             "SequenceNumber": 0,
             "Attributes": [
               "None"
@@ -2253,30 +1549,203 @@
     "GenericParameters": []
   },
   {
-    "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-    "Name": "LicenseSatisfactionResult",
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "IModelContextProtocolServerInfoFactory",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "NotPublic",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolServerInfo"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 3376341326
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 58487
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 23141
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 189
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 128
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 42
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 120
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 96
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 222
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 126
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 173
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "ModelContextProtocolClientContext",
     "BaseType": "System.Object",
     "IsNested": false,
     "Attributes": [
       "Public",
       "AutoLayout",
       "Class",
-      "Sealed",
       "WindowsRuntime",
       "AnsiClass"
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "Type": "Windows.Foundation.Metadata.ComposableAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
+              "Namespace": "System",
+              "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Both"
+            "Value": "Windows.AI.ModelContextProtocol.IModelContextProtocolClientContextFactory"
+          },
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "CompositionType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Public"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           }
         ],
         "NamedArguments": []
@@ -2297,6 +1766,26 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -2306,14 +1795,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Windows.Foundation.UniversalApiContract"
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
           },
           {
             "Type": {
               "Kind": "Primitive",
               "Name": "UInt32"
             },
-            "Value": 196608
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -2325,8 +1814,8 @@
         "Interface": {
           "Kind": "TypeReference",
           "TypeReference": {
-            "Name": "ILicenseSatisfactionResult",
-            "Namespace": "Windows.ApplicationModel.Store.LicenseManagement"
+            "Name": "IModelContextProtocolClientContext",
+            "Namespace": "Windows.AI.ModelContextProtocol"
           },
           "TypeDefinition": null,
           "TypeSpecification": null
@@ -2334,6 +1823,11 @@
         "CustomAttributes": [
           {
             "Type": "Windows.Foundation.Metadata.DefaultAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
             "FixedArguments": [],
             "NamedArguments": []
           }
@@ -2347,7 +1841,7 @@
     },
     "Methods": [
       {
-        "Name": "get_LicenseSatisfactionInfos",
+        "Name": "put_OwnerWindowId",
         "Attributes": [
           "Public",
           "Final",
@@ -2356,7 +1850,13 @@
           "NewSlot",
           "SpecialName"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -2375,36 +1875,26 @@
             "IsInstance": true,
             "Kind": "Method"
           },
-          "ParameterTypes": [],
-          "RequiredParameterCount": 0,
-          "ReturnType": {
-            "Kind": "Generic",
-            "Type": {
+          "ParameterTypes": [
+            {
               "Kind": "Type",
-              "Namespace": "Windows.Foundation.Collections",
-              "Name": "IMapView`2",
+              "Namespace": "Windows.UI",
+              "Name": "WindowId",
               "Comment": "TypeReference"
-            },
-            "TypeArguments": [
-              {
-                "Kind": "Primitive",
-                "Name": "String"
-              },
-              {
-                "Kind": "Type",
-                "Namespace": "Windows.ApplicationModel.Store.LicenseManagement",
-                "Name": "LicenseSatisfactionInfo",
-                "Comment": "TypeReference"
-              }
-            ]
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "Void"
           }
         },
         "Parameters": [
           {
             "Name": "value",
-            "SequenceNumber": 0,
+            "SequenceNumber": 1,
             "Attributes": [
-              "None"
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -2413,7 +1903,7 @@
         "GenericParameters": []
       },
       {
-        "Name": "get_ExtendedError",
+        "Name": "get_OwnerWindowId",
         "Attributes": [
           "Public",
           "Final",
@@ -2422,7 +1912,13 @@
           "NewSlot",
           "SpecialName"
         ],
-        "CustomAttributes": [],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
         "ImplAttributes": [
           "Runtime",
           "Managed"
@@ -2445,14 +1941,773 @@
           "RequiredParameterCount": 0,
           "ReturnType": {
             "Kind": "Type",
-            "Namespace": "Windows.Foundation",
-            "Name": "HResult",
+            "Namespace": "Windows.UI",
+            "Name": "WindowId",
             "Comment": "TypeReference"
           }
         },
         "Parameters": [
           {
             "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "ModelContextProtocolContract",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ApiContractAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "ModelContextProtocolServerCatalog",
+    "BaseType": "System.Object",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ComposableAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.IModelContextProtocolServerCatalogFactory"
+          },
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "CompositionType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Public"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IModelContextProtocolServerCatalog",
+            "Namespace": "Windows.AI.ModelContextProtocol"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ]
+      }
+    ],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "GetServerInfos",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "SZArray",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.AI.ModelContextProtocol",
+              "Name": "ModelContextProtocolServerInfo",
+              "Comment": "TypeReference"
+            }
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ActivateServer",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Guid",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.AI.ModelContextProtocol",
+              "Name": "ModelContextProtocolClientContext",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.AI.ModelContextProtocol",
+            "Name": "IModelContextProtocolServer",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "serverId",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "client",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "CreateClientContext",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.AI.ModelContextProtocol",
+            "Name": "ModelContextProtocolClientContext",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.AI.ModelContextProtocol",
+    "Name": "ModelContextProtocolServerInfo",
+    "BaseType": "System.Object",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "WindowsRuntime",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ComposableAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.IModelContextProtocolServerInfoFactory"
+          },
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "CompositionType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Public"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Windows.AI.ModelContextProtocol.ModelContextProtocolContract"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IModelContextProtocolServerInfo",
+            "Namespace": "Windows.AI.ModelContextProtocol"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Foundation.Metadata.DefaultAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ]
+      }
+    ],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "get_Id",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "System",
+            "Name": "Guid",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_Name",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "String"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "get_Description",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "SpecialName"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "String"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "value",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "GetPackage",
+        "Attributes": [
+          "Public",
+          "Final",
+          "Virtual",
+          "HideBySig",
+          "NewSlot"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Foundation.Metadata.ExperimentalAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "ImplAttributes": [
+          "Runtime",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.ApplicationModel",
+            "Name": "Package",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "result",
             "SequenceNumber": 0,
             "Attributes": [
               "None"
