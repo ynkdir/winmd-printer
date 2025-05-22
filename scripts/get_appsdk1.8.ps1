@@ -1,29 +1,25 @@
 # https://www.nuget.org/packages/Microsoft.WindowsAppSDK
 
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$version
 )
 
 $ErrorActionPreference = "Stop"
 
-function ExitOnError()
-{
+function ExitOnError() {
     exit 1
 }
 
-function New-TemporaryFolder()
-{
+function New-TemporaryFolder() {
     $tmpfile = New-TemporaryFile
     Remove-Item $tmpfile
     return New-Item -Path $tmpfile -ItemType directory
 }
 
-function DownloadPackage($id, $version)
-{
+function DownloadPackage($id, $version) {
     # Two packages can have same package dependency with different version.
-    if (Test-Path $tmpdir\$id)
-    {
+    if (Test-Path $tmpdir\$id) {
         return
     }
 
@@ -37,53 +33,46 @@ function DownloadPackage($id, $version)
     tar.exe -C $tmpdir\$id -xvf $tmpdir\$id.zip || ExitOnError
 }
 
-function DownloadDependencies($id)
-{
+function DownloadDependencies($id) {
     $xml = [xml]::new()
     $xml.Load("$tmpdir\$id\$id.nuspec")
 
-    if ($xml.package.metadata.dependencies.dependency -eq $null)
-    {
+    if ($null -eq $xml.package.metadata.dependencies.dependency) {
         return
     }
 
-    foreach ($dependency in $xml.package.metadata.dependencies.dependency)
-    {
+    foreach ($dependency in $xml.package.metadata.dependencies.dependency) {
         DownloadPackage $dependency.id $dependency.version
     }
 
-    foreach ($dependency in $xml.package.metadata.dependencies.dependency)
-    {
+    foreach ($dependency in $xml.package.metadata.dependencies.dependency) {
         DownloadDependencies $dependency.id
     }
 }
 
-function CheckDependencies($id, $known_dependencies)
-{
+function CheckDependencies($id, $known_dependencies) {
     $xml = [xml]::new()
     $xml.Load("$tmpdir\$id\$id.nuspec")
-    $current_dependencies = $xml.package.metadata.dependencies.dependency | % { $_.id }
+    $current_dependencies = $xml.package.metadata.dependencies.dependency | ForEach-Object { $_.id }
 
     $diff = Compare-Object $known_dependencies $current_dependencies
-    if ($diff)
-    {
+    if ($diff) {
         Write-Host $diff
         throw "dependencies was changed"
     }
 }
 
-if (-not (Test-Path appsdk))
-{
+if (-not (Test-Path appsdk)) {
     New-Item appsdk -ItemType Directory
 }
-else
-{
+else {
     Remove-Item appsdk\*
 }
 
 $tmpdir = New-TemporaryFolder
 
 DownloadPackage "Microsoft.WindowsAppSDK" $version
+
 CheckDependencies "Microsoft.WindowsAppSDK" @(
     "Microsoft.WindowsAppSDK.Base",
     "Microsoft.WindowsAppSDK.Foundation",
@@ -93,16 +82,19 @@ CheckDependencies "Microsoft.WindowsAppSDK" @(
     "Microsoft.WindowsAppSDK.Widgets",
     "Microsoft.WindowsAppSDK.AI",
     "Microsoft.WindowsAppSDK.Packages"
-    )
+)
+
 DownloadDependencies "Microsoft.WindowsAppSDK"
 
-(Get-Item $tmpdir\Microsoft.WindowsAppSDK.AI\metadata\*.winmd,
-          $tmpdir\Microsoft.WindowsAppSDK.Foundation\metadata\*.winmd,
-          $tmpdir\Microsoft.WindowsAppSDK.InteractiveExperiences\metadata\10.0.18362.0\*.winmd,
-          $tmpdir\Microsoft.WindowsAppSDK.Widgets\metadata\*.winmd,
-          $tmpdir\Microsoft.WindowsAppSDK.WinUI\metadata\*.winmd) | ForEach-Object {
-    Write-Host $_.Name
-    dotnet run -o "$tmpdir\$($_.BaseName).json" $_ || ExitOnError
+$winmdfiles = (Get-Item $tmpdir\Microsoft.WindowsAppSDK.AI\metadata\*.winmd,
+    $tmpdir\Microsoft.WindowsAppSDK.Foundation\metadata\*.winmd,
+    $tmpdir\Microsoft.WindowsAppSDK.InteractiveExperiences\metadata\10.0.18362.0\*.winmd,
+    $tmpdir\Microsoft.WindowsAppSDK.Widgets\metadata\*.winmd,
+    $tmpdir\Microsoft.WindowsAppSDK.WinUI\metadata\*.winmd)
+
+foreach ($f in $winmdfiles) {
+    Write-Host $f.Name
+    dotnet run -o "$tmpdir\$($f.BaseName).json" $f || ExitOnError
 }
 
 Write-Host "make WindowsAppSDK.json ..."

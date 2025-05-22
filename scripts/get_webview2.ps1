@@ -1,7 +1,7 @@
 # https://www.nuget.org/packages/Microsoft.Web.WebView2
 
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$version
 )
 
@@ -21,7 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path webview2)) {
     New-Item webview2 -ItemType Directory
-} else {
+}
+else {
     Remove-Item webview2\*
 }
 

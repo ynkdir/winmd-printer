@@ -1,7 +1,7 @@
 # https://www.nuget.org/packages/Microsoft.Windows.SDK.Win32Metadata/
 
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$version
 )
 
@@ -21,7 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path win32)) {
     New-Item win32 -ItemType Directory
-} else {
+}
+else {
     Remove-Item win32\*
 }
 

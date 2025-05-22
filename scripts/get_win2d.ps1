@@ -1,7 +1,7 @@
 # https://www.nuget.org/packages/Microsoft.Graphics.Win2D
 
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$version
 )
 
@@ -21,7 +21,8 @@ function New-TemporaryFolder() {
 
 if (-not (Test-Path win2d)) {
     New-Item win2d -ItemType Directory
-} else {
+}
+else {
     Remove-Item win2d\*
 }
 
