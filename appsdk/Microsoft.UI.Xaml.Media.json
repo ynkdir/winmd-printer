@@ -1498,57 +1498,16 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
             "Type": {
               "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Xaml.Media.IAcrylicBrushStatics2"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Both"
           }
         ],
         "NamedArguments": []
@@ -1569,18 +1528,8 @@
         ]
       },
       {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXHasCustomActivationFactoryAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       },
       {
@@ -1622,6 +1571,62 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.StaticAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.IAcrylicBrushStatics2"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
         "NamedArguments": [
@@ -1635,11 +1640,6 @@
             "Value": "OnPropertyChanged"
           }
         ]
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXHasCustomActivationFactoryAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -1891,21 +1891,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "AcrylicBrush::sc_defaultTintOpacity"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyValidationCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -1917,6 +1902,21 @@
                   "Name": "String"
                 },
                 "Value": "CoerceToZeroOneRange"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "AcrylicBrush::sc_defaultTintOpacity"
               }
             ]
           }
@@ -9754,6 +9754,48 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "MarshalingType",
+              "Comment": "TypeReference"
+            },
+            "Value": "Agile"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 262144
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ComposableAttribute",
         "FixedArguments": [
           {
@@ -9792,33 +9834,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
         "FixedArguments": [
           {
@@ -9829,21 +9844,6 @@
               "Comment": "TypeReference"
             },
             "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.MarshalingBehaviorAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "MarshalingType",
-              "Comment": "TypeReference"
-            },
-            "Value": "Agile"
           }
         ],
         "NamedArguments": []
@@ -16706,63 +16706,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "value",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "OnPropertyChanged"
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -16841,6 +16784,63 @@
               "Name": "Byte"
             },
             "Value": 54
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "value",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "OnPropertyChanged"
+          }
+        ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -17020,21 +17020,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "AcrylicBrush::sc_defaultTintOpacity"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyValidationCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -17046,6 +17031,21 @@
                   "Name": "String"
                 },
                 "Value": "CoerceToZeroOneRange"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "AcrylicBrush::sc_defaultTintOpacity"
               }
             ]
           }
@@ -17100,21 +17100,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "AcrylicBrush::sc_defaultTintOpacity"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyValidationCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -17126,6 +17111,21 @@
                   "Name": "String"
                 },
                 "Value": "CoerceToZeroOneRange"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "AcrylicBrush::sc_defaultTintOpacity"
               }
             ]
           }
@@ -17434,6 +17434,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
         "FixedArguments": [],
         "NamedArguments": [
@@ -17532,24 +17547,19 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
+        "NamedArguments": [
           {
+            "Kind": "Field",
+            "Name": "value",
             "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "String"
             },
-            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
+            "Value": "OnPropertyChanged"
           }
-        ],
-        "NamedArguments": []
+        ]
       },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
@@ -17574,19 +17584,9 @@
         "NamedArguments": []
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
         "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "value",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "OnPropertyChanged"
-          }
-        ]
+        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -17773,32 +17773,17 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
         "FixedArguments": [],
         "NamedArguments": [
           {
             "Kind": "Field",
-            "Name": "value",
+            "Name": "enable",
             "Type": {
               "Kind": "Primitive",
-              "Name": "String"
+              "Name": "Boolean"
             },
-            "Value": "OnPropertyChanged"
+            "Value": true
           }
         ]
       },
@@ -17891,17 +17876,32 @@
         "NamedArguments": []
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
         "NamedArguments": [
           {
             "Kind": "Field",
-            "Name": "enable",
+            "Name": "value",
             "Type": {
               "Kind": "Primitive",
-              "Name": "Boolean"
+              "Name": "String"
             },
-            "Value": true
+            "Value": "OnPropertyChanged"
           }
         ]
       },
@@ -18035,41 +18035,19 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
           {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
+            "Kind": "Field",
+            "Name": "enable",
             "Type": {
               "Kind": "Primitive",
-              "Name": "UInt32"
+              "Name": "Boolean"
             },
-            "Value": 65536
+            "Value": true
           }
-        ],
-        "NamedArguments": []
+        ]
       },
       {
         "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
@@ -18092,19 +18070,26 @@
         ]
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
           {
-            "Kind": "Field",
-            "Name": "enable",
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
             "Type": {
               "Kind": "Primitive",
-              "Name": "Boolean"
+              "Name": "UInt32"
             },
-            "Value": true
+            "Value": 65536
           }
-        ]
+        ],
+        "NamedArguments": []
       },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
@@ -18185,6 +18170,21 @@
               "Name": "Byte"
             },
             "Value": 140
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
           }
         ],
         "NamedArguments": []
@@ -18421,22 +18421,7 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "value",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "OnPropertyChanged"
-          }
-        ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -18445,32 +18430,15 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
+            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
           }
         ],
         "NamedArguments": []
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
         "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "enable",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Boolean"
-            },
-            "Value": true
-          }
-        ]
+        "NamedArguments": []
       },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
@@ -18556,7 +18524,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -18565,15 +18533,47 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Xaml.Media.AcrylicBrush"
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
           }
         ],
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
         "FixedArguments": [],
-        "NamedArguments": []
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "enable",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            },
+            "Value": true
+          }
+        ]
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "value",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "OnPropertyChanged"
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -24778,7 +24778,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -24787,14 +24787,7 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
+            "Value": "Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop"
           }
         ],
         "NamedArguments": []
@@ -24883,7 +24876,7 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
             "Type": {
@@ -24892,7 +24885,14 @@
               "Name": "Type",
               "Comment": "TypeReference"
             },
-            "Value": "Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop"
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 262144
           }
         ],
         "NamedArguments": []
@@ -24924,26 +24924,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -24963,6 +24943,26 @@
             "Value": 262144
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       },
       {
@@ -36734,11 +36734,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
         "FixedArguments": [],
         "NamedArguments": [
@@ -36754,6 +36749,21 @@
         ]
       },
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.MicaBackdrop"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
         "NamedArguments": [
@@ -36767,6 +36777,11 @@
             "Value": "OnPropertyChanged"
           }
         ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
       },
       {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
@@ -36786,21 +36801,6 @@
               "Name": "UInt32"
             },
             "Value": 262144
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.MicaBackdrop"
           }
         ],
         "NamedArguments": []
@@ -36940,25 +36940,8 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
-          }
-        ],
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       },
       {
@@ -37045,21 +37028,6 @@
         "NamedArguments": []
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "enable",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Boolean"
-            },
-            "Value": true
-          }
-        ]
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
         "FixedArguments": [
           {
@@ -37075,6 +37043,43 @@
         "NamedArguments": []
       },
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 262144
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "enable",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            },
+            "Value": true
+          }
+        ]
+      },
+      {
         "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
         "NamedArguments": [
@@ -37088,11 +37093,6 @@
             "Value": "OnPropertyChanged"
           }
         ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
       }
     ],
     "Fields": [],
@@ -37202,56 +37202,19 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.MicaBackdrop"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
         "FixedArguments": [],
         "NamedArguments": [
           {
             "Kind": "Field",
-            "Name": "enable",
+            "Name": "value",
             "Type": {
               "Kind": "Primitive",
-              "Name": "Boolean"
+              "Name": "String"
             },
-            "Value": true
+            "Value": "OnPropertyChanged"
           }
         ]
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 262144
-          }
-        ],
-        "NamedArguments": []
       },
       {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
@@ -37337,23 +37300,60 @@
         "NamedArguments": []
       },
       {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
         "FixedArguments": [],
         "NamedArguments": [
           {
             "Kind": "Field",
-            "Name": "value",
+            "Name": "enable",
             "Type": {
               "Kind": "Primitive",
-              "Name": "String"
+              "Name": "Boolean"
             },
-            "Value": "OnPropertyChanged"
+            "Value": true
           }
         ]
       },
       {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 262144
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.MicaBackdrop"
+          }
+        ],
         "NamedArguments": []
       }
     ],
@@ -44000,26 +44000,6 @@
     ],
     "CustomAttributes": [
       {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.RadialGradientBrush"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -44122,6 +44102,26 @@
             "Value": 238
           }
         ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.RadialGradientBrush"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
         "NamedArguments": []
       }
     ],
@@ -44227,21 +44227,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44253,6 +44238,21 @@
                   "Name": "String"
                 },
                 "Value": "winrt::Point(0.5,0.5)"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -44394,21 +44394,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "0.5"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44420,6 +44405,21 @@
                   "Name": "Boolean"
                 },
                 "Value": true
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "0.5"
               }
             ]
           }
@@ -44559,21 +44559,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "0.5"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44585,6 +44570,21 @@
                   "Name": "Boolean"
                 },
                 "Value": true
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "0.5"
               }
             ]
           }
@@ -44644,21 +44644,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44670,6 +44655,21 @@
                   "Name": "String"
                 },
                 "Value": "winrt::Point(0.5,0.5)"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -44726,21 +44726,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44752,6 +44737,21 @@
                   "Name": "String"
                 },
                 "Value": "winrt::Point(0.5,0.5)"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -44895,21 +44895,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -44921,6 +44906,21 @@
                   "Name": "String"
                 },
                 "Value": "winrt::BrushMappingMode::RelativeToBoundingBox"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -44982,21 +44982,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "winrt::Microsoft::UI::Composition::CompositionColorSpace::Auto"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -45008,6 +44993,21 @@
                   "Name": "Boolean"
                 },
                 "Value": true
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "winrt::Microsoft::UI::Composition::CompositionColorSpace::Auto"
               }
             ]
           }
@@ -45064,21 +45064,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -45090,6 +45075,21 @@
                   "Name": "String"
                 },
                 "Value": "winrt::Microsoft::UI::Composition::CompositionColorSpace::Auto"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -45389,6 +45389,21 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.Media.RadialGradientBrush"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
         "FixedArguments": [
           {
@@ -45494,21 +45509,6 @@
               "Name": "Byte"
             },
             "Value": 51
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ExclusiveToAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.Media.RadialGradientBrush"
           }
         ],
         "NamedArguments": []
@@ -45621,6 +45621,28 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.GuidAttribute",
         "FixedArguments": [
           {
@@ -45699,28 +45721,6 @@
               "Name": "Byte"
             },
             "Value": 211
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -63811,6 +63811,21 @@
         "NamedArguments": []
       },
       {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "value",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "OnPropertyChanged"
+          }
+        ]
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ComposableAttribute",
         "FixedArguments": [
           {
@@ -63847,56 +63862,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackMethodNameAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "value",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "OnPropertyChanged"
-          }
-        ]
-      },
-      {
-        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "enable",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "Boolean"
-            },
-            "Value": true
-          }
-        ]
       },
       {
         "Type": "Windows.Foundation.Metadata.StaticAttribute",
@@ -63948,6 +63913,41 @@
           }
         ],
         "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "enable",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Boolean"
+            },
+            "Value": true
+          }
+        ]
       }
     ],
     "Fields": [],
@@ -72551,6 +72551,63 @@
     ],
     "CustomAttributes": [
       {
+        "Type": "Windows.UI.Xaml.Markup.ContentPropertyAttribute",
+        "FixedArguments": [],
+        "NamedArguments": [
+          {
+            "Kind": "Field",
+            "Name": "Name",
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "GradientStops"
+          }
+        ]
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "Windows.Foundation.Metadata",
+              "Name": "ThreadingModel",
+              "Comment": "TypeReference"
+            },
+            "Value": "Both"
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
+        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Type",
+              "Namespace": "System",
+              "Name": "Type",
+              "Comment": "TypeReference"
+            },
+            "Value": "Microsoft.UI.Xaml.XamlContract"
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 65536
+          }
+        ],
+        "NamedArguments": []
+      },
+      {
         "Type": "Windows.Foundation.Metadata.ComposableAttribute",
         "FixedArguments": [
           {
@@ -72584,48 +72641,6 @@
               "Name": "String"
             },
             "Value": "Microsoft.UI.Xaml.XamlContract"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ThreadingAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "Windows.Foundation.Metadata",
-              "Name": "ThreadingModel",
-              "Comment": "TypeReference"
-            },
-            "Value": "Both"
-          }
-        ],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.WebHostHiddenAttribute",
-        "FixedArguments": [],
-        "NamedArguments": []
-      },
-      {
-        "Type": "Windows.Foundation.Metadata.ContractVersionAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Type",
-              "Namespace": "System",
-              "Name": "Type",
-              "Comment": "TypeReference"
-            },
-            "Value": "Microsoft.UI.Xaml.XamlContract"
-          },
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "UInt32"
-            },
-            "Value": 65536
           }
         ],
         "NamedArguments": []
@@ -72673,21 +72688,6 @@
           }
         ],
         "NamedArguments": []
-      },
-      {
-        "Type": "Windows.UI.Xaml.Markup.ContentPropertyAttribute",
-        "FixedArguments": [],
-        "NamedArguments": [
-          {
-            "Kind": "Field",
-            "Name": "Name",
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "GradientStops"
-          }
-        ]
       }
     ],
     "Fields": [],
@@ -73181,21 +73181,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "enable",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "Boolean"
-                },
-                "Value": true
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -73207,6 +73192,21 @@
                   "Name": "String"
                 },
                 "Value": "0.5"
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "enable",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Boolean"
+                },
+                "Value": true
               }
             ]
           }
@@ -73517,21 +73517,6 @@
         ],
         "CustomAttributes": [
           {
-            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
-            "FixedArguments": [],
-            "NamedArguments": [
-              {
-                "Kind": "Field",
-                "Name": "value",
-                "Type": {
-                  "Kind": "Primitive",
-                  "Name": "String"
-                },
-                "Value": "winrt::BrushMappingMode::RelativeToBoundingBox"
-              }
-            ]
-          },
-          {
             "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyChangedCallbackAttribute",
             "FixedArguments": [],
             "NamedArguments": [
@@ -73543,6 +73528,21 @@
                   "Name": "Boolean"
                 },
                 "Value": true
+              }
+            ]
+          },
+          {
+            "Type": "Microsoft.UI.Xaml.CustomAttributes.MUXPropertyDefaultValueAttribute",
+            "FixedArguments": [],
+            "NamedArguments": [
+              {
+                "Kind": "Field",
+                "Name": "value",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "winrt::BrushMappingMode::RelativeToBoundingBox"
               }
             ]
           }
