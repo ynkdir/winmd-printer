@@ -81,7 +81,7 @@ CheckDependencies "Microsoft.WindowsAppSDK" @(
     "Microsoft.WindowsAppSDK.DWrite",
     "Microsoft.WindowsAppSDK.Widgets",
     "Microsoft.WindowsAppSDK.AI",
-    "Microsoft.WindowsAppSDK.Packages"
+    "Microsoft.WindowsAppSDK.Runtime"
 )
 
 DownloadDependencies "Microsoft.WindowsAppSDK"
