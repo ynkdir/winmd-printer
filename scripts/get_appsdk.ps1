@@ -30,6 +30,8 @@ function Main {
 
     py -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\$Name.json
 
+    tar.exe -C $DstDir -acf "$Name.$version.zip" *
+
     Remove-Item -Recurse $tmpdir
 }
 
