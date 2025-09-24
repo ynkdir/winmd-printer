@@ -48,7 +48,26 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    if ([System.Version]$Version -ge [System.Version]"1.8.250916003") {
+    if ([System.Version]$Version -lt [System.Version]"1.8.250916003") {
+        Check-Dependencies $tmpdir\$Name.$Version\$Name.nuspec @(
+            "Microsoft.WindowsAppSDK.Base",
+            "Microsoft.WindowsAppSDK.Foundation",
+            "Microsoft.WindowsAppSDK.InteractiveExperiences",
+            "Microsoft.WindowsAppSDK.WinUI",
+            "Microsoft.WindowsAppSDK.DWrite",
+            "Microsoft.WindowsAppSDK.Widgets",
+            "Microsoft.WindowsAppSDK.AI",
+            "Microsoft.WindowsAppSDK.Runtime"
+        )
+
+        Download-Dependencies $tmpdir\$Name.$Version\$Name.nuspec $tmpdir
+
+        $winmdfiles = (Get-Item $tmpdir\Microsoft.WindowsAppSDK.AI\metadata\*.winmd,
+            $tmpdir\Microsoft.WindowsAppSDK.Foundation\metadata\*.winmd,
+            $tmpdir\Microsoft.WindowsAppSDK.InteractiveExperiences\metadata\10.0.18362.0\*.winmd,
+            $tmpdir\Microsoft.WindowsAppSDK.Widgets\metadata\*.winmd,
+            $tmpdir\Microsoft.WindowsAppSDK.WinUI\metadata\*.winmd)
+    } else {
         Check-Dependencies $tmpdir\$Name.$Version\$Name.nuspec @(
             "Microsoft.WindowsAppSDK.Base",
             "Microsoft.WindowsAppSDK.Foundation",
@@ -69,25 +88,6 @@ function Main {
             $tmpdir\Microsoft.WindowsAppSDK.Widgets\metadata\*.winmd,
             $tmpdir\Microsoft.WindowsAppSDK.WinUI\metadata\*.winmd,
             $tmpdir\Microsoft.WindowsAppSDK.ML\metadata\*.winmd)
-    } else {
-        Check-Dependencies $tmpdir\$Name.$Version\$Name.nuspec @(
-            "Microsoft.WindowsAppSDK.Base",
-            "Microsoft.WindowsAppSDK.Foundation",
-            "Microsoft.WindowsAppSDK.InteractiveExperiences",
-            "Microsoft.WindowsAppSDK.WinUI",
-            "Microsoft.WindowsAppSDK.DWrite",
-            "Microsoft.WindowsAppSDK.Widgets",
-            "Microsoft.WindowsAppSDK.AI",
-            "Microsoft.WindowsAppSDK.Runtime"
-        )
-
-        Download-Dependencies $tmpdir\$Name.$Version\$Name.nuspec $tmpdir
-
-        $winmdfiles = (Get-Item $tmpdir\Microsoft.WindowsAppSDK.AI\metadata\*.winmd,
-            $tmpdir\Microsoft.WindowsAppSDK.Foundation\metadata\*.winmd,
-            $tmpdir\Microsoft.WindowsAppSDK.InteractiveExperiences\metadata\10.0.18362.0\*.winmd,
-            $tmpdir\Microsoft.WindowsAppSDK.Widgets\metadata\*.winmd,
-            $tmpdir\Microsoft.WindowsAppSDK.WinUI\metadata\*.winmd)
     }
 
     foreach ($f in $winmdfiles) {
