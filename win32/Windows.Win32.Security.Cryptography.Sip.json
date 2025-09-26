@@ -216,6 +216,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "MSSIP_ADDINFO_DETACHEDSIG",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "MSSIP_ADDINFO_NONMSSIP",
         "Signature": {
           "Kind": "Primitive",
@@ -2441,6 +2461,25 @@
             "DefaultValue": null,
             "Offset": 0,
             "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "psDetachedSig",
+            "Signature": {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Security.Cryptography.Sip",
+                "Name": "MS_ADDINFO_DETACHEDSIG",
+                "Comment": "TypeReference"
+              }
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
           }
         ],
         "InterfaceImplementations": [],
@@ -2619,6 +2658,93 @@
       },
       {
         "Name": "pbMemSignedMsg",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.Cryptography.Sip",
+    "Name": "MS_ADDINFO_DETACHEDSIG",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "cbStruct",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "hSignatureFile",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "cbSignatureObject",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "pbSignatureObject",
         "Signature": {
           "Kind": "Pointer",
           "Type": {

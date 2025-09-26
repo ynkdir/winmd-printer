@@ -5471,6 +5471,197 @@
         "GenericParameters": []
       },
       {
+        "Name": "EnclaveEncryptDataForTrustlet",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveEncryptDataForTrustlet",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Environment",
+                "Name": "TRUSTLET_BINDING_DATA",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 6,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DataToEncrypt",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 1
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DataToEncryptSize",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TrustletBindingData",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "EncryptedData",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.MemorySizeAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "BytesParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 4
+                  }
+                ]
+              }
+            ],
+            "DefaultValue": null
+          },
+          {
+            "Name": "BufferSize",
+            "SequenceNumber": 5,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "EncryptedDataSize",
+            "SequenceNumber": 6,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "EnclaveGetEnclaveInformation",
         "Attributes": [
           "Public",
@@ -5600,6 +5791,66 @@
                 ]
               }
             ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "EnclaveUsesAttestedKeys",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "EnclaveUsesAttestedKeys",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "vertdll.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [],
+          "RequiredParameterCount": 0,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOLEAN",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
             "DefaultValue": null
           }
         ],
@@ -10724,6 +10975,154 @@
     "Layout": {
       "IsDefault": true,
       "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Environment",
+    "Name": "PS_TRUSTLET_TKSESSION_ID",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "SessionId",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "UInt64"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            4
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Environment",
+    "Name": "TRUSTLET_BINDING_DATA",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "TrustletIdentity",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TrustletSessionId",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Environment",
+          "Name": "PS_TRUSTLET_TKSESSION_ID",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TrustletSvn",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved1",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved2",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 1,
       "Size": 0
     },
     "Methods": [],

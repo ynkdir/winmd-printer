@@ -4185,6 +4185,107 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "GUID_DEVINTERFACE_POWER_LIMIT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "System",
+          "Name": "Guid",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt32"
+                },
+                "Value": 2402706177
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt16"
+                },
+                "Value": 2334
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "UInt16"
+                },
+                "Value": 16470
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 185
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 47
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 149
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 139
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 39
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 98
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 95
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                },
+                "Value": 206
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "BATTERY_UNKNOWN_CAPACITY",
         "Signature": {
           "Kind": "Primitive",
@@ -5402,6 +5503,26 @@
       },
       {
         "Name": "THERMAL_DEVICE_INTERFACE_VERSION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "POWER_LIMIT_INTERFACE_VERSION",
         "Signature": {
           "Kind": "Primitive",
           "Name": "UInt32"
@@ -12047,6 +12168,326 @@
             "Attributes": [
               "In",
               "Optional"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PowerGetUserConfiguredACPowerMode",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PowerGetUserConfiguredACPowerMode",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "POWRPROF.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "System",
+                "Name": "Guid",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "PowerModeGuid",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PowerGetUserConfiguredDCPowerMode",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PowerGetUserConfiguredDCPowerMode",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "POWRPROF.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "System",
+                "Name": "Guid",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "PowerModeGuid",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PowerSetUserConfiguredACPowerMode",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PowerSetUserConfiguredACPowerMode",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "POWRPROF.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "System",
+                "Name": "Guid",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "PowerModeGuid",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.ConstAttribute",
+                "FixedArguments": [],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "PowerSetUserConfiguredDCPowerMode",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "PowerSetUserConfiguredDCPowerMode",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "POWRPROF.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "System",
+                "Name": "Guid",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Primitive",
+            "Name": "UInt32"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "PowerModeGuid",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
             ],
             "CustomAttributes": [
               {
@@ -21594,7 +22035,51 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "EffectivePowerModeEnergySaverHighSavings",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "EFFECTIVE_POWER_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "EffectivePowerModeBetterBattery",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "EFFECTIVE_POWER_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EffectivePowerModeEnergySaverStandard",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Power",
@@ -24282,6 +24767,28 @@
       },
       {
         "Name": "ACCESS_OVERLAY_SCHEME",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "POWER_DATA_ACCESSOR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 26
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ACCESS_POWER_MODE",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Power",
@@ -33350,7 +33857,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "MonitorRequestReasonMax",
+        "Name": "MonitorRequestReasonAusterityBatteryDrain",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Power",
@@ -33367,6 +33874,72 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 55
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MonitorRequestReasonDozeRestrictedStandby",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "POWER_MONITOR_REQUEST_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 56
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MonitorRequestReasonSmartRestrictedStandby",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "POWER_MONITOR_REQUEST_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 57
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MonitorRequestReasonMax",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Power",
+          "Name": "POWER_MONITOR_REQUEST_REASON",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 58
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0

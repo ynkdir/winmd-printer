@@ -1,6 +1,52 @@
 [
   {
     "Namespace": "Windows.Win32.Security.EnterpriseData",
+    "Name": "_SRP_REQUEST",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.NativeTypedefAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "Value",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "IntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.EnterpriseData",
     "Name": "IProtectionPolicyManagerInterop",
     "BaseType": null,
     "IsNested": false,
@@ -4230,6 +4276,85 @@
             "SequenceNumber": 2,
             "Attributes": [
               "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SrpIsAllowed",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "SrpIsAllowed",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "srpapi.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Security.EnterpriseData",
+                "Name": "_SRP_REQUEST",
+                "Comment": "TypeDefinition"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "NTSTATUS",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "FileInfo",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
             ],
             "CustomAttributes": [],
             "DefaultValue": null

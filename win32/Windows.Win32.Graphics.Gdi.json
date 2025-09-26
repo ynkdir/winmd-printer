@@ -12017,6 +12017,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "DISPLAYCONFIG_PATH_BOOST_REFRESH_RATE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "DISPLAYCONFIG_PATH_VALID_FLAGS",
         "Signature": {
           "Kind": "Primitive",
@@ -65147,16 +65167,12 @@
               }
             },
             {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Graphics.Gdi",
-              "Name": "DFC_TYPE",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "UInt32"
             },
             {
-              "Kind": "Type",
-              "Namespace": "Windows.Win32.Graphics.Gdi",
-              "Name": "DFCS_STATE",
-              "Comment": "TypeReference"
+              "Kind": "Primitive",
+              "Name": "UInt32"
             }
           ],
           "RequiredParameterCount": 4,
@@ -65178,7 +65194,7 @@
             "DefaultValue": null
           },
           {
-            "Name": "param0",
+            "Name": "hdc",
             "SequenceNumber": 1,
             "Attributes": [
               "In"
@@ -65187,7 +65203,7 @@
             "DefaultValue": null
           },
           {
-            "Name": "param1",
+            "Name": "lprc",
             "SequenceNumber": 2,
             "Attributes": [
               "In",
@@ -65197,7 +65213,7 @@
             "DefaultValue": null
           },
           {
-            "Name": "param2",
+            "Name": "uType",
             "SequenceNumber": 3,
             "Attributes": [
               "In"
@@ -65206,7 +65222,7 @@
             "DefaultValue": null
           },
           {
-            "Name": "param3",
+            "Name": "uState",
             "SequenceNumber": 4,
             "Attributes": [
               "In"
@@ -106658,6 +106674,113 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Graphics.Gdi",
+    "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE_SDR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Graphics.Gdi",
+          "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE_WCG",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Graphics.Gdi",
+          "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE_HDR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Graphics.Gdi",
+          "Name": "DISPLAYCONFIG_ADVANCED_COLOR_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0

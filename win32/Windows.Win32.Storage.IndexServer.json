@@ -4932,6 +4932,28 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CHUNK_IMAGE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.IndexServer",
+          "Name": "CHUNKSTATE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -6029,6 +6051,476 @@
               "Out"
             ],
             "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      }
+    ],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.IndexServer",
+    "Name": "IMAGE_PIXELFORMAT",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FILTER_PIXELFORMAT_BGRA8",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.IndexServer",
+          "Name": "IMAGE_PIXELFORMAT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FILTER_PIXELFORMAT_PBGRA8",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.IndexServer",
+          "Name": "IMAGE_PIXELFORMAT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FILTER_PIXELFORMAT_BGR8",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.IndexServer",
+          "Name": "IMAGE_PIXELFORMAT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.IndexServer",
+    "Name": "IMAGE_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Width",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Height",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Format",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Storage.IndexServer",
+          "Name": "IMAGE_PIXELFORMAT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Storage.IndexServer",
+    "Name": "IPixelFilter",
+    "BaseType": null,
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Interface",
+      "Abstract",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.GuidAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Value": 1031666087
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 36262
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "UInt16"
+            },
+            "Value": 20415
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 164
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 91
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 117
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 146
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 240
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 109
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 147
+          },
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Value": 169
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [],
+    "InterfaceImplementations": [
+      {
+        "Interface": {
+          "Kind": "TypeReference",
+          "TypeReference": {
+            "Name": "IFilter",
+            "Namespace": "Windows.Win32.Storage.IndexServer"
+          },
+          "TypeDefinition": null,
+          "TypeSpecification": null
+        },
+        "CustomAttributes": []
+      }
+    ],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [
+      {
+        "Name": "GetImageInfo",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Storage.IndexServer",
+                "Name": "IMAGE_INFO",
+                "Comment": "TypeDefinition"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "imageInfo",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "GetPixelsForImage",
+        "Attributes": [
+          "Public",
+          "Virtual",
+          "HideBySig",
+          "NewSlot",
+          "Abstract"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": null,
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "Instance"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": true,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Pointer",
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Byte"
+                }
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pixelBufferLength",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pixelBuffer",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeArrayInfoAttribute",
+                "FixedArguments": [],
+                "NamedArguments": [
+                  {
+                    "Kind": "Field",
+                    "Name": "CountParamIndex",
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int16"
+                    },
+                    "Value": 0
+                  }
+                ]
+              }
+            ],
             "DefaultValue": null
           }
         ],

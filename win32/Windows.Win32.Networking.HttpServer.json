@@ -1152,6 +1152,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "HTTP_LOG_FIELD_EXT_FAULT_CODE_EXT",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt64",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "HTTP_LOGGING_FLAG_LOCAL_TIME_ROLLOVER",
         "Signature": {
           "Kind": "Primitive",
@@ -1452,6 +1472,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "HTTP_SEND_RESPONSE_FLAG_AUTOMATIC_CHUNKING",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 512
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "HTTP_FLUSH_RESPONSE_FLAG_RECURSIVE",
         "Signature": {
           "Kind": "Primitive",
@@ -1712,6 +1752,46 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "HTTP_REQUEST_FLAG_FAST_FORWARDING_ALLOWED",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HTTP_REQUEST_FLAG_FAST_FORWARDING_RESPONSE_ALLOWED",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "HTTP_RESPONSE_FLAG_MULTIPLE_ENCODINGS_AVAILABLE",
         "Signature": {
           "Kind": "Primitive",
@@ -1767,6 +1847,46 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HTTP_SSL_CERT_SHA_HASH_LENGTH",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 20
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HTTP_SSL_CERT_STORE_NAME_LENGTH",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 128
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -2067,6 +2187,26 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 16384
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HTTP_SERVICE_CONFIG_SSL_FLAG_ENABLE_CACHE_CLIENT_HELLO",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32768
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -9567,6 +9707,28 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpServerFastForwardingProperty",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_SERVER_PROPERTY",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 18
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -10882,6 +11044,64 @@
       },
       {
         "Name": "EnableSharing",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "BOOLEAN",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.HttpServer",
+    "Name": "HTTP_FAST_FORWARD_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_PROPERTY_FLAGS",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EnableFastForwarding",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.Foundation",
@@ -15739,6 +15959,56 @@
   },
   {
     "Namespace": "Windows.Win32.Networking.HttpServer",
+    "Name": "HTTP_WINHTTP_FAST_FORWARDING_DATA",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Reserved",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            16
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.HttpServer",
     "Name": "HTTP_DATA_CHUNK_TYPE",
     "BaseType": "System.Enum",
     "IsNested": false,
@@ -15892,7 +16162,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "HttpDataChunkMaximum",
+        "Name": "HttpDataChunkFromWinHttpFastForwarding",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.Networking.HttpServer",
@@ -15909,6 +16179,28 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 5
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpDataChunkMaximum",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_DATA_CHUNK_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 6
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -16079,6 +16371,22 @@
               "Kind": "Type",
               "Namespace": "",
               "Name": "_Trailers_e__Struct",
+              "Comment": "TypeReference"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "FromWinHttpFastForwarding",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "",
+              "Name": "_FromWinHttpFastForwarding_e__Struct",
               "Comment": "TypeReference"
             },
             "Attributes": [
@@ -16378,6 +16686,48 @@
                     "Name": "HTTP_UNKNOWN_HEADER",
                     "Comment": "TypeDefinition"
                   }
+                },
+                "Attributes": [
+                  "Public"
+                ],
+                "CustomAttributes": [],
+                "DefaultValue": null,
+                "Offset": -1,
+                "RelativeVirtualAddress": 0
+              }
+            ],
+            "InterfaceImplementations": [],
+            "Layout": {
+              "IsDefault": true,
+              "PackingSize": 0,
+              "Size": 0
+            },
+            "Methods": [],
+            "NestedTypes": [],
+            "GenericParameters": []
+          },
+          {
+            "Namespace": "",
+            "Name": "_FromWinHttpFastForwarding_e__Struct",
+            "BaseType": "System.ValueType",
+            "IsNested": true,
+            "Attributes": [
+              "NestedPublic",
+              "SequentialLayout",
+              "Class",
+              "Sealed",
+              "AnsiClass",
+              "BeforeFieldInit"
+            ],
+            "CustomAttributes": [],
+            "Fields": [
+              {
+                "Name": "WhFastForwardingData",
+                "Signature": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.Networking.HttpServer",
+                  "Name": "HTTP_WINHTTP_FAST_FORWARDING_DATA",
+                  "Comment": "TypeDefinition"
                 },
                 "Attributes": [
                   "Public"
@@ -19311,6 +19661,50 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestInfoTypeQuicStatsV2",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_INFO_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 10
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestInfoTypeTcpInfoV2",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_INFO_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 11
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -22009,7 +22403,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "ExParamTypeMax",
+        "Name": "ExParamTypeCertConfig",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.Networking.HttpServer",
@@ -22026,6 +22420,28 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 6
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ExParamTypeMax",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 7
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -22592,6 +23008,139 @@
   },
   {
     "Namespace": "Windows.Win32.Networking.HttpServer",
+    "Name": "HTTP_CERT_CONFIG_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "CertHash",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            20
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CertStoreName",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Char"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            128
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.HttpServer",
+    "Name": "HTTP_CERT_CONFIG_PARAM",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "CertConfigCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CertConfigs",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Networking.HttpServer",
+            "Name": "HTTP_CERT_CONFIG_ENTRY",
+            "Comment": "TypeDefinition"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Networking.HttpServer",
     "Name": "HTTP_SERVICE_CONFIG_SSL_PARAM_EX",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -22761,6 +23310,22 @@
               "Kind": "Type",
               "Namespace": "Windows.Win32.Networking.HttpServer",
               "Name": "HTTP_TLS_SESSION_TICKET_KEYS_PARAM",
+              "Comment": "TypeDefinition"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "HttpCertConfigParam",
+            "Signature": {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Networking.HttpServer",
+              "Name": "HTTP_CERT_CONFIG_PARAM",
               "Comment": "TypeDefinition"
             },
             "Attributes": [
@@ -24514,6 +25079,94 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestPropertyQuicStatsV2",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_PROPERTY",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestPropertyQuicStreamStats",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_PROPERTY",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 9
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestPropertyTcpInfoV2",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_PROPERTY",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 10
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpRequestPropertyTlsClientHello",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_REQUEST_PROPERTY",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 11
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -25757,7 +26410,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "HttpFeatureLast",
+        "Name": "HttpFeatureTlsSessionTickets",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.Networking.HttpServer",
@@ -25774,6 +26427,160 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 5
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureDisableTlsSessionId",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 6
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureTlsDualCerts",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 7
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureAutomaticChunkedEncoding",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureDedicatedReqQueueDelegationType",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 9
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureFastForwardResponse",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 10
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureCacheTlsClientHello",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 11
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HttpFeatureLast",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Networking.HttpServer",
+          "Name": "HTTP_FEATURE_ID",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 12
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0

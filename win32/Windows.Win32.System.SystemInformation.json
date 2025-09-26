@@ -7460,6 +7460,86 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "NTDDI_WIN10_CU",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 167772173
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NTDDI_WIN11_ZN",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 167772174
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NTDDI_WIN11_GA",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 167772175
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NTDDI_WIN11_GE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 167772176
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "WDK_NTDDI_VERSION",
         "Signature": {
           "Kind": "Primitive",
@@ -7474,7 +7554,7 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "UInt32",
-          "Value": 167772172
+          "Value": 167772176
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -7554,7 +7634,7 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "UInt32",
-          "Value": 167772172
+          "Value": 167772176
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -15128,6 +15208,162 @@
   },
   {
     "Namespace": "Windows.Win32.System.SystemInformation",
+    "Name": "GROUP_AFFINITY32",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Mask",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Group",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "UInt16"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            3
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.SystemInformation",
+    "Name": "GROUP_AFFINITY64",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Mask",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Group",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "UInt16"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            3
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.SystemInformation",
     "Name": "SYSTEM_INFO",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -16500,6 +16736,28 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CacheUnknown",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.SystemInformation",
+          "Name": "PROCESSOR_CACHE_TYPE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 4
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -20007,7 +20265,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "GlobalDataIdQpcShift",
+        "Name": "GlobalDataIdQpcBypassEnabled",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.SystemInformation",
@@ -20029,7 +20287,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "GlobalDataIdQpcBypassEnabled",
+        "Name": "GlobalDataIdQpcData",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.SystemInformation",
@@ -20051,28 +20309,6 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "GlobalDataIdQpcData",
-        "Signature": {
-          "Kind": "Type",
-          "Namespace": "Windows.Win32.System.SystemInformation",
-          "Name": "RTL_SYSTEM_GLOBAL_DATA_ID",
-          "Comment": "TypeReference"
-        },
-        "Attributes": [
-          "Public",
-          "Static",
-          "Literal",
-          "HasDefault"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": {
-          "TypeCode": "Int32",
-          "Value": 18
-        },
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
         "Name": "GlobalDataIdQpcBias",
         "Signature": {
           "Kind": "Type",
@@ -20089,7 +20325,7 @@
         "CustomAttributes": [],
         "DefaultValue": {
           "TypeCode": "Int32",
-          "Value": 19
+          "Value": 18
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0

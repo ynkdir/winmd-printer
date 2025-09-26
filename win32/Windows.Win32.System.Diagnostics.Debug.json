@@ -1270,6 +1270,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "SYMFLAG_COMPLEX",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 67108864
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "SYMFLAG_RESET",
         "Signature": {
           "Kind": "Primitive",
@@ -5130,6 +5150,46 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "MINIDUMP_SYSMEMINFO1_PERF_MDLPAGESALLOCATED_PFNDATABASECOMMITTEDPAGES",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 16
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MINIDUMP_SYSMEMINFO1_PERF_SYSTEMPAGETABLECOMMITTEDPAGES_CONTIGUOUSPAGESALLOCATED",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "MINIDUMP_PROCESS_VM_COUNTERS",
         "Signature": {
           "Kind": "Primitive",
@@ -5505,6 +5565,26 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 2147483648
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WHEA_ERR_SRC_OVERRIDE_FLAG",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1073741824
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -6585,6 +6665,46 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 19
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WHEA_DISABLE_PRM_ADDRESS_TRANSLATION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 20
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WHEA_ENABLE_BATCHED_ROW_OFFLINE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 21
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -24832,6 +24952,85 @@
             "SequenceNumber": 1,
             "Attributes": [
               "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "SymGetParentWindow",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "SymGetParentWindow",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "dbghelp.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Foundation",
+                "Name": "HWND",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "pHwnd",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "Out"
             ],
             "CustomAttributes": [],
             "DefaultValue": null
@@ -53175,24 +53374,6 @@
               }
             ],
             "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Type",
-                  "Namespace": "Windows.Win32.Foundation.Metadata",
-                  "Name": "Architecture",
-                  "Comment": "TypeReference"
-                },
-                "Value": [
-                  "X86",
-                  "X64"
-                ]
-              }
-            ],
-            "NamedArguments": []
           }
         ],
         "ImplAttributes": [
@@ -53275,24 +53456,6 @@
                   "Name": "String"
                 },
                 "Value": "https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-getxstatefeaturesmask"
-              }
-            ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Type",
-                  "Namespace": "Windows.Win32.Foundation.Metadata",
-                  "Name": "Architecture",
-                  "Comment": "TypeReference"
-                },
-                "Value": [
-                  "X86",
-                  "X64"
-                ]
               }
             ],
             "NamedArguments": []
@@ -53415,24 +53578,6 @@
                   "Name": "String"
                 },
                 "Value": "https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-locatexstatefeature"
-              }
-            ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Type",
-                  "Namespace": "Windows.Win32.Foundation.Metadata",
-                  "Name": "Architecture",
-                  "Comment": "TypeReference"
-                },
-                "Value": [
-                  "X86",
-                  "X64"
-                ]
               }
             ],
             "NamedArguments": []
@@ -53570,24 +53715,6 @@
                   "Name": "String"
                 },
                 "Value": "https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-setxstatefeaturesmask"
-              }
-            ],
-            "NamedArguments": []
-          },
-          {
-            "Type": "Windows.Win32.Foundation.Metadata.SupportedArchitectureAttribute",
-            "FixedArguments": [
-              {
-                "Type": {
-                  "Kind": "Type",
-                  "Namespace": "Windows.Win32.Foundation.Metadata",
-                  "Name": "Architecture",
-                  "Comment": "TypeReference"
-                },
-                "Value": [
-                  "X86",
-                  "X64"
-                ]
               }
             ],
             "NamedArguments": []
@@ -55497,6 +55624,50 @@
         "DefaultValue": {
           "TypeCode": "UInt16",
           "Value": 32
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IMAGE_DLLCHARACTERISTICS_EX_FORWARD_CFI_COMPAT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGE_DLL_CHARACTERISTICS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt16",
+          "Value": 64
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IMAGE_DLLCHARACTERISTICS_EX_HOTPATCH_COMPATIBLE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGE_DLL_CHARACTERISTICS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt16",
+          "Value": 128
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -64626,6 +64797,28 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "SECURE_KERNEL_HIBERNATE_ERROR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 370
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "COREMSGCALL_INTERNAL_ERROR",
         "Signature": {
           "Kind": "Type",
@@ -64687,6 +64880,28 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 373
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "STORAGE_STACK_FATAL_ERROR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 374
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -66914,6 +67129,28 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "APPLICATION_HANG_KERNEL_LIVEDUMP",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 501
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "MISALIGNED_POINTER_PARAMETER",
         "Signature": {
           "Kind": "Type",
@@ -66953,6 +67190,248 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 503
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "INVALID_MINIMAL_PROCESS_STATE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 504
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PREVIOUS_MODE_MISMATCH",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 505
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SMB_SRV_REQUEST_VALIDATION_FAILURE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 506
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IOMMU_INTERRUPT_REMAPPING_FAULT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 507
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32K_CALLOUT_UNREGISTER_FAILED",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 508
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HAL_SPE_INTERNAL_ERROR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 509
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SMB_CLIENT_REQUEST_VALIDATION_FAILURE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 510
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CPU_SCHEDULER_INTERNAL_ERROR",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 512
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PROCESS_TERMINATE_LIKELY_DEADLOCK",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 513
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "UNEXPECTED_CODEPATH",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 514
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "INVALID_EXTENSION_STATE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 515
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -67085,6 +67564,28 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 859
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "XBOX_CANNOT_MANAGE_PARTITION_MEMORY",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "BUGCHECK_ERROR",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 861
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -70690,6 +71191,72 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 2340
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FACILITY_USERMODE_UNIONFS",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "FACILITY_CODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2341
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FACILITY_USERMODE_PRM",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "FACILITY_CODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2342
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FACILITY_USERMODE_WIN_ACCEL",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "FACILITY_CODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2343
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -79661,10 +80228,34 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "Reserved1",
+        "Name": "Flags",
         "Signature": {
           "Kind": "Primitive",
-          "Name": "UInt32"
+          "Name": "Byte"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved0",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            3
+          ]
         },
         "Attributes": [
           "Public"
@@ -83583,10 +84174,34 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "Reserved1",
+        "Name": "Flags",
         "Signature": {
           "Kind": "Primitive",
-          "Name": "UInt32"
+          "Name": "Byte"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Reserved0",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            3
+          ]
         },
         "Attributes": [
           "Public"
@@ -87617,10 +88232,24 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "Spare",
+        "Name": "MaxSveVectorLength",
         "Signature": {
           "Kind": "Primitive",
-          "Name": "UInt32"
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Spare1",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
         },
         "Attributes": [
           "Public"
@@ -103104,6 +103733,1180 @@
   },
   {
     "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION_2",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "IdleProcessTime",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoReadTransferCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoWriteTransferCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoOtherTransferCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoReadOperationCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoWriteOperationCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IoOtherOperationCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AvailablePages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CommittedPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CommitLimit",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PeakCommitment",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageFaultCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CopyOnWriteCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TransitionCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CacheTransitionCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DemandZeroCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageReadCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PageReadIoCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CacheReadCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CacheIoCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DirtyPagesWriteCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DirtyWriteIoCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MappedPagesWriteCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MappedWriteIoCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagedPoolPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NonPagedPoolPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagedPoolAllocs",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagedPoolFrees",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NonPagedPoolAllocs",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NonPagedPoolFrees",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FreeSystemPtes",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ResidentSystemCodePage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TotalSystemDriverPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TotalSystemCodePages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "NonPagedPoolLookasideHits",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PagedPoolLookasideHits",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AvailablePagedPoolPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ResidentSystemCachePage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ResidentPagedPoolPage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ResidentSystemDriverPage",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastReadNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastReadWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastReadResourceMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastReadNotPossible",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastMdlReadNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastMdlReadWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastMdlReadResourceMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcFastMdlReadNotPossible",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMapDataNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMapDataWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMapDataNoWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMapDataWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcPinMappedDataCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcPinReadNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcPinReadWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcPinReadNoWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcPinReadWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcCopyReadNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcCopyReadWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcCopyReadNoWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcCopyReadWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMdlReadNoWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMdlReadWait",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMdlReadNoWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcMdlReadWaitMiss",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcReadAheadIos",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcLazyWriteIos",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcLazyWritePages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcDataFlushes",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcDataPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ContextSwitches",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FirstLevelTbFills",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SecondLevelTbFills",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SystemCalls",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcTotalDirtyPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "CcDirtyPageThreshold",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ResidentAvailablePages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SharedCommittedPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MdlPagesAllocated",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PfnDatabaseCommittedPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "SystemPageTableCommittedPages",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ContiguousPagesAllocated",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 4,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
     "Name": "MINIDUMP_SYSTEM_MEMORY_INFO_1",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -103214,6 +105017,124 @@
     "Layout": {
       "IsDefault": false,
       "PackingSize": 4,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "MINIDUMP_SYSTEM_MEMORY_INFO_2",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Revision",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BasicInfo",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "MINIDUMP_SYSTEM_BASIC_INFORMATION",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "FileCacheInfo",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "MINIDUMP_SYSTEM_FILECACHE_INFORMATION",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BasicPerfInfo",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "MINIDUMP_SYSTEM_BASIC_PERFORMANCE_INFORMATION",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PerfInfo",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "MINIDUMP_SYSTEM_PERFORMANCE_INFORMATION_2",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
       "Size": 0
     },
     "Methods": [],
@@ -127372,7 +129293,7 @@
         "RelativeVirtualAddress": 0
       },
       {
-        "Name": "IMAGEHLP_SYMBOL_TYPE_INFO_MAX",
+        "Name": "TI_GET_DISCRIMINATEDUNION_TAG_TYPEID",
         "Signature": {
           "Kind": "Type",
           "Namespace": "Windows.Win32.System.Diagnostics.Debug",
@@ -127389,6 +129310,94 @@
         "DefaultValue": {
           "TypeCode": "Int32",
           "Value": 35
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TI_GET_DISCRIMINATEDUNION_TAG_OFFSET",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGEHLP_SYMBOL_TYPE_INFO",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 36
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TI_GET_DISCRIMINATEDUNION_TAG_RANGESCOUNT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGEHLP_SYMBOL_TYPE_INFO",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 37
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TI_GET_DISCRIMINATEDUNION_TAG_RANGES",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGEHLP_SYMBOL_TYPE_INFO",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 38
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "IMAGEHLP_SYMBOL_TYPE_INFO_MAX",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "IMAGEHLP_SYMBOL_TYPE_INFO",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 39
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -127468,6 +129477,156 @@
           "Type": {
             "Kind": "Primitive",
             "Name": "UInt32"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            1
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DISCRIMINATEDUNION_TAG_VALUE",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            16
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "valueSizeBytes",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Byte"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "TI_GET_DISCRIMINATEDUNION_TAG_RANGES_PARAMS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Count",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Start",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Range",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+            "Name": "DISCRIMINATEDUNION_TAG_VALUE",
+            "Comment": "TypeDefinition"
           },
           "LowerBounds": [
             0
@@ -146706,6 +148865,2119 @@
             "NamedArguments": []
           }
         ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 1,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DIMM_ADDRESS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "ExplicitLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Ddr4",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Ddr4_e__Struct",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Ddr5",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Ddr5_e__Struct",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_Ddr4_e__Struct",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "NestedPublic",
+          "SequentialLayout",
+          "Class",
+          "Sealed",
+          "AnsiClass",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "_bitfield",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "SocketId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 0
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "MemoryControllerId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "ChannelId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 6
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "DimmSlot"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 8
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "DimmRank"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 10
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Device"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 12
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 5
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "ChipSelect"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 17
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 3
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Bank"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 20
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 8
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Dq"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 28
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Reserved"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 32
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 32
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Row",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Column",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Info",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": false,
+          "PackingSize": 1,
+          "Size": 0
+        },
+        "Methods": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      },
+      {
+        "Namespace": "",
+        "Name": "_Ddr5_e__Struct",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "NestedPublic",
+          "SequentialLayout",
+          "Class",
+          "Sealed",
+          "AnsiClass",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "_bitfield",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "SocketId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 0
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 5
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "MemoryControllerId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 5
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "ChannelId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 9
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 3
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "SubChannelId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 12
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "DimmSlot"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 14
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "DimmRank"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 16
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Device"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 20
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 6
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "ChipId"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 26
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 4
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Bank"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 30
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 8
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Dq"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 38
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 5
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Reserved"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 43
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 21
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Row",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Column",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "Info",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "UInt64"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": false,
+          "PackingSize": 1,
+          "Size": 0
+        },
+        "Methods": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      }
+    ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "PAGE_OFFLINE_ERROR_TYPES",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BitErrorDdr4",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "PAGE_OFFLINE_ERROR_TYPES",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RowErrorDdr4",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "PAGE_OFFLINE_ERROR_TYPES",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "BitErrorDdr5",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "PAGE_OFFLINE_ERROR_TYPES",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "RowErrorDdr5",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "PAGE_OFFLINE_ERROR_TYPES",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 3
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "PAGE_OFFLINE_VALID_BITS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "ExplicitLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Anonymous",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Anonymous_e__Struct",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AsUINT8",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Byte"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_Anonymous_e__Struct",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "NestedPublic",
+          "SequentialLayout",
+          "Class",
+          "Sealed",
+          "AnsiClass",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "_bitfield",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "PhysicalAddress"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 0
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "MemDefect"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Reserved"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 6
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": true,
+          "PackingSize": 0,
+          "Size": 0
+        },
+        "Methods": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      }
+    ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DIMM_ADDR_VALID_BITS_DDR4",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "_bitfield",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SocketId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 0
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "MemoryControllerId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ChannelId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 2
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "DimmSlot"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 3
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "DimmRank"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 4
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Device"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 5
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ChipSelect"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 6
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Bank"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 7
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Dq"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 8
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Row"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 9
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Column"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 10
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Info"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 11
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Reserved"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 12
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 20
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 1,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DIMM_ADDR_VALID_BITS_DDR5",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "_bitfield",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SocketId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 0
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "MemoryControllerId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ChannelId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 2
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "SubChannelId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 3
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "DimmSlot"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 4
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "DimmRank"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 5
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Device"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 6
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ChipId"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 7
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Bank"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 8
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Dq"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 9
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Row"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 10
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Column"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 11
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Info"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 12
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 1
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "Reserved"
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 13
+              },
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "Int64"
+                },
+                "Value": 19
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 1,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DIMM_ADDR_VALID_BITS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "ExplicitLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "VB_DDR4",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "DIMM_ADDR_VALID_BITS_DDR4",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "VB_DDR5",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "DIMM_ADDR_VALID_BITS_DDR5",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "AsUINT32",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": 0,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": false,
+      "PackingSize": 1,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "DIMM_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "DimmAddress",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "DIMM_ADDRESS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ValidBits",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "DIMM_ADDR_VALID_BITS",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+    "Name": "MEMORY_DEFECT",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "Version",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DimmInfo",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "DIMM_INFO",
+          "Comment": "TypeDefinition"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ErrType",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Diagnostics.Debug",
+          "Name": "PAGE_OFFLINE_ERROR_TYPES",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
         "DefaultValue": null,
         "Offset": -1,
         "RelativeVirtualAddress": 0

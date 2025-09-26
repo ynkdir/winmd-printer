@@ -1537,6 +1537,26 @@
         "RelativeVirtualAddress": 0
       },
       {
+        "Name": "WTD_CHOICE_DETACHED_SIG",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 6
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
         "Name": "WTD_PROV_FLAGS_MASK",
         "Signature": {
           "Kind": "Primitive",
@@ -1552,6 +1572,26 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 65535
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WTD_USE_LOCAL_MACHINE_CERTS",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -1692,6 +1732,46 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 3758096384
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WINTRUST_DETACHED_SIG_CHOICE_HANDLE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WINTRUST_DETACHED_SIG_CHOICE_BLOB",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -3852,6 +3932,346 @@
         "DefaultValue": {
           "TypeCode": "String",
           "Value": "1.3.6.1.4.1.311.2.6.2"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_INTERNAL_NAME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.1"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_FILE_VERSION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.2"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_FILE_DESCRIPTION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.3"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_PRODUCT",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.4"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_PRODUCT_VERSION",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.5"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_ORIGINAL_FILENAME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.6"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_LANGUAGE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.7"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_AUTHOR",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.8"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_PUBLISH_TIME",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.9"
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "szOID_SIGNED_ATTRIBUTE_SOURCE_URL",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "String"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.NativeEncodingAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "ansi"
+              }
+            ],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": {
+          "TypeCode": "String",
+          "Value": "1.3.6.1.4.1.311.2.7.10"
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -9715,6 +10135,25 @@
             "DefaultValue": null,
             "Offset": 0,
             "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "pDetachedSig",
+            "Signature": {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Security.WinTrust",
+                "Name": "WINTRUST_DETACHED_SIG_INFO",
+                "Comment": "TypeReference"
+              }
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
           }
         ],
         "InterfaceImplementations": [],
@@ -9970,6 +10409,287 @@
     },
     "Methods": [],
     "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.WinTrust",
+    "Name": "WINTRUST_DETACHED_SIG_FILE_HANDLES",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "hContentFile",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "hSignatureFile",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "HANDLE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.WinTrust",
+    "Name": "WINTRUST_DETACHED_SIG_BLOBS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "cbContentObject",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "pbContentObject",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "cbSignatureObject",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "pbSignatureObject",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Byte"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.Security.WinTrust",
+    "Name": "WINTRUST_DETACHED_SIG_INFO",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "cbStruct",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "dwUnionChoice",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Anonymous",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Anonymous_e__Union",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_Anonymous_e__Union",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "NestedPublic",
+          "ExplicitLayout",
+          "Class",
+          "Sealed",
+          "AnsiClass",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "pDetachedSigHandles",
+            "Signature": {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Security.WinTrust",
+                "Name": "WINTRUST_DETACHED_SIG_FILE_HANDLES",
+                "Comment": "TypeDefinition"
+              }
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          },
+          {
+            "Name": "pDetachedSigBlobs",
+            "Signature": {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.Security.WinTrust",
+                "Name": "WINTRUST_DETACHED_SIG_BLOBS",
+                "Comment": "TypeDefinition"
+              }
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null,
+            "Offset": 0,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": true,
+          "PackingSize": 0,
+          "Size": 0
+        },
+        "Methods": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      }
+    ],
     "GenericParameters": []
   },
   {

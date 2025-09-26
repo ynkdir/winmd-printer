@@ -2885,6 +2885,106 @@
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_ALL_TARGET_NODE",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4294967295
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_READ_LATENCY",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_READ_BANDWIDTH",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_LATENCY",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_BANDWIDTH",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
       }
     ],
     "InterfaceImplementations": [],
@@ -13882,6 +13982,204 @@
         "GenericParameters": []
       },
       {
+        "Name": "GetMemoryNumaClosestInitiatorNode",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "GetMemoryNumaClosestInitiatorNode",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "api-ms-win-core-memory-l1-1-9.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "UInt32"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "TargetNodeNumber",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "InitiatorNodeNumber",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "GetMemoryNumaPerformanceInformation",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "GetMemoryNumaPerformanceInformation",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "api-ms-win-core-memory-l1-1-9.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Pointer",
+                "Type": {
+                  "Kind": "Type",
+                  "Namespace": "Windows.Win32.System.Memory",
+                  "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT",
+                  "Comment": "TypeReference"
+                }
+              }
+            }
+          ],
+          "RequiredParameterCount": 3,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "BOOL",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "NodeNumber",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "DataType",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "PerfInfo",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "RtlCompareMemory",
         "Attributes": [
           "Public",
@@ -19384,6 +19682,313 @@
   },
   {
     "Namespace": "Windows.Win32.System.Memory",
+    "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_ENTRY",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "InitiatorNodeNumber",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "TargetNodeNumber",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "DataType",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Byte"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Flags",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "",
+          "Name": "_Flags_e__Struct",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "MinTransferSizeInBytes",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EntryValue",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt64"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [
+      {
+        "Namespace": "",
+        "Name": "_Flags_e__Struct",
+        "BaseType": "System.ValueType",
+        "IsNested": true,
+        "Attributes": [
+          "NestedPublic",
+          "SequentialLayout",
+          "Class",
+          "Sealed",
+          "AnsiClass",
+          "BeforeFieldInit"
+        ],
+        "CustomAttributes": [],
+        "Fields": [
+          {
+            "Name": "_bitfield",
+            "Signature": {
+              "Kind": "Primitive",
+              "Name": "Byte"
+            },
+            "Attributes": [
+              "Public"
+            ],
+            "CustomAttributes": [
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "MinTransferSizeToAchieveValues"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 0
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "NonSequentialTransfers"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 1
+                  }
+                ],
+                "NamedArguments": []
+              },
+              {
+                "Type": "Windows.Win32.Foundation.Metadata.NativeBitfieldAttribute",
+                "FixedArguments": [
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "String"
+                    },
+                    "Value": "Reserved"
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 2
+                  },
+                  {
+                    "Type": {
+                      "Kind": "Primitive",
+                      "Name": "Int64"
+                    },
+                    "Value": 6
+                  }
+                ],
+                "NamedArguments": []
+              }
+            ],
+            "DefaultValue": null,
+            "Offset": -1,
+            "RelativeVirtualAddress": 0
+          }
+        ],
+        "InterfaceImplementations": [],
+        "Layout": {
+          "IsDefault": true,
+          "PackingSize": 0,
+          "Size": 0
+        },
+        "Methods": [],
+        "NestedTypes": [],
+        "GenericParameters": []
+      }
+    ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Memory",
+    "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "EntryCount",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt32"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "PerformanceEntries",
+        "Signature": {
+          "Kind": "Array",
+          "Type": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.System.Memory",
+            "Name": "WIN32_MEMORY_NUMA_PERFORMANCE_ENTRY",
+            "Comment": "TypeReference"
+          },
+          "LowerBounds": [
+            0
+          ],
+          "Rank": 1,
+          "Sizes": [
+            1
+          ]
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [
+          {
+            "Type": "Windows.Win32.Foundation.Metadata.FlexibleArrayAttribute",
+            "FixedArguments": [],
+            "NamedArguments": []
+          }
+        ],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Memory",
     "Name": "MEMORY_BASIC_INFORMATION",
     "BaseType": "System.ValueType",
     "IsNested": false,
@@ -20097,94 +20702,6 @@
   },
   {
     "Namespace": "Windows.Win32.System.Memory",
-    "Name": "MEM_ADDRESS_REQUIREMENTS",
-    "BaseType": "System.ValueType",
-    "IsNested": false,
-    "Attributes": [
-      "Public",
-      "SequentialLayout",
-      "Class",
-      "Sealed",
-      "AnsiClass",
-      "BeforeFieldInit"
-    ],
-    "CustomAttributes": [
-      {
-        "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
-        "FixedArguments": [
-          {
-            "Type": {
-              "Kind": "Primitive",
-              "Name": "String"
-            },
-            "Value": "https://learn.microsoft.com/windows/win32/api/winnt/ns-winnt-mem_address_requirements"
-          }
-        ],
-        "NamedArguments": []
-      }
-    ],
-    "Fields": [
-      {
-        "Name": "LowestStartingAddress",
-        "Signature": {
-          "Kind": "Pointer",
-          "Type": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "HighestEndingAddress",
-        "Signature": {
-          "Kind": "Pointer",
-          "Type": {
-            "Kind": "Primitive",
-            "Name": "Void"
-          }
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      },
-      {
-        "Name": "Alignment",
-        "Signature": {
-          "Kind": "Primitive",
-          "Name": "UIntPtr"
-        },
-        "Attributes": [
-          "Public"
-        ],
-        "CustomAttributes": [],
-        "DefaultValue": null,
-        "Offset": -1,
-        "RelativeVirtualAddress": 0
-      }
-    ],
-    "InterfaceImplementations": [],
-    "Layout": {
-      "IsDefault": true,
-      "PackingSize": 0,
-      "Size": 0
-    },
-    "Methods": [],
-    "NestedTypes": [],
-    "GenericParameters": []
-  },
-  {
-    "Namespace": "Windows.Win32.System.Memory",
     "Name": "MEM_EXTENDED_PARAMETER_TYPE",
     "BaseType": "System.Enum",
     "IsNested": false,
@@ -20681,6 +21198,94 @@
         "GenericParameters": []
       }
     ],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Memory",
+    "Name": "MEM_ADDRESS_REQUIREMENTS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [
+      {
+        "Type": "Windows.Win32.Foundation.Metadata.DocumentationAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "https://learn.microsoft.com/windows/win32/api/winnt/ns-winnt-mem_address_requirements"
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
+    "Fields": [
+      {
+        "Name": "LowestStartingAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "HighestEndingAddress",
+        "Signature": {
+          "Kind": "Pointer",
+          "Type": {
+            "Kind": "Primitive",
+            "Name": "Void"
+          }
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "Alignment",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UIntPtr"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
     "GenericParameters": []
   },
   {

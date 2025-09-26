@@ -184,7 +184,13 @@
       "Sealed",
       "AnsiClass"
     ],
-    "CustomAttributes": [],
+    "CustomAttributes": [
+      {
+        "Type": "System.FlagsAttribute",
+        "FixedArguments": [],
+        "NamedArguments": []
+      }
+    ],
     "Fields": [
       {
         "Name": "value__",
@@ -242,6 +248,50 @@
         "DefaultValue": {
           "TypeCode": "UInt32",
           "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EVENTLOG_FORWARDS_READ",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.EventLog",
+          "Name": "READ_EVENT_LOG_READ_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 4
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "EVENTLOG_BACKWARDS_READ",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.EventLog",
+          "Name": "READ_EVENT_LOG_READ_FLAGS",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "UInt32",
+          "Value": 8
         },
         "Offset": -1,
         "RelativeVirtualAddress": 0
@@ -15780,7 +15830,21 @@
       "AnsiClass",
       "BeforeFieldInit"
     ],
-    "CustomAttributes": [],
+    "CustomAttributes": [
+      {
+        "Type": "System.ObsoleteAttribute",
+        "FixedArguments": [
+          {
+            "Type": {
+              "Kind": "Primitive",
+              "Name": "String"
+            },
+            "Value": "struct EVENTSFORLOGFILE is deprecated and might not work on all platforms. For more info, see MSDN."
+          }
+        ],
+        "NamedArguments": []
+      }
+    ],
     "Fields": [
       {
         "Name": "ulSize",

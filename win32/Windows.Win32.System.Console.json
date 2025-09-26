@@ -1962,6 +1962,105 @@
         "GenericParameters": []
       },
       {
+        "Name": "AllocConsoleWithOptions",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "AllocConsoleWithOptions",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Console",
+                "Name": "ALLOC_CONSOLE_OPTIONS",
+                "Comment": "TypeReference"
+              }
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Type",
+                "Namespace": "Windows.Win32.System.Console",
+                "Name": "ALLOC_CONSOLE_RESULT",
+                "Comment": "TypeReference"
+              }
+            }
+          ],
+          "RequiredParameterCount": 2,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "options",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "result",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "Out",
+              "Optional"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
         "Name": "FreeConsole",
         "Attributes": [
           "Public",
@@ -4327,6 +4426,82 @@
           }
         },
         "Parameters": [
+          {
+            "Name": "hPC",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ReleasePseudoConsole",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "ReleasePseudoConsole",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "KERNEL32.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.System.Console",
+              "Name": "HPCON",
+              "Comment": "TypeReference"
+            }
+          ],
+          "RequiredParameterCount": 1,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
           {
             "Name": "hPC",
             "SequenceNumber": 1,
@@ -14509,6 +14684,292 @@
         ],
         "CustomAttributes": [],
         "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Console",
+    "Name": "ALLOC_CONSOLE_MODE",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_MODE_DEFAULT",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_MODE_NEW_WINDOW",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_MODE_NO_WINDOW",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Console",
+    "Name": "ALLOC_CONSOLE_OPTIONS",
+    "BaseType": "System.ValueType",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "SequentialLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass",
+      "BeforeFieldInit"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "mode",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_MODE",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "useShowWindow",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.Foundation",
+          "Name": "BOOL",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "showWindow",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "UInt16"
+        },
+        "Attributes": [
+          "Public"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      }
+    ],
+    "InterfaceImplementations": [],
+    "Layout": {
+      "IsDefault": true,
+      "PackingSize": 0,
+      "Size": 0
+    },
+    "Methods": [],
+    "NestedTypes": [],
+    "GenericParameters": []
+  },
+  {
+    "Namespace": "Windows.Win32.System.Console",
+    "Name": "ALLOC_CONSOLE_RESULT",
+    "BaseType": "System.Enum",
+    "IsNested": false,
+    "Attributes": [
+      "Public",
+      "AutoLayout",
+      "Class",
+      "Sealed",
+      "AnsiClass"
+    ],
+    "CustomAttributes": [],
+    "Fields": [
+      {
+        "Name": "value__",
+        "Signature": {
+          "Kind": "Primitive",
+          "Name": "Int32"
+        },
+        "Attributes": [
+          "Public",
+          "SpecialName",
+          "RTSpecialName"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": null,
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_RESULT_NO_CONSOLE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_RESULT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 0
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_RESULT_NEW_CONSOLE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_RESULT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 1
+        },
+        "Offset": -1,
+        "RelativeVirtualAddress": 0
+      },
+      {
+        "Name": "ALLOC_CONSOLE_RESULT_EXISTING_CONSOLE",
+        "Signature": {
+          "Kind": "Type",
+          "Namespace": "Windows.Win32.System.Console",
+          "Name": "ALLOC_CONSOLE_RESULT",
+          "Comment": "TypeReference"
+        },
+        "Attributes": [
+          "Public",
+          "Static",
+          "Literal",
+          "HasDefault"
+        ],
+        "CustomAttributes": [],
+        "DefaultValue": {
+          "TypeCode": "Int32",
+          "Value": 2
+        },
         "Offset": -1,
         "RelativeVirtualAddress": 0
       }

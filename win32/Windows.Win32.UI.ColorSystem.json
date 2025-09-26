@@ -10277,6 +10277,19 @@
         ],
         "CustomAttributes": [
           {
+            "Type": "System.ObsoleteAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "GetColorDirectoryW is deprecated and might not work on all platforms. For more info, see MSDN."
+              }
+            ],
+            "NamedArguments": []
+          },
+          {
             "Type": "Windows.Win32.Foundation.Metadata.AnsiAttribute",
             "FixedArguments": [],
             "NamedArguments": []
@@ -10427,6 +10440,19 @@
           "PinvokeImpl"
         ],
         "CustomAttributes": [
+          {
+            "Type": "System.ObsoleteAttribute",
+            "FixedArguments": [
+              {
+                "Type": {
+                  "Kind": "Primitive",
+                  "Name": "String"
+                },
+                "Value": "GetColorDirectoryA is deprecated and might not work on all platforms. For more info, see MSDN."
+              }
+            ],
+            "NamedArguments": []
+          },
           {
             "Type": "Windows.Win32.Foundation.Metadata.UnicodeAttribute",
             "FixedArguments": [],
@@ -19623,6 +19649,141 @@
           {
             "Name": "scope",
             "SequenceNumber": 3,
+            "Attributes": [
+              "Out"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          }
+        ],
+        "GenericParameters": []
+      },
+      {
+        "Name": "ColorProfileGetDeviceCapabilities",
+        "Attributes": [
+          "Public",
+          "Static",
+          "HideBySig",
+          "ReuseSlot",
+          "PinvokeImpl"
+        ],
+        "CustomAttributes": [],
+        "ImplAttributes": [
+          "IL",
+          "Managed"
+        ],
+        "RelativeVirtualAddress": 0,
+        "Import": {
+          "Name": "ColorProfileGetDeviceCapabilities",
+          "Attributes": [
+            "ExactSpelling",
+            "CallingConventionWinApi"
+          ],
+          "Module": {
+            "Name": "mscms.dll",
+            "CustomAttributes": []
+          }
+        },
+        "Signature": {
+          "GenericParameterCount": 0,
+          "Header": {
+            "Attributes": [
+              "None"
+            ],
+            "CallingConvention": "Default",
+            "HasExplicitThis": false,
+            "IsGeneric": false,
+            "IsInstance": false,
+            "Kind": "Method"
+          },
+          "ParameterTypes": [
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.UI.ColorSystem",
+              "Name": "WCS_PROFILE_MANAGEMENT_SCOPE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.Foundation",
+              "Name": "LUID",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Primitive",
+              "Name": "UInt32"
+            },
+            {
+              "Kind": "Type",
+              "Namespace": "Windows.Win32.UI.ColorSystem",
+              "Name": "WCS_DEVICE_CAPABILITIES_TYPE",
+              "Comment": "TypeReference"
+            },
+            {
+              "Kind": "Pointer",
+              "Type": {
+                "Kind": "Primitive",
+                "Name": "Void"
+              }
+            }
+          ],
+          "RequiredParameterCount": 5,
+          "ReturnType": {
+            "Kind": "Type",
+            "Namespace": "Windows.Win32.Foundation",
+            "Name": "HRESULT",
+            "Comment": "TypeReference"
+          }
+        },
+        "Parameters": [
+          {
+            "Name": "",
+            "SequenceNumber": 0,
+            "Attributes": [
+              "None"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "scope",
+            "SequenceNumber": 1,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "targetAdapterID",
+            "SequenceNumber": 2,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "sourceID",
+            "SequenceNumber": 3,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "capsType",
+            "SequenceNumber": 4,
+            "Attributes": [
+              "In"
+            ],
+            "CustomAttributes": [],
+            "DefaultValue": null
+          },
+          {
+            "Name": "outputCapabilities",
+            "SequenceNumber": 5,
             "Attributes": [
               "Out"
             ],
