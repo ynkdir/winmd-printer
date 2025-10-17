@@ -4,3 +4,5 @@ USAGE:
 > dotnet.exe run Windows.Win32.winmd
 
 https://github.com/microsoft/win32metadata
+
+Generated json files are available in release page.
