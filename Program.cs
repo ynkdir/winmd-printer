@@ -405,6 +405,14 @@ class JsTypeDefinition {
     public IEnumerable<JsGenericParameter> GenericParameters { get =>
         from h in _td.GetGenericParameters()
         select new JsGenericParameter(_reader, _reader.GetGenericParameter(h), _gc); }
+
+    public IEnumerable<JsEventDefinition> Events { get =>
+        from h in _td.GetEvents()
+        select new JsEventDefinition(_reader, _reader.GetEventDefinition(h), _gc); }
+
+    public IEnumerable<JsPropertyDefinition> Properties { get =>
+        from h in _td.GetProperties()
+        select new JsPropertyDefinition(_reader, _reader.GetPropertyDefinition(h), _gc); }
 }
 
 class JsGenericParameter {
@@ -903,6 +911,98 @@ class JsModuleReference {
     public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
         from h in _mr.GetCustomAttributes()
         select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
+}
+
+class JsEventDefinition {
+    MetadataReader _reader;
+    EventDefinition _ed;
+    TGenericContext _gc;
+
+    public JsEventDefinition(MetadataReader reader, EventDefinition ed, TGenericContext gc) {
+        _reader = reader;
+        _ed = ed;
+        _gc = gc;
+    }
+
+    public IEnumerable<string> Attributes { get => _ed.Attributes.ToString().Split(", "); }
+
+    public string Name { get => _reader.GetString(_ed.Name); }
+
+    public JsEntityHandle Type { get => new JsEntityHandle(_reader, _ed.Type, _gc); }
+
+    public JsEventAccessors Accessors { get => new JsEventAccessors(_reader, _ed.GetAccessors()); }
+
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _ed.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
+}
+
+class JsEventAccessors {
+    MetadataReader _reader;
+    EventAccessors _ea;
+
+    public JsEventAccessors(MetadataReader reader, EventAccessors ea) {
+        _reader = reader;
+        _ea = ea;
+    }
+
+    public string? Adder { get =>
+        _ea.Adder.IsNil ? null : _reader.GetString(_reader.GetMethodDefinition(_ea.Adder).Name); }
+
+    public string? Raiser { get =>
+        _ea.Raiser.IsNil ? null : _reader.GetString(_reader.GetMethodDefinition(_ea.Raiser).Name); }
+
+    public string? Remover { get =>
+        _ea.Remover.IsNil ? null : _reader.GetString(_reader.GetMethodDefinition(_ea.Remover).Name); }
+
+    public IEnumerable<string> Others { get =>
+        from h in _ea.Others
+        select _reader.GetString(_reader.GetMethodDefinition(h).Name); }
+}
+
+class JsPropertyDefinition {
+    MetadataReader _reader;
+    PropertyDefinition _pd;
+    TGenericContext _gc;
+
+    public JsPropertyDefinition(MetadataReader reader, PropertyDefinition pd, TGenericContext gc) {
+        _reader = reader;
+        _pd = pd;
+        _gc = gc;
+    }
+
+    public IEnumerable<string> Attributes { get => _pd.Attributes.ToString().Split(", "); }
+
+    public string Name { get => _reader.GetString(_pd.Name); }
+
+    public JsMethodSignature Signature { get =>
+        new JsMethodSignature(_pd.DecodeSignature(new TypeProvider(), _gc)); }
+
+    public JsPropertyAccessors Accessors { get => new JsPropertyAccessors(_reader, _pd.GetAccessors()); }
+
+    public IEnumerable<JsCustomAttribute> CustomAttributes { get =>
+        from h in _pd.GetCustomAttributes()
+        select new JsCustomAttribute(_reader, _reader.GetCustomAttribute(h)); }
+}
+
+class JsPropertyAccessors {
+    MetadataReader _reader;
+    PropertyAccessors _pa;
+
+    public JsPropertyAccessors(MetadataReader reader, PropertyAccessors pa) {
+        _reader = reader;
+        _pa = pa;
+    }
+
+    public string? Getter { get =>
+        _pa.Getter.IsNil ? null : _reader.GetString(_reader.GetMethodDefinition(_pa.Getter).Name); }
+
+    public string? Setter { get =>
+        _pa.Setter.IsNil ? null : _reader.GetString(_reader.GetMethodDefinition(_pa.Setter).Name); }
+
+    public IEnumerable<string> Others { get =>
+        from h in _pa.Others
+        select _reader.GetString(_reader.GetMethodDefinition(h).Name); }
 }
 
 class MetadataPrinter {
