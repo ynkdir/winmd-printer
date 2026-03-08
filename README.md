@@ -1,8 +1,7 @@
-# winmd json printer for homework
+# winmd to json converter
 
 USAGE:
-> dotnet.exe run Windows.Win32.winmd
 
-https://github.com/microsoft/win32metadata
-
-Generated json files are available in release page.
+```
+> winmd-printer.exe Windows.Win32.winmd
+```
