@@ -1,6 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.1.0</Version>
+    <Description>winmd to json converter</Description>
+    <Authors>Yukihiro Nakadaira</Authors>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -9,7 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-      <Compile Include="Program.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+
+  <!-- for nupkg: dotnet.exe pack -->
+  <ItemGroup>
+    <None Include="$(TargetDir)/$(TargetName).exe" PackagePath="bin" Pack="true" />
+    <None Include="$(TargetDir)/$(TargetName).dll" PackagePath="bin" Pack="true" />
+    <None Include="$(TargetDir)/$(TargetName).runtimeconfig.json" PackagePath="bin" Pack="true" />
   </ItemGroup>
 
 </Project>
