@@ -90,14 +90,7 @@ function Main {
             $tmpdir\Microsoft.WindowsAppSDK.ML\metadata\*.winmd)
     }
 
-    foreach ($f in $winmdfiles) {
-        Write-Host $f.Name
-        dotnet.exe run -o "$tmpdir\$($f.BaseName).json" $f
-    }
-
-    py.exe -X utf8 $PSScriptRoot\join_metadata.py -o $tmpdir\$Name.json (Get-Item $tmpdir\*.json)
-
-    py.exe -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\$Name.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 

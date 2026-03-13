@@ -21,14 +21,10 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    Get-Item $tmpdir\$Name.$Version\lib\uap10.0\*.winmd, $tmpdir\$Name.$Version\lib\uap10.0.18362\*.winmd | ForEach-Object {
-        Write-Host $_.Name
-        dotnet run -o "$tmpdir\$($_.BaseName).json" $_
-    }
+    $winmdfiles = (Get-Item $tmpdir\$Name.$Version\lib\uap10.0\*.winmd,
+        $tmpdir\$Name.$Version\lib\uap10.0.18362\*.winmd)
 
-    py -X utf8 $PSScriptRoot\join_metadata.py -o $tmpdir\$Name.json (Get-Item $tmpdir\*.json)
-
-    py -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\$Name.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 

@@ -21,9 +21,9 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    dotnet.exe run -o $tmpdir\Windows.Win32.json $tmpdir\$Name.$Version\Windows.Win32.winmd
+    $winmdfiles = (Get-Item $tmpdir\$Name.$Version\Windows.Win32.winmd)
 
-    py.exe -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\Windows.Win32.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 

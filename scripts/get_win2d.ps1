@@ -21,9 +21,9 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    dotnet.exe run -o $tmpdir\Microsoft.Graphics.Canvas.json $tmpdir\$Name.$Version\lib\uap10.0\Microsoft.Graphics.Canvas.winmd
+    $winmdfiles = (Get-Item $tmpdir\$Name.$Version\lib\uap10.0\Microsoft.Graphics.Canvas.winmd)
 
-    py.exe -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\Microsoft.Graphics.Canvas.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 

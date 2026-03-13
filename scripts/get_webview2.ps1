@@ -21,9 +21,9 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    dotnet.exe run -o $tmpdir\Microsoft.Web.WebView2.Core.json $tmpdir\$Name.$Version\lib\Microsoft.Web.WebView2.Core.winmd
+    $winmdfiles = (Get-Item $tmpdir\$Name.$Version\lib\Microsoft.Web.WebView2.Core.winmd)
 
-    py.exe -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\Microsoft.Web.WebView2.Core.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 

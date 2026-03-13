@@ -21,14 +21,9 @@ function Main {
 
     Download-NugetPackage $Name $Version $tmpdir\$Name.$Version
 
-    Get-Item $tmpdir\$Name.$Version\ref\netstandard2.0\*.winmd | ForEach-Object {
-        Write-Host $_.Name
-        dotnet.exe run -o "$tmpdir\$($_.BaseName).json" $_
-    }
+    $winmdfiles = (Get-Item $tmpdir\$Name.$Version\ref\netstandard2.0\*.winmd)
 
-    py.exe -X utf8 $PSScriptRoot\join_metadata.py -o $tmpdir\$Name.$Version.json (Get-Item $tmpdir\*.json)
-
-    py.exe -X utf8 $PSScriptRoot\split_namespace.py -d $DstDir $tmpdir\$Name.$Version.json
+    dotnet.exe run -d $DstDir $winmdfiles
 
     tar.exe -C $DstDir -acf "$Name.$version.zip" *
 
