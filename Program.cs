@@ -1257,17 +1257,43 @@ class JsPropertyAccessors
     }
 }
 
+class MetadataWriter
+{
+    private readonly Stream _stream;
+    private readonly Utf8JsonWriter _writer;
+
+    public MetadataWriter(Stream stream)
+    {
+        _stream = stream;
+        _writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+        _writer.WriteStartArray();
+    }
+
+    public void Write(JsTypeDefinition td)
+    {
+        JsonSerializer.Serialize(_writer, td);
+    }
+
+    public void Close()
+    {
+        _writer.WriteEndArray();
+        _writer.Dispose();
+        _stream.Dispose();
+    }
+}
+
 class MetadataPrinter
 {
     public static void usage()
     {
-        Console.WriteLine("winmd-printer [-h] [-o output.json] input.winmd");
+        Console.WriteLine("winmd-printer [-h] [-o output.json] [-d outdir] input.winmd ...");
     }
 
     public static void Main(string[] args)
     {
-        string? input = null;
+        var inputs = new List<string>();
         string? output = null;
+        string? outdir = null;
 
         for (int i = 0; i < args.Length; ++i)
         {
@@ -1279,25 +1305,77 @@ class MetadataPrinter
                 case "-o":
                     output = args[++i];
                     break;
+                case "-d":
+                    outdir = args[++i];
+                    break;
                 default:
-                    input = args[i];
+                    inputs.Add(args[i]);
                     break;
             }
         }
 
-        if (input is null)
+        if (inputs.Count == 0)
         {
             usage();
             return;
         }
 
-        using var fs = new FileStream(input, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-        using var pe = new PEReader(fs);
-        var reader = pe.GetMetadataReader(MetadataReaderOptions.None);
-        using var writer = (output is null) ? Console.Out : new StreamWriter(output);
-        writer.Write(JsonSerializer.Serialize(
-            from h in reader.TypeDefinitions
-            select new JsTypeDefinition(reader, reader.GetTypeDefinition(h)),
-            new JsonSerializerOptions { WriteIndented = true }));
+        if (outdir is not null && !Directory.Exists(outdir))
+        {
+            Directory.CreateDirectory(outdir);
+        }
+
+        MetadataWriter? outputWriter = null;
+        if (output is not null)
+        {
+            outputWriter = new MetadataWriter(new FileStream(output, FileMode.Create, FileAccess.Write));
+        }
+        else if (outdir is null)
+        {
+            outputWriter = new MetadataWriter(Console.OpenStandardOutput());
+        }
+
+
+        var namespaces = new Dictionary<string, MetadataWriter>();
+
+        foreach (var input in inputs)
+        {
+            using var fs = new FileStream(input, FileMode.Open, FileAccess.Read, FileShare.Read);
+            using var pe = new PEReader(fs);
+            var reader = pe.GetMetadataReader(MetadataReaderOptions.None);
+
+            foreach (var h in reader.TypeDefinitions)
+            {
+                var td = new JsTypeDefinition(reader, reader.GetTypeDefinition(h));
+
+                if (outputWriter is not null)
+                {
+                    outputWriter.Write(td);
+                }
+
+                if (outdir is null || td.Namespace == "")
+                {
+                    continue;
+                }
+
+                if (!namespaces.ContainsKey(td.Namespace))
+                {
+                    var path = Path.Combine(outdir, $"{td.Namespace}.json");
+                    namespaces.Add(td.Namespace, new MetadataWriter(new FileStream(path, FileMode.Create, FileAccess.Write)));
+                }
+
+                namespaces[td.Namespace].Write(td);
+            }
+        }
+
+        foreach (var writer in namespaces.Values)
+        {
+            writer.Close();
+        }
+
+        if (outputWriter is not null)
+        {
+            outputWriter.Close();
+        }
     }
 }
