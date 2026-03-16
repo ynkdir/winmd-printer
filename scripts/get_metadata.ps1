@@ -74,8 +74,7 @@ function Get-Winmdfiles {
 
     $r = @()
     foreach ($m in $recipe.Metadata) {
-        $nupkg_path = Get-NupkgPath $NupkgDir $m.Id
-        $r += Get-Item "$nupkg_path\$($m.Pattern)"
+        $r += Join-Path (Get-NupkgPath $NupkgDir $m.Id) $m.Pattern -Resolve
     }
     return $r
 }
