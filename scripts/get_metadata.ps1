@@ -117,8 +117,11 @@ function Get-Recipe {
         if ([System.Version]$Version -lt [System.Version]"1.3.0") {
             return $RECIPES["Microsoft.Graphics.Win2D.1.2"]
         }
-        else {
+        elseif ([System.Version]$Version -lt [System.Version]"1.4.0") {
             return $RECIPES["Microsoft.Graphics.Win2D.1.3"]
+        }
+        else {
+            return $RECIPES["Microsoft.Graphics.Win2D.1.4"]
         }
     }
 
@@ -244,6 +247,23 @@ $RECIPES = @{
         Id            = "Microsoft.Graphics.Win2D"
         Dependencies  = @("Microsoft.WindowsAppSDK.1.6")
         KnownPackages = @("Microsoft.Graphics.Win2D")
+        Metadata      = @(
+            @{Id = "Microsoft.Graphics.Win2D"; Pattern = "lib/uap10.0/*.winmd" }
+        )
+    }
+    "Microsoft.Graphics.Win2D.1.4"          = @{
+        Id            = "Microsoft.Graphics.Win2D"
+        Dependencies  = @() # Microsoft.WindowsAppSDK.WinUI
+        KnownPackages = @(
+            "Microsoft.Graphics.Win2D"
+            "Microsoft.WindowsAppSDK.WinUI"
+            "Microsoft.Web.WebView2"
+            "Microsoft.WindowsAppSDK.Base"
+            "Microsoft.WindowsAppSDK.Foundation"
+            "Microsoft.WindowsAppSDK.InteractiveExperiences"
+            "Microsoft.Windows.SDK.BuildTools"
+            "Microsoft.Windows.SDK.BuildTools.MSIX"
+        )
         Metadata      = @(
             @{Id = "Microsoft.Graphics.Win2D"; Pattern = "lib/uap10.0/*.winmd" }
         )
