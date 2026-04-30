@@ -106,8 +106,11 @@ function Get-Recipe {
         elseif ([System.Version]$Version -lt [System.Version]"1.8.250916003") {
             return $RECIPES["Microsoft.WindowsAppSDK.1.8"]
         }
-        else {
+        elseif ([System.Version]$Version -lt [System.Version]"2.0.1") {
             return $RECIPES["Microsoft.WindowsAppSDK.1.8.250916003"]
+        }
+        else {
+            return $RECIPES["Microsoft.WindowsAppSDK.2.0.1"]
         }
     }
     elseif ($Id -eq "Microsoft.Web.WebView2") {
@@ -225,6 +228,39 @@ $RECIPES = @{
             @{Id = "Microsoft.WindowsAppSDK.Widgets"; Pattern = "metadata/*.winmd" }
             @{Id = "Microsoft.WindowsAppSDK.AI"; Pattern = "metadata/*.winmd" }
             @{Id = "Microsoft.WindowsAppSDK.ML"; Pattern = "metadata/*.winmd" }
+        )
+    }
+    "Microsoft.WindowsAppSDK.2.0.1" = @{
+        Id            = "Microsoft.WindowsAppSDK"
+        Dependencies  = @("Microsoft.Web.WebView2")
+        KnownPackages = @(
+            "Microsoft.WindowsAppSDK"
+            "Microsoft.WindowsAppSDK.Base"
+            "Microsoft.WindowsAppSDK.Foundation"
+            "Microsoft.WindowsAppSDK.InteractiveExperiences"
+            "Microsoft.WindowsAppSDK.WinUI"
+            "Microsoft.WindowsAppSDK.DWrite"
+            "Microsoft.WindowsAppSDK.Widgets"
+            "Microsoft.WindowsAppSDK.AI"
+            "Microsoft.WindowsAppSDK.Runtime"
+            "Microsoft.WindowsAppSDK.ML"
+            "Microsoft.Windows.SDK.BuildTools"
+            "Microsoft.Windows.SDK.BuildTools.MSIX"
+            "Microsoft.Windows.AI.MachineLearning"
+            "Microsoft.Bcl.Numerics"
+            "System.Buffers"
+            "System.Memory"
+            "System.Numerics.Tensors"
+            "System.Numerics.Vectors"
+            "System.Runtime.CompilerServices.Unsafe"
+        )
+        Metadata      = @(
+            @{Id = "Microsoft.WindowsAppSDK.Foundation"; Pattern = "metadata/*.winmd" }
+            @{Id = "Microsoft.WindowsAppSDK.InteractiveExperiences"; Pattern = "metadata/10.0.18362.0/*.winmd" }
+            @{Id = "Microsoft.WindowsAppSDK.WinUI"; Pattern = "metadata/*.winmd" }
+            @{Id = "Microsoft.WindowsAppSDK.Widgets"; Pattern = "metadata/*.winmd" }
+            @{Id = "Microsoft.WindowsAppSDK.AI"; Pattern = "metadata/*.winmd" }
+            @{Id = "Microsoft.Windows.AI.MachineLearning"; Pattern = "metadata/*.winmd" }
         )
     }
     "Microsoft.Web.WebView2"                = @{
