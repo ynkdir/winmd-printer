@@ -90,6 +90,9 @@ function Get-Recipe {
     if ($Id -eq "Microsoft.Windows.SDK.Win32Metadata") {
         return $RECIPES["Microsoft.Windows.SDK.Win32Metadata"]
     }
+    elseif ($Id -eq "Microsoft.Windows.WDK.Win32Metadata") {
+        return $RECIPES["Microsoft.Windows.WDK.Win32Metadata"]
+    }
     elseif ($Id -eq "Microsoft.Windows.SDK.Contracts") {
         return $RECIPES["Microsoft.Windows.SDK.Contracts"]
     }
@@ -138,6 +141,14 @@ $RECIPES = @{
         KnownPackages = @("Microsoft.Windows.SDK.Win32Metadata")
         Metadata      = @(
             @{Id = "Microsoft.Windows.SDK.Win32Metadata"; Pattern = "Windows.Win32.winmd" }
+        )
+    }
+    "Microsoft.Windows.WDK.Win32Metadata"   = @{
+        Id            = "Microsoft.Windows.WDK.Win32Metadata"
+        Dependencies  = @()
+        KnownPackages = @("Microsoft.Windows.WDK.Win32Metadata", "Microsoft.Windows.SDK.Win32Metadata")
+        Metadata      = @(
+            @{Id = "Microsoft.Windows.WDK.Win32Metadata"; Pattern = "Windows.WDK.winmd" }
         )
     }
     "Microsoft.Windows.SDK.Contracts"       = @{
@@ -376,6 +387,7 @@ function Get-AllMetadata {
 function Main {
     if ($Id -eq "") {
         Get-AllMetadata "Microsoft.Windows.SDK.Win32Metadata" "63.0" $true $DstDir
+        Get-AllMetadata "Microsoft.Windows.WDK.Win32Metadata" "0.13.25" $true $DstDir
         Get-AllMetadata "Microsoft.Windows.SDK.Contracts" "10.0.26100.4948" $false $DstDir
         Get-AllMetadata "Microsoft.WindowsAppSDK" "1.5" $false $DstDir
         Get-AllMetadata "Microsoft.Web.WebView2" "1.0.2651" $false $DstDir
